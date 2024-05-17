@@ -31,10 +31,10 @@ import BitCoinImage from '@/assets/images/bitcoin.svg';
 const Footer = () => {
   return (
     <footer className='h-[579px] bg-[#0066B3]'>
-      <div className='max-w-[1758px] px-[24px] py-8 mx-auto'>
+      <div className='max-w-[1910px] px-[100px] py-8 mx-auto'>
         <div className='flex pt-2 pb-4'>
           <Image src={LogoImage} alt='logo' />
-          <div className='flex items-center gap-10 flex-1 px-[10rem]'>
+          <div className='flex items-center justify-center gap-10 flex-1'>
             <div className='flex gap-2 items-center'>
               <Image src={CallingImage} alt='calling' />
               <p className='text-white font-semibold text-[18px]'>
