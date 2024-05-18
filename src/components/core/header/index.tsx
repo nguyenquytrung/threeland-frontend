@@ -130,7 +130,9 @@ const Header = () => {
             <p className='text-[16px]'>About</p>
           </div>
           <div role='button' className='flex gap-2 items-center'>
-            <p className='text-[16px]'>Blog</p>
+            <Link href='/blogs' className='text-[16px]'>
+              Blog
+            </Link>
           </div>
           <div role='button' className='flex gap-2 items-center'>
             <p className='text-[16px]'>Contact Us</p>
