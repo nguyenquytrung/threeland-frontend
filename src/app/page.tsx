@@ -233,7 +233,7 @@ export default function Home() {
   };
 
   const settingsPartners = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 6,
@@ -262,7 +262,11 @@ export default function Home() {
 
   return (
     <main className=''>
-      <Banner />
+      <Banner
+        title='Make Your Travel Whishlist, We’ll Do The Rest'
+        subTitle='Instantly find the best deals on flights, hotels, and vacation
+          packages. Start planning your dream getaway today!'
+      />
 
       {/* Best Travel Agency Vietnam Section */}
       <section className='relative px-[100px] 2xl:max-w-[1584px] w-full h-[827px] flex gap-8 items-center mx-auto mt-[6rem]'>
@@ -496,13 +500,13 @@ export default function Home() {
               young urban culture with traditional values. In the city, ancient
               temples are just a turn away from modern shops. In the
               countryside, life still flows along the rivers and harvests. This
-              contrast between old and new makes up a large part of Vietnam's
-              appeal. Another reason to visit Vietnam is its natural beauty. The
-              North has majestic mountains and beautiful limestone bays. The
-              Central Coast Road leads to historical relics and romantic
-              beaches. In the South, the sleepless life of Ho Chi Minh City and
-              the riverside villages in the Mekong Delta will make you want to
-              linger forever.
+              contrast between old and new makes up a large part of
+              Vietnam&apos;s appeal. Another reason to visit Vietnam is its
+              natural beauty. The North has majestic mountains and beautiful
+              limestone bays. The Central Coast Road leads to historical relics
+              and romantic beaches. In the South, the sleepless life of Ho Chi
+              Minh City and the riverside villages in the Mekong Delta will make
+              you want to linger forever.
             </p>
             <div
               role='button'
@@ -927,7 +931,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='mt-10 bg-[#F3F5F6]'>
+      <section className='mt-10 bg-[#F3F5F6] pb-8'>
         <div className='max-w-[1474px] px-[100px] mx-auto'>
           <Slider
             className='mt-[4rem]'
