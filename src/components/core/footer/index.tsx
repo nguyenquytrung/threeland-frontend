@@ -31,10 +31,10 @@ import BitCoinImage from '@/assets/images/bitcoin.svg';
 const Footer = () => {
   return (
     <footer className='h-[579px] bg-[#0066B3]'>
-      <div className='max-w-[1758px] px-[24px] py-8'>
+      <div className='max-w-[1910px] px-[100px] py-8 mx-auto'>
         <div className='flex pt-2 pb-4'>
           <Image src={LogoImage} alt='logo' />
-          <div className='flex items-center gap-10 flex-1 px-[10rem]'>
+          <div className='flex items-center justify-center gap-10 flex-1'>
             <div className='flex gap-2 items-center'>
               <Image src={CallingImage} alt='calling' />
               <p className='text-white font-semibold text-[18px]'>
@@ -57,7 +57,7 @@ const Footer = () => {
         </div>
         <hr className='opacity-[0.4] bg-[#E6E8E8]' />
 
-        <div className='flex gap-20 text-white pt-8 justify-between pb-6'>
+        <div className='flex gap-20 2xl:gap-[16rem] text-white pt-8 justify-between pb-6'>
           <div className='flex gap-[4.5rem]'>
             <div className='flex flex-col gap-4'>
               <h5 className='text-[24px] font-medium'>TO KNOW</h5>
@@ -149,7 +149,7 @@ const Footer = () => {
               <Link href=''>Privacy & Cookie Policy</Link>
             </p>
             <p className='text-[14px] mb-5'>WE ACCEPT</p>
-            <div className='grid grid-cols-8 gap-2'>
+            <div className='grid grid-cols-8 gap-2 w-fit'>
               <Image src={MasterCardImage} alt='pay' />
               <Image src={PayPalImage} alt='pay' />
               <Image src={EbayImage} alt='pay' />
