@@ -43,7 +43,9 @@ const Header = () => {
       <div className='flex-1 flex justify-between items-center h-[75px] max-w-[1480px] w-full mx-auto px-[24px]'>
         <div className='flex gap-[4rem] items-center h-full'>
           <div role='button' className='h-full flex items-center'>
-            <p className='text-[16px]'>Home</p>
+            <Link href='/' className='text-[16px] hover:underline'>
+              Home
+            </Link>
           </div>
           <div className='relative group h-full flex items-center'>
             <div role='button' className='flex gap-2 items-center'>
@@ -127,15 +129,15 @@ const Header = () => {
             <Image src={DownArrowBlackImage} alt='down-arrow' />
           </div>
           <div role='button' className='flex gap-2 items-center'>
-            <p className='text-[16px]'>About</p>
+            <p className='text-[16px] hover:underline'>About</p>
           </div>
           <div role='button' className='flex gap-2 items-center'>
-            <Link href='/blogs' className='text-[16px]'>
+            <Link href='/blogs' className='text-[16px] hover:underline'>
               Blog
             </Link>
           </div>
           <div role='button' className='flex gap-2 items-center'>
-            <p className='text-[16px]'>Contact Us</p>
+            <p className='text-[16px] hover:underline'>Contact Us</p>
           </div>
         </div>
 
