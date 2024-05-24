@@ -163,3 +163,101 @@ export const arrayTags = [
         name: 'MULTI - COUNTRY'
     },
 ]
+
+export const CategoriesList = [
+  {
+    id: 1,
+    name: 'Travel Alert ( Top News )',
+    amount: 100,
+  },
+  {
+    id: 2,
+    name: 'Visa, Flight To Vietnam & Indochina',
+    amount: 100,
+  },
+  {
+    id: 3,
+    name: 'Food and Drink Travel Tips',
+    amount: 100,
+  },
+  {
+    id: 4,
+    name: 'Getting around Vietnam & Indochina',
+    amount: 100,
+  },
+  {
+    id: 5,
+    name: 'Festivals & Events Information',
+    amount: 100,
+  },
+  {
+    id: 6,
+    name: 'Luxury & Family Travel Tips',
+    amount: 100,
+  },
+  {
+    id: 7,
+    name: 'Travel Alert ( Top News )',
+    amount: 100,
+  },
+  {
+    id: 8,
+    name: 'Travel Alert ( Top News )',
+    amount: 100,
+  },
+  {
+    id: 9,
+    name: 'Travel Alert ( Top News )',
+    amount: 100,
+  },
+  {
+    id: 10,
+    name: 'Travel Alert ( Top News )',
+    amount: 100,
+  },
+  {
+    id: 11,
+    name: 'Travel Alert ( Top News )',
+    amount: 100,
+  },
+  {
+    id: 12,
+    name: 'Travel Alert ( Top News )',
+    amount: 100,
+  },
+  {
+    id: 13,
+    name: 'Travel Alert ( Top News )',
+    amount: 100,
+  },
+  {
+    id: 14,
+    name: 'Travel Alert ( Top News )',
+    amount: 100,
+  },
+  {
+    id: 15,
+    name: 'Travel Alert ( Top News )',
+    amount: 100,
+  },
+  {
+    id: 16,
+    name: 'Travel Alert ( Top News )',
+    amount: 100,
+  },
+  {
+    id: 17,
+    name: 'Travel Alert ( Top News )',
+    amount: 100,
+  },
+  {
+    id: 18,
+    name: 'Travel Alert ( Top News )',
+    amount: 100,
+  },
+  {
+    id: 19,
+    name: 'Travel Alert ( Top News )',
+    amount: 100,
+  },
+]

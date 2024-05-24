@@ -3,11 +3,9 @@ import React, { useEffect, useState } from "react";
 import { ArrayBlogs } from "../const";
 import Image from "next/image";
 
-import Blog2 from "@/assets/images/blogs/blog2.png";
-import Avatar from "@/assets/images/blogs/avt.png";
-import Dot from "@/assets/images/blogs/dot.svg";
-import Clock from "@/assets/images/blogs/tabler_clock-hour-8.svg";
-import Share from "@/assets/images/blogs/Share.svg";
+import post1 from '@/assets/images/blogs/post1.png';
+
+import BlogItem from '@/components/blogs/blog-item';
 
 const BlogList = () => {
   const [chooseBlogs, setChooseBlogs] = useState<any>({
@@ -19,6 +17,7 @@ const BlogList = () => {
     content:
       "Tasting coffee in Vietnam is an experience that we highly recommend to our readers. This simple drink is more than simply a source of energy for the day; it is an essential component of Vietnamese culture. The strong but delicious fragrance of freshly brewed coffee can be found on practically every street in Vietnam, whether at roadside vendors or trendy cafés.",
     name: "By: Peter Rowardson",
+    image: post1
   });
 
   const setIdBlogs = (item: any) => {
@@ -54,48 +53,7 @@ const BlogList = () => {
           ) : null
         )}
       </div>
-      <div className="my-10">
-        <Image
-          src={Blog2}
-          alt="see-more"
-          className="object-cover w-[max(700px)] h-[379px]"
-        />
-      </div>
-      <div className="flex-1 self-center ml-10">
-        <div className="flex ">
-          <Image src={Dot} alt="x-mark" className="w-2 h-2 self-center" />
-          <Image
-            src={Clock}
-            alt="x-mark"
-            className="w-6 h-6 mx-2 self-center"
-          />
-          <p className="text-[18px] text-[#6A7373] self-center">
-            {chooseBlogs?.time}
-          </p>
-          <Image src={Dot} alt="x-mark" className="mx-5 w-2 h-2 self-center" />
-          <Image src={Share} alt="x-mark" className="w-15 h-15 self-center" />
-          <p className="mx-5 text-[18px] text-[#6A7373] self-center">
-            {chooseBlogs?.share}
-          </p>
-        </div>
-        <p className="my-5 text-[32px] text-[#212529] font-bold">
-          {chooseBlogs?.title}
-        </p>
-        <p className="text=[16px] text-[#6A7373] leading-[24px]">
-          {chooseBlogs?.content}
-        </p>
-        <div className="h-[1px] bg-[#E5E5E5] my-4" />
-        <div className="flex">
-          <Image
-            src={Avatar}
-            alt="see-more"
-            className="object-cover w-[40px] rounded-[20px]"
-          />
-          <p className="self-center text-[#6A7373] px-4 text-[20px]">
-            {chooseBlogs?.name}
-          </p>
-        </div>
-      </div>
+      <div className="py-10 flex"><BlogItem item={chooseBlogs} /></div>
     </div>
   );
 };
