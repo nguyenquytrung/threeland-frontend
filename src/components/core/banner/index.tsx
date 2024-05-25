@@ -43,11 +43,11 @@ const Banner = (props: Props) => {
         {defaultForm && (
           <div className='flex items-center gap-2 bg-black bg-opacity-[0.3] rounded-[8px] p-2'>
             <div className='relative'>
-              <Image
+              {/* <Image
                 src={DurationImage}
                 alt='duration'
                 className='absolute top-[1.1rem] left-[0.5rem]'
-              />
+              /> */}
               <select className='w-[312px] h-[62px] rounded-[4px] px-2 pl-9'>
                 <option value='volvo'>Duration</option>
                 <option value='saab'>Saab</option>
