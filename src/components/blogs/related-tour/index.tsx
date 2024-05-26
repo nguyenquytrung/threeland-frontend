@@ -98,13 +98,13 @@ const Index = () => {
                     </span>
                   </p>
                 </div>
-                <Image
-                  src={item?.image}
-                  alt="see-more"
-                  className={
-                    "object-cover w-[max(700px)] h-[240px] rounded-[8px]"
-                  }
-                />
+                <div className="flex justify-center">
+                  <Image
+                    src={item?.image}
+                    alt="see-more"
+                    className={"object-cover h-[240px] rounded-[8px]"}
+                  />
+                </div>
                 <div className="absolute bottom-0 w-full flex justify-center pr-[60px]">
                   <div className="p-2 bg-[#F7F7F7] rounded-[40px]">
                     <SeeMore />
