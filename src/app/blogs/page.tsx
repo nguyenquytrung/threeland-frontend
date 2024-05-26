@@ -7,6 +7,7 @@ import ViewedArticles from "@/components/blogs/viewed-articles";
 import Tour from "@/components/blogs/tour";
 import AllArticles from "@/components/blogs/all-articles";
 import Categories from "@/components/blogs/categories";
+import RelatedTour from "@/components/blogs/related-tour";
 
 const Page = () => {
   return (
@@ -25,6 +26,8 @@ const Page = () => {
         <AllArticles /> 
         <Categories />
       </div>      
+
+      <RelatedTour />
     </main>
   );
 };
