@@ -1,5 +1,6 @@
 import post1 from '@/assets/images/blogs/post1.png';
 import post2 from '@/assets/images/blogs/post3.png';
+import relatedTour from '@/assets/images/blogs/relatedTour.jpg';
 
 export const ArrayBlogs = [
   {
@@ -258,6 +259,91 @@ export const CategoriesList = [
   {
     id: 19,
     name: 'Travel Alert ( Top News )',
+    amount: 101,
+  },
+  {
+    id: 20,
+    name: 'Travel Alert ( Top News )',
     amount: 100,
   },
+  {
+    id: 21,
+    name: 'Travel Alert ( Top News )',
+    amount:99,
+  },
+]
+
+export const relatedTourList = [
+  {
+    id: 1,
+    name: "Essential Vietnam with Sapa",
+    locate: "Saigon – Mekong Delta – Hoi An – Hue – Hanoi – Sapa – Halong Bay",
+    time: "8Day 9Night",
+    evaluation: "4.8",
+    reviewAmount: 3454,
+    originPrice: 320,
+    price: 150,
+    currency: "$",
+    image: relatedTour
+  },
+  {
+    id: 2,
+    name: "Essential Vietnam with Sapa",
+    locate: "Saigon – Mekong Delta – Hoi An – Hue – Hanoi – Sapa – Halong Bay",
+    time: "8Day 9Night",
+    evaluation: "4.8",
+    reviewAmount: 3454,
+    originPrice: 320,
+    price: 150,
+    currency: "$",
+    image: relatedTour
+  },
+  {
+    id: 3,
+    name: "Essential Vietnam with Sapa",
+    locate: "Saigon – Mekong Delta – Hoi An – Hue – Hanoi – Sapa – Halong Bay",
+    time: "8Day 9Night",
+    evaluation: "4.8",
+    reviewAmount: 3454,
+    originPrice: 320,
+    price: 150,
+    currency: "$",
+    image: relatedTour
+  },
+  {
+    id: 4,
+    name: "Essential Vietnam with Sapa",
+    locate: "Saigon – Mekong Delta – Hoi An – Hue – Hanoi – Sapa – Halong Bay",
+    time: "8Day 9Night",
+    evaluation: "4.8",
+    reviewAmount: 3454,
+    originPrice: 320,
+    price: 150,
+    currency: "$",
+    image: relatedTour
+  },
+  {
+    id: 5,
+    name: "Essential Vietnam with Sapa",
+    locate: "Saigon – Mekong Delta – Hoi An – Hue – Hanoi – Sapa – Halong Bay",
+    time: "8Day 9Night",
+    evaluation: "4.8",
+    reviewAmount: 3454,
+    originPrice: 320,
+    price: 150,
+    currency: "$",
+    image: relatedTour
+  },
+  {
+    id: 6,
+    name: "Essential Vietnam with Sapa",
+    locate: "Saigon – Mekong Delta – Hoi An – Hue – Hanoi – Sapa – Halong Bay",
+    time: "8Day 9Night",
+    evaluation: "4.8",
+    reviewAmount: 3454,
+    originPrice: 320,
+    price: 150,
+    currency: "$",
+    image: relatedTour
+  }
 ]
