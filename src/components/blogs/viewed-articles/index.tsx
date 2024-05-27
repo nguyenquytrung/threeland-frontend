@@ -9,7 +9,7 @@ import TimeAndShare from '@/components/blogs/blog-item/timeAndShare'
 
 const Index = () => {
   return (
-    <div className="flex h-[930px]">
+    <div className="flex">
       <div className="bg-[#0066B3] flex-1 px-[100px] pt-[50px]">
         <p className="text-[48px] font-bold text-[#FFF]">
           Most viewed articles

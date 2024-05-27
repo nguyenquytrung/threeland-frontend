@@ -2,7 +2,8 @@ import Image from "next/image";
 
 import Avatar from "@/assets/images/blogs/avt.png";
 
-import TimeAndShare from '@/components/blogs/blog-item/timeAndShare'
+import TimeAndShare from "@/components/blogs/blog-item/timeAndShare";
+import AvatarInfo from "@/components/blogs/blog-item/AvatarInfo";
 
 const Index = ({
   item,
@@ -43,20 +44,7 @@ const Index = ({
           }}
           className={`h-[1px] my-4`}
         />
-        <div className="flex">
-          <Image
-            src={Avatar}
-            alt="see-more"
-            className="object-cover w-[40px] rounded-[20px]"
-          />
-          <p
-            className={`self-center text-[${
-              theme === "dark" ? "#FFF" : "#6A7373"
-            }] px-4 text-[20px]`}
-          >
-            {item?.name}
-          </p>
-        </div>
+        <AvatarInfo image={Avatar} name={item.name} theme={theme} />
       </div>
     </>
   );

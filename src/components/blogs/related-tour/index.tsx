@@ -8,7 +8,6 @@ import Clock from "@/svg/clockSvg";
 import Star from "@/svg/star";
 import ArrowLeft from "@/svg/arrow_left";
 import ArrowRight from "@/svg/arrow_right";
-import SeeMoreImage from "@/assets/images/see-more.svg";
 import SeeMore from "@/svg/seeMore";
 
 // Import css files
@@ -17,12 +16,29 @@ import "slick-carousel/slick/slick-theme.css";
 
 import Image from "next/image";
 
-const Index = () => {
+const Index = (props: any) => {
+  const { width } = props;
   const slider = useRef(null);
+
+  const genAmount = () => {
+    return 4;
+  };
+
   const settingsCustomerReview = {
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow:
+      width > 3800
+        ? 6
+        : width > 3000 && width <= 3800
+        ? 5
+        : width <= 3000 && width > 1700
+        ? 4
+        : width <= 1700 && width > 1000
+        ? 3
+        : width <= 1000 && width > 600
+        ? 2
+        : 1,
     slidesToScroll: 1,
   };
 

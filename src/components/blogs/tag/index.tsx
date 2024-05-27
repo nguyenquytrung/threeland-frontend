@@ -16,7 +16,7 @@ const Tag = () => {
     title: "Vietnamese Coffee: Discover the World's Best Coffee",
     content:
       "Coffee in Vietnam is more than simply a drink; it is a way of life. So, if you want to visit this lovely nation, you will encounter this style of life....",
-    name: "By: Peter Rowardson",
+    name: "Peter Rowardson",
   });
 
   const [tag, setTag] = useState({
