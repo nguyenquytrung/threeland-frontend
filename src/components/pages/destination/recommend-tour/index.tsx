@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import Filter from '../filter';
+import Filter from './filter';
 import RecommendVietnam1 from '@/assets/images/recommend-vietnam-1.png';
 import RecommendVietnam2 from '@/assets/images/recommend-vietnam-2.png';
 import RecommendVietnam3 from '@/assets/images/recommend-vietnam-3.png';
@@ -12,6 +12,7 @@ import ClockHeImage from '@/assets/images/he-clock.svg';
 import StarHeImage from '@/assets/images/he-star.svg';
 import PopularSaleImage from '@/assets/images/popular-sale.svg';
 import SeeMoreImage from '@/assets/images/see-more.svg';
+import RightSliderImage from '@/assets/images/right-slider.svg';
 
 const recommendTours = [
   { id: 0, img: RecommendVietnam1 },
@@ -103,6 +104,17 @@ const RecommendTour = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div
+          role='button'
+          className='mt-6 mx-auto border border-[#E6E8E8] hover:bg-[#f3f3f3] rounded-[8px] w-[235px] h-[48px] flex gap-2 items-center justify-center'
+        >
+          <span className='text-[#071516] text-[18px]'>
+            View more tour{' '}
+            <span className='text-[#9B9B9B] text-[12px]'>(34)</span>
+          </span>
+          <Image src={RightSliderImage} alt='view-more-tour' />
         </div>
       </div>
     </section>

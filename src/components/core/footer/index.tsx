@@ -30,24 +30,24 @@ import BitCoinImage from '@/assets/images/bitcoin.svg';
 
 const Footer = () => {
   return (
-    <footer className='h-[579px] bg-[#0066B3]'>
-      <div className='max-w-[1910px] px-[100px] py-8 mx-auto'>
-        <div className='flex pt-2 pb-4'>
+    <footer className='min-[1440px]:h-[579px] bg-[#0066B3]'>
+      <div className='max-w-[1910px] px-[50px] xl:px-[100px] py-8 mx-auto'>
+        <div className='min-[540px]:flex justify-between lg:justify-normal gap-6 pt-2 pb-4'>
           <Image src={LogoImage} alt='logo' />
-          <div className='flex items-center justify-center gap-10 flex-1'>
-            <div className='flex gap-2 items-center'>
+          <div className='lg:flex w-fit items-center justify-center gap-[clamp(1rem,3vw,2.5rem)] lg:flex-1 mt-6 min-[540px]:mt-0'>
+            <div className='flex gap-2 items-center w-fit'>
               <Image src={CallingImage} alt='calling' />
-              <p className='text-white font-semibold text-[18px]'>
+              <p className='text-white font-semibold text-[18px] min-w-max'>
                 +84 24 3926 2056
               </p>
             </div>
-            <div className='flex gap-2 items-center'>
+            <div className='flex gap-2 items-center w-fit'>
               <Image src={EmailImage} alt='calling' />
               <p className='text-white font-semibold text-[18px]'>
                 help@threeland.com
               </p>
             </div>
-            <div className='flex gap-2 items-center'>
+            <div className='flex gap-2 items-center w-fit'>
               <Image src={LocationImage} alt='calling' />
               <p className='text-white font-semibold text-[18px]'>
                 125 Hong Ha, Ba Dinh, Hanoi, Vietnam
@@ -57,8 +57,8 @@ const Footer = () => {
         </div>
         <hr className='opacity-[0.4] bg-[#E6E8E8]' />
 
-        <div className='flex gap-20 2xl:gap-[16rem] text-white pt-8 justify-between pb-6'>
-          <div className='flex gap-[4.5rem]'>
+        <div className='md:flex gap-[clamp(3rem,4vw,16rem)] text-white pt-8 justify-between pb-6'>
+          <div className='grid grid-cols-1 min-[540px]:grid-cols-2 min-[1180px]:grid-cols-4 gap-10 min-[540px]:gap-[clamp(0.5rem,3vw,3rem)]'>
             <div className='flex flex-col gap-4'>
               <h5 className='text-[24px] font-medium'>TO KNOW</h5>
               <Link href='' className='text-[18px] font-light'>
@@ -95,7 +95,9 @@ const Footer = () => {
             </div>
 
             <div className='flex flex-col gap-4'>
-              <h5 className='text-[24px] font-medium'>TO EXPERIENCE</h5>
+              <h5 className='text-[24px] font-medium min-w-max'>
+                TO EXPERIENCE
+              </h5>
               <Link href='' className='text-[18px] font-light'>
                 Vietnam Tours
               </Link>
@@ -133,14 +135,14 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className='flex-1'>
+          <div className='flex-1 max-w-max mt-10 md:mt-0'>
             <p className='text-[18px] mb-1'>Subscribe for Latest Newsletter</p>
             <div className='flex items-center gap-3 mb-3'>
               <input
                 type='text'
                 className='max-w-[398px] rounded-[24px] text-black px-4 h-[44px] flex-1'
               />
-              <div role='button'>
+              <div role='button' className='min-w-[44px]'>
                 <Image src={SendEmailButtonImage} alt='send-email-button' />
               </div>
             </div>
@@ -169,12 +171,12 @@ const Footer = () => {
         </div>
 
         <hr className='opacity-[0.4] bg-[#E6E8E8]' />
-        <div className='flex items-center text-white pt-10'>
+        <div className='min-[1160px]:flex items-center text-white pt-10'>
           <div>
             <p className='font-extralight mb-4'>
               Copyright Threeland Travel © 2024
             </p>
-            <p className='font-extralight'>
+            <p className='font-extralight text-wrap'>
               <Link href='' className='underline'>
                 Privacy Center{'  '}
               </Link>
@@ -201,7 +203,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className='flex items-center justify-center flex-1 gap-4'>
+          <div className='flex items-center min-[1160px]:justify-center flex-1 gap-4 mt-4 min-[1160px]:mt-0'>
             <p className='font-medium text-[14px]'>SOCIALS</p>
             <Image src={FbImage} alt='social' />
             <Image src={TwitterImage} alt='social' />
