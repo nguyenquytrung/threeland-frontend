@@ -43,15 +43,29 @@ const settingsHighLightedExperiences = {
   slidesToScroll: 1,
   arrows: false,
   centerPadding: '10px',
-  // responsive: [
-  //   {
-  //     breakpoint: 1441,
-  //     settings: {
-  //       slidesToShow: 2,
-  //       slidesToScroll: 1,
-  //     },
-  //   },
-  // ],
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 520,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 };
 
 const HighlightedExperiences = () => {
@@ -68,12 +82,12 @@ const HighlightedExperiences = () => {
   };
 
   return (
-    <section className='pt-[4rem] max-w-[1910px] px-[100px] pb-[8rem]'>
-      <div className='flex justify-between mb-[2rem] pr-[1rem]'>
-        <h3 className='text-[56px] font-semibold leading-[54px]'>
+    <section className='pt-[4rem] max-w-[1910px] px-[24px] sm:px-[50px] lg:px-[100px] pb-[8rem]'>
+      <div className='flex justify-between mb-[1rem] min-[520px]:mb-[2rem] pr-[1rem]'>
+        <h3 className='text-[clamp(26px,3vw,40px)] min-[1360px]:text-[56px] font-semibold leading-[clamp(42px,3vw,54px)]'>
           Highlighted experiences in 2024
         </h3>
-        <div className='flex items-center gap-3'>
+        <div className='hidden min-[520px]:flex items-center gap-3'>
           <div
             role='button'
             onClick={handleClickPrev}
@@ -91,7 +105,7 @@ const HighlightedExperiences = () => {
           </div>
         </div>
       </div>
-      <div className='flex gap-2 mb-8'>
+      <div className='flex gap-2 mb-4 min-[520px]:mb-8'>
         <div
           role='button'
           className='w-[107px] h-[48px] flex items-center justify-center border border-[#9CA1A2] text-[#9CA1A2] rounded-[8px]'
@@ -116,7 +130,7 @@ const HighlightedExperiences = () => {
           <div key={index} className='w-[411px] pr-4'>
             <div className='relative rounded-[24px] bg-[#F7F7F7] h-full p-3 pb-5 overflow-hidden'>
               <div className='p-1'>
-                <h5 className='font-medium 2xl:text-[22px] leading-[32px]'>
+                <h5 className='font-medium 2xl:text-[22px] leading-[clamp(24px,2vw,32px)]'>
                   Highlights of Singapore 3 Weeks
                 </h5>
                 <div className='flex gap-2 items-start mt-4'>
@@ -126,16 +140,16 @@ const HighlightedExperiences = () => {
                     Bay
                   </p>
                 </div>
-                <div className='flex mt-4'>
+                <div className='min-[1330px]:flex flex-wrap mt-4'>
                   <div className='flex items-center gap-2 w-fit'>
                     <Image src={ClockHeImage} alt='location' />
                     <p className='font-light text-[12px] 2xl:text-[16px]'>
                       8Day 9Night
                     </p>
                   </div>
-                  <div className='flex items-center gap-2 flex-1 justify-center'>
+                  <div className='flex items-center gap-2 flex-1 mt-4 min-[1330px]:mt-0 min-[1330px]:justify-center'>
                     <Image src={StarHeImage} alt='location' />
-                    <p className='font-light text-[12px] 2xl:text-[16px]'>
+                    <p className='font-light text-[12px] 2xl:text-[16px] min-w-max'>
                       4.8 (3454 reviews)
                     </p>
                   </div>
@@ -165,6 +179,24 @@ const HighlightedExperiences = () => {
           </div>
         ))}
       </Slider>
+
+      <div className='flex min-[520px]:hdden items-center gap-3 mt-4'>
+        <div
+          role='button'
+          onClick={handleClickPrev}
+          className='rounded-[43px] border-[#9CA1A2] border w-[68px] h-[48px] flex items-center justify-center'
+        >
+          <Image src={LeftSliderImage} alt='left-slider' />
+        </div>
+        <div
+          role='button'
+          onClick={handleClickNext}
+          className='rounded-[43px] border-[#9CA1A2] border w-[115px] h-[48px] flex gap-2 items-center justify-center'
+        >
+          <p className='text-[#071516]'>Next</p>
+          <Image src={RightSliderImage} alt='left-slider' />
+        </div>
+      </div>
     </section>
   );
 };

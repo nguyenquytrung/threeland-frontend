@@ -54,15 +54,36 @@ const settingsTourByTheme = {
   slidesToScroll: 1,
   arrows: false,
   centerPadding: '10px',
-  // responsive: [
-  //   {
-  //     breakpoint: 1441,
-  //     settings: {
-  //       slidesToShow: 2,
-  //       slidesToScroll: 1,
-  //     },
-  //   },
-  // ],
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 900,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 700,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 440,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 };
 
 const ToursByTheme = () => {
@@ -78,13 +99,13 @@ const ToursByTheme = () => {
     slider?.current?.slickNext();
   };
   return (
-    <section className='pt-[4rem] max-w-[1910px] px-[100px] pb-[10rem]'>
+    <section className='pt-[4rem] max-w-[1910px] px-[24px] sm:px-[50px] lg:px-[100px] pb-[10rem]'>
       <p className='text-[24px] tracking-[6px]'>TRAVEL</p>
       <div className='flex justify-between items-center mt-4 pr-[1rem]'>
-        <h3 className='text-[56px] font-semibold leading-[54px]'>
+        <h3 className='text-[clamp(26px,3vw,40px)] min-[1360px]:text-[56px] font-semibold leading-[54px]'>
           Tours by theme
         </h3>
-        <div className='flex items-center gap-3'>
+        <div className='hidden min-[480px]:flex items-center gap-3'>
           <div
             role='button'
             onClick={handleClickPrev}
@@ -102,8 +123,27 @@ const ToursByTheme = () => {
           </div>
         </div>
       </div>
+
+      <div className='flex min-[480px]:hidden items-center gap-3'>
+        <div
+          role='button'
+          onClick={handleClickPrev}
+          className='rounded-[43px] border-[#9CA1A2] border w-[68px] h-[48px] flex items-center justify-center'
+        >
+          <Image src={LeftSliderImage} alt='left-slider' />
+        </div>
+        <div
+          role='button'
+          onClick={handleClickNext}
+          className='rounded-[43px] border-[#9CA1A2] border w-[115px] h-[48px] flex gap-2 items-center justify-center'
+        >
+          <p className='text-[#071516]'>Next</p>
+          <Image src={RightSliderImage} alt='left-slider' />
+        </div>
+      </div>
+
       <Slider
-        className='gap-2 mt-[4rem]'
+        className='gap-2 mt-[clamp(1rem,4vw,4rem)]'
         ref={slider}
         {...settingsTourByTheme}
         nextArrow={<button>next</button>}

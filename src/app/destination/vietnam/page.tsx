@@ -19,11 +19,7 @@ const Page = () => {
           <p className='text-white w-[952px] font-extralight text-[32px] text-center mb-[1rem]'>
             Your best trip with special travel
           </p>
-          <Image
-            src={VietnamTextImage}
-            alt='vietnam-text'
-            className='mb-[5rem]'
-          />
+          <Image src={VietnamTextImage} alt='vietnam-text' />
         </>
       </Banner>
 

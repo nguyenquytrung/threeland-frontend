@@ -44,15 +44,29 @@ const settingsHighLightedExperiences = {
   slidesToScroll: 1,
   arrows: false,
   centerPadding: '10px',
-  // responsive: [
-  //   {
-  //     breakpoint: 1441,
-  //     settings: {
-  //       slidesToShow: 2,
-  //       slidesToScroll: 1,
-  //     },
-  //   },
-  // ],
+  responsive: [
+    {
+      breakpoint: 1180,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 860,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 };
 
 const PopularMultiCountryTours = () => {
@@ -69,14 +83,14 @@ const PopularMultiCountryTours = () => {
   };
 
   return (
-    <section className='relative text-white h-[720px] min-[1700px]:h-[880px] 2xl:h-[800px]'>
+    <section className='relative text-white h-[800px] sm:h-[720px] min-[1700px]:h-[880px] 2xl:h-[800px]'>
       <div className='bg-[#0066B3] h-[397px] top-0 right-0 left-0'></div>
-      <div className='absolute top-0 bottom-0 left-0 right-0 pt-[4rem] max-w-[1910px] px-[100px] pb-[8rem]'>
+      <div className='absolute top-0 bottom-0 left-0 right-0 pt-[4rem] max-w-[1910px] px-[24px] sm:px-[50px] lg:px-[100px] pb-[8rem]'>
         <div className='flex justify-between pr-[1rem]'>
-          <h3 className='text-[56px] font-semibold leading-[54px]'>
+          <h3 className='text-[clamp(26px,3vw,40px)] min-[1360px]:text-[56px] font-semibold leading-[clamp(42px,3vw,54px)]'>
             Popular multi - country tours
           </h3>
-          <div className='flex items-center gap-3'>
+          <div className='hidden sm:flex items-center gap-3'>
             <div
               role='button'
               onClick={handleClickPrev}
@@ -94,9 +108,26 @@ const PopularMultiCountryTours = () => {
             </div>
           </div>
         </div>
-        <p className='text-[18px] font-extralight my-4 mb-[5rem]'>
+        <p className='text-[18px] font-extralight my-4 mb-[clamp(1rem,5vw,5rem)]'>
           What people says about Golobe facilities
         </p>
+        <div className='flex sm:hidden items-center gap-3 mb-4'>
+          <div
+            role='button'
+            onClick={handleClickPrev}
+            className='rounded-[43px] border-[white] border w-[68px] h-[48px] flex items-center justify-center'
+          >
+            <Image src={LeftSliderWhiteImage} alt='left-slider' />
+          </div>
+          <div
+            role='button'
+            onClick={handleClickNext}
+            className='rounded-[43px] border-[white] border w-[115px] h-[48px] flex gap-2 items-center justify-center'
+          >
+            <p className='text-[white]'>Next</p>
+            <Image src={RightSliderWhiteImage} alt='left-slider' />
+          </div>
+        </div>
         <Slider
           className='gap-2'
           ref={slider}
@@ -140,7 +171,7 @@ const PopularMultiCountryTours = () => {
                       </div>
                     </div>
 
-                    <div className='flex gap-4 my-4'>
+                    <div className='flex gap-4 mt-4 sm:my-4'>
                       <p className='flex gap-2 items-center'>
                         <span className='text-[26px] 2xl:text-[36px] font-medium'>
                           $240

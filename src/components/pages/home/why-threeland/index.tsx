@@ -7,11 +7,11 @@ import MedalImage from '@/assets/images/medal.svg';
 
 const WhyThreeland = () => {
   return (
-    <section className='max-w-[1910px] px-[100px] mx-auto mt-[9rem]'>
-      <h3 className='text-[56px] font-semibold leading-[45px] mb-[3rem]'>
+    <section className='max-w-[1910px] px-[50px] lg:px-[100px] mx-auto mt-[9rem]'>
+      <h3 className='text-[clamp(26px,3vw,40px)] min-[1360px]:text-[56px] font-semibold leading-[45px] mb-[clamp(1rem,2vw,3rem)]'>
         Why Threeland
       </h3>
-      <div className='flex gap-[5rem] items-start'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[3rem] sm:gap-[clamp(1rem,2vw,5rem)] items-start'>
         <div className='max-w-[344px]'>
           <Image src={TicketImage} alt='ticket' />
           <h5 className='text-[24x] font-semibold my-4 leading-[27px]'>
