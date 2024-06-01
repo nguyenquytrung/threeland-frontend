@@ -11,7 +11,7 @@ export const ArrayBlogs = [
     title: "Vietnamese Coffee: Discover the World's Best Coffee",
     content:
       "Tasting coffee in Vietnam is an experience that we highly recommend to our readers. This simple drink is more than simply a source of energy for the day; it is an essential component of Vietnamese culture. The strong but delicious fragrance of freshly brewed coffee can be found on practically every street in Vietnam, whether at roadside vendors or trendy cafés.",
-    name: "By: Peter Rowardson",
+    name: "Peter Rowardson",
     image: post1
   },
   {
@@ -22,7 +22,7 @@ export const ArrayBlogs = [
     title: "Vietnamese Coffee: Discover the World's Best Coffee",
     content:
       "Tasting coffee in Vietnam is an experience that we highly recommend to our readers. This simple drink is more than simply a source of energy for the day; it is an essential component of Vietnamese culture. The strong but delicious fragrance of freshly brewed coffee can be found on practically every street in Vietnam, whether at roadside vendors or trendy cafés.",
-    name: "By: Peter Rowardson",
+    name: "Peter Rowardson",
     image: post2
   },
   {
@@ -33,7 +33,7 @@ export const ArrayBlogs = [
     title: "Vietnamese Coffee: Discover the World's Best Coffee",
     content:
       "Tasting coffee in Vietnam is an experience that we highly recommend to our readers. This simple drink is more than simply a source of energy for the day; it is an essential component of Vietnamese culture. The strong but delicious fragrance of freshly brewed coffee can be found on practically every street in Vietnam, whether at roadside vendors or trendy cafés.",
-    name: "By: Peter Rowardson",
+    name: "Peter Rowardson",
     image: post1
   },
   {
@@ -44,7 +44,7 @@ export const ArrayBlogs = [
     title: "Vietnamese Coffee: Discover the World's Best Coffee",
     content:
       "Tasting coffee in Vietnam is an experience that we highly recommend to our readers. This simple drink is more than simply a source of energy for the day; it is an essential component of Vietnamese culture. The strong but delicious fragrance of freshly brewed coffee can be found on practically every street in Vietnam, whether at roadside vendors or trendy cafés.",
-    name: "By: Peter Rowardson",
+    name: "Peter Rowardson",
     image: post2
   },
   {
@@ -55,7 +55,7 @@ export const ArrayBlogs = [
     title: "Vietnamese Coffee: Discover the World's Best Coffee",
     content:
       "Tasting coffee in Vietnam is an experience that we highly recommend to our readers. This simple drink is more than simply a source of energy for the day; it is an essential component of Vietnamese culture. The strong but delicious fragrance of freshly brewed coffee can be found on practically every street in Vietnam, whether at roadside vendors or trendy cafés.",
-    name: "By: Peter Rowardson",
+    name: "Peter Rowardson",
     image: post1
   },
   {
@@ -66,7 +66,7 @@ export const ArrayBlogs = [
     title: "Vietnamese Coffee: Discover the World's Best Coffee",
     content:
       "Tasting coffee in Vietnam is an experience that we highly recommend to our readers. This simple drink is more than simply a source of energy for the day; it is an essential component of Vietnamese culture. The strong but delicious fragrance of freshly brewed coffee can be found on practically every street in Vietnam, whether at roadside vendors or trendy cafés.",
-    name: "By: Peter Rowardson",
+    name: "Peter Rowardson",
     image: post2
   },
   {
@@ -77,7 +77,7 @@ export const ArrayBlogs = [
     title: "Vietnamese Coffee: Discover the World's Best Coffee",
     content:
       "Tasting coffee in Vietnam is an experience that we highly recommend to our readers. This simple drink is more than simply a source of energy for the day; it is an essential component of Vietnamese culture. The strong but delicious fragrance of freshly brewed coffee can be found on practically every street in Vietnam, whether at roadside vendors or trendy cafés.",
-    name: "By: Peter Rowardson",
+    name: "Peter Rowardson",
     image: post1
   },
   {
@@ -88,7 +88,7 @@ export const ArrayBlogs = [
     title: "Vietnamese Coffee: Discover the World's Best Coffee",
     content:
       "Tasting coffee in Vietnam is an experience that we highly recommend to our readers. This simple drink is more than simply a source of energy for the day; it is an essential component of Vietnamese culture. The strong but delicious fragrance of freshly brewed coffee can be found on practically every street in Vietnam, whether at roadside vendors or trendy cafés.",
-    name: "By: Peter Rowardson",
+    name: "Peter Rowardson",
     image: post2
   },
 //   {
@@ -99,7 +99,7 @@ export const ArrayBlogs = [
 //     title: "Vietnamese Coffee: Discover the World's Best Coffee",
 //     content:
 //       "Tasting coffee in Vietnam is an experience that we highly recommend to our readers. This simple drink is more than simply a source of energy for the day; it is an essential component of Vietnamese culture. The strong but delicious fragrance of freshly brewed coffee can be found on practically every street in Vietnam, whether at roadside vendors or trendy cafés.",
-//     name: "By: Peter Rowardson",
+//     name: "Peter Rowardson",
 //     image: post1
 //   },
 //   {
@@ -110,7 +110,7 @@ export const ArrayBlogs = [
 //     title: "Vietnamese Coffee: Discover the World's Best Coffee",
 //     content:
 //       "Tasting coffee in Vietnam is an experience that we highly recommend to our readers. This simple drink is more than simply a source of energy for the day; it is an essential component of Vietnamese culture. The strong but delicious fragrance of freshly brewed coffee can be found on practically every street in Vietnam, whether at roadside vendors or trendy cafés.",
-//     name: "By: Peter Rowardson",
+//     name: "Peter Rowardson",
 //     image: post2
 //   },
 //   {
@@ -121,7 +121,7 @@ export const ArrayBlogs = [
 //     title: "Vietnamese Coffee: Discover the World's Best Coffee",
 //     content:
 //       "Tasting coffee in Vietnam is an experience that we highly recommend to our readers. This simple drink is more than simply a source of energy for the day; it is an essential component of Vietnamese culture. The strong but delicious fragrance of freshly brewed coffee can be found on practically every street in Vietnam, whether at roadside vendors or trendy cafés.",
-//     name: "By: Peter Rowardson",
+//     name: "Peter Rowardson",
 //     image: post1
 //   },
 //   {
@@ -132,7 +132,7 @@ export const ArrayBlogs = [
 //     title: "Vietnamese Coffee: Discover the World's Best Coffee",
 //     content:
 //       "Tasting coffee in Vietnam is an experience that we highly recommend to our readers. This simple drink is more than simply a source of energy for the day; it is an essential component of Vietnamese culture. The strong but delicious fragrance of freshly brewed coffee can be found on practically every street in Vietnam, whether at roadside vendors or trendy cafés.",
-//     name: "By: Peter Rowardson",
+//     name: "Peter Rowardson",
 //     image: post2
 //   },
 ];

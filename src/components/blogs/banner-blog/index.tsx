@@ -1,12 +1,40 @@
 import React from "react";
 
-const BannerBlog = () => {
-    return (
-        <section
-        className={`bg-[url('/blogs/backgroundBlog.png')] flex justify-center relative bg-banner-1 h-[calc(100vh-144px)] 2xl:h-[927px] overflow-hidden bg-cover text-[#FFFFFF]`}
-      >
+import TimeAndShare from "@/components/blogs/blog-item/timeAndShare";
+import AvatarInfo from "@/components/blogs/blog-item/AvatarInfo";
+
+import Avatar from "@/assets/images/blogs/avt.png";
+
+const BannerBlog = (props: any) => {
+  const { isDetail } = props;
+
+  return (
+    <section
+      className={`bg-[url('/blogs/backgroundBlog.png')] flex ${
+        isDetail ? "" : "justify-center"
+      } relative bg-banner-1 h-[calc(100vh-144px)] 2xl:h-[650px] overflow-hidden bg-cover text-[#FFFFFF]`}
+    >
+      {isDetail ? (
+        <div className="flex flex-col justify-end w-3/4 px-[100px] py-[100px]">
+          <TimeAndShare
+            item={{ time: "June 28, 2018", share: "1K" }}
+            theme="dark"
+          />
+          <p className="text-[64px] min-w-[1/2] font-bold leading-[66px] py-5">
+            Vietnamese Coffee: Discover the World&apos;s Best Coffee
+          </p>
+          <p className="text-[20px] leading-[26px] pb-5">
+            Tasting coffee in Vietnam is an experience that we highly recommend
+            to our readers. This simple drink is more than simply a source of
+            energy for the day; it is an essential component of Vietnamese
+            culture. The strong but delicious fragrance of freshly brewed coffee
+            can be found{" "}
+          </p>
+          <AvatarInfo image={Avatar} name='Peter Rowardson' theme='dark' />
+        </div>
+      ) : (
         <div className="flex flex-col justify-center">
-          <div className={"text-[69px] text-center font-bold py-2"}>
+          <div className={"text-[69px] text-center font-bold py-2 w-[1200px]"}>
             Talk To Our Local Expert Directly
           </div>
           <div className="text-center font-normal text-[18px] mx-30 py-2">
@@ -24,8 +52,9 @@ const BannerBlog = () => {
             </div>
           </div>
         </div>
-      </section>
-    )
-}
+      )}
+    </section>
+  );
+};
 
-export default BannerBlog
+export default BannerBlog;
