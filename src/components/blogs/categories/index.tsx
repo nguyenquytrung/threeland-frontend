@@ -2,7 +2,7 @@ import { CategoriesList } from "../const";
 
 const Index = () => {
   return (
-    <div className="ml-20">
+    <div className="">
       <div className="px-5 w-[500px] text-[24px] text-[#FFFFFF] bg-[#0066B3] h-[70px] leading-[70px]">
         <p className="font-medium">CATEGORIES</p>
       </div>

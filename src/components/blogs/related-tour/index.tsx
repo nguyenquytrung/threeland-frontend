@@ -15,14 +15,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import Image from "next/image";
+import useSize from "@/components/core/hook/useSize";
 
 const Index = (props: any) => {
-  const { width } = props;
+  const windowsize = useSize();
   const slider = useRef(null);
 
-  const genAmount = () => {
-    return 4;
-  };
+  const width = windowsize.innerWidth;
 
   const settingsCustomerReview = {
     infinite: true,

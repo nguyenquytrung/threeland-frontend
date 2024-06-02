@@ -6,19 +6,10 @@ import Image from "next/image";
 import ArrowDown from "@/assets/images/blogs/arrow_left_alt.svg";
 
 import BlogItem from '@/components/blogs/blog-item';
+import useSize from "@/components/core/hook/useSize";
 
 const Tag = () => {
-  const [chooseBlogs, setChooseBlogs] = useState<any>({
-    id: 1,
-    stt: "01",
-    time: "June 28, 2018",
-    share: "1k",
-    title: "Vietnamese Coffee: Discover the World's Best Coffee",
-    content:
-      "Coffee in Vietnam is more than simply a drink; it is a way of life. So, if you want to visit this lovely nation, you will encounter this style of life....",
-    name: "Peter Rowardson",
-  });
-
+  const windowsize = useSize();
   const [tag, setTag] = useState({
     id: 1,
     name: "All",
@@ -28,7 +19,15 @@ const Tag = () => {
     setTag(item);
   };
 
-  const page = Math.floor(arrayTags.length / 4) + 1;
+  const renderCol = () => {
+    if (windowsize.innerWidth > 1280) {
+      return 4
+    } else if (windowsize.innerWidth < 1280 && windowsize.innerWidth > 640) {
+      return 2
+    } else if (windowsize.innerWidth < 640) {
+      return 1
+    }
+  }
 
   return (
     <div className="mx-[100px]">
@@ -52,8 +51,8 @@ const Tag = () => {
           </p>
         ))}
       </div>
-      <div className="grid grid-cols-4 gap-10 auto-rows-max">
-        {ArrayBlogs.map((item, index) => (
+      <div className={`grid grid-cols-${renderCol()} gap-10 auto-rows-max`}>
+        {ArrayBlogs.map((item) => (
           <div key={item.id} className="py-10">
             <BlogItem item={item} />
           </div>

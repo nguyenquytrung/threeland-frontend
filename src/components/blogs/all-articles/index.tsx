@@ -4,16 +4,28 @@ import { ArrayBlogs } from "../const";
 import ArrowDown from "@/assets/images/blogs/arrow_left_alt.svg";
 
 import BlogItem from "@/components/blogs/blog-item";
+import useSize from "@/components/core/hook/useSize";
 
 const Index = () => {
+  const windowsize = useSize();
   return (
-    <div>
+    <div className="mr-20">
       <p className="text-[48px] font-bold">All articles</p>
       {ArrayBlogs.map(
         (item, index) =>
           index < 5 && (
-            <div key={item.id} className="py-10 flex">
-              <BlogItem item={item} classNameAvt="w-[557px] h-[300px] object-cover" />
+            <div
+              key={item.id}
+              className={`py-10 flex ${
+                windowsize.innerWidth < 1440 ? "flex-col items-center" : ""
+              }`}
+            >
+              <BlogItem
+                item={item}
+                classNameAvt={`w-[557px] h-[300px] object-cover ${
+                  windowsize.innerWidth < 1440 ? "" : "mr-10"
+                }`}
+              />
             </div>
           )
       )}

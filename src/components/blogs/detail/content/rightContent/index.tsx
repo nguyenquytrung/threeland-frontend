@@ -4,8 +4,10 @@ import Twister from "@/svg/twisterSocial";
 import Gmail from "@/svg/gmailSvg";
 import BlogItem from "@/components/blogs/blog-item";
 import { ArrayBlogs } from "@/components/blogs/const";
+import useSize from "@/components/core/hook/useSize";
 
 const Index = ({ width }: any) => {
+  const windowsize = useSize();
   return (
     <div>
       <p className="text-[32px] font-bold pb-5">Follow Us</p>
@@ -50,10 +52,17 @@ const Index = ({ width }: any) => {
         {ArrayBlogs.map(
           (item, index) =>
             index < 3 && (
-              <div key={item.id} className="flex my-7">
+              <div
+                key={item.id}
+                className={`flex my-7 ${
+                  windowsize.innerWidth < 1800 ? "flex-col items-center" : ""
+                }`}
+              >
                 <BlogItem
                   item={item}
-                  classNameAvt="w-[276px] h-[216px] object-cover rounded-[8px]"
+                  classNameAvt={`w-[276px] h-[216px] object-cover rounded-[8px] ${
+                    windowsize.innerWidth < 1440 ? "" : "mr-10"
+                  }`}
                   isContent={false}
                 />
               </div>

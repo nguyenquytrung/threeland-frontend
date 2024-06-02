@@ -1,13 +1,16 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 
 import TimeAndShare from "@/components/blogs/blog-item/timeAndShare";
 import AvatarInfo from "@/components/blogs/blog-item/AvatarInfo";
 
 import Avatar from "@/assets/images/blogs/avt.png";
+import useSize from "@/components/core/hook/useSize";
 
 const BannerBlog = (props: any) => {
   const { isDetail } = props;
 
+  const windowsize = useSize();
   return (
     <section
       className={`bg-[url('/blogs/backgroundBlog.png')] flex ${
@@ -20,7 +23,7 @@ const BannerBlog = (props: any) => {
             item={{ time: "June 28, 2018", share: "1K" }}
             theme="dark"
           />
-          <p className="text-[64px] min-w-[1/2] font-bold leading-[66px] py-5">
+          <p className={`text-[64px] min-w-[1/2] font-bold leading-[66px] py-5`}>
             Vietnamese Coffee: Discover the World&apos;s Best Coffee
           </p>
           <p className="text-[20px] leading-[26px] pb-5">
@@ -34,7 +37,7 @@ const BannerBlog = (props: any) => {
         </div>
       ) : (
         <div className="flex flex-col justify-center">
-          <div className={"text-[69px] text-center font-bold py-2 w-[1200px]"}>
+          <div className={`text-[69px] text-center font-bold py-2 w-[${windowsize.innerWidth <= 1000 ? 600 : 1200}px]`}>
             Talk To Our Local Expert Directly
           </div>
           <div className="text-center font-normal text-[18px] mx-30 py-2">
