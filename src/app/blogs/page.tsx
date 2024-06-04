@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+'use client'
+import React from 'react';
 
 import BlogList from '@/components/blogs/blog-list';
 import BannerBlog from '@/components/blogs/banner-blog';
@@ -8,8 +9,10 @@ import Tour from '@/components/blogs/tour';
 import AllArticles from '@/components/blogs/all-articles';
 import Categories from '@/components/blogs/categories';
 import RelatedTour from '@/components/blogs/related-tour';
+import useSize from '@/components/core/hook/useSize';
 
 const Page = () => {
+  const windowsize = useSize();
   return (
     <main>
       <BannerBlog />
@@ -22,7 +25,7 @@ const Page = () => {
 
       <Tour />
 
-      <div className='flex mx-[100px] mt-20'>
+      <div className={`flex ${windowsize.innerWidth < 1440 ? 'flex-col' : 'mr-10'} mx-[100px] mt-20`}>
         <AllArticles />
         <Categories />
       </div>

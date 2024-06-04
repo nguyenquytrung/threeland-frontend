@@ -17,10 +17,10 @@ const Index = ({
         src={item?.image}
         alt="see-more"
         className={
-          classNameAvt || "object-cover w-[max(700px)] h-[379px] rounded-[8px]"
+          classNameAvt || "object-cover w-[max(700px)] h-[379px] rounded-[8px] mr-10"
         }
       />
-      <div className="flex-1 self-center ml-10 mt-5">
+      <div className="flex-1 self-center mt-5">
         <TimeAndShare item={item} theme={theme} />
         <p
           className={`my-5 text-[32px] text-[${
