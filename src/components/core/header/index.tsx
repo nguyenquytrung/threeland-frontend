@@ -20,6 +20,11 @@ import LogoImage from '@/assets/images/logo-nobackground.svg';
 import LogoColorImage from '@/assets/images/logo-color.svg';
 import MobileMenuImage from '@/assets/images/mobile-menu.svg';
 
+import WhoWeAreImage from '@/assets/images/about-tooltip/who-we-are.jpeg';
+import PortfolioImage from '@/assets/images/about-tooltip/portfolio.jpeg';
+import WhyUsImage from '@/assets/images/about-tooltip/why-us.jpeg';
+import OurTeamImage from '@/assets/images/about-tooltip/our-team.jpeg';
+
 const Header = () => {
   return (
     <>
@@ -184,8 +189,90 @@ const Header = () => {
               <p className='text-[16px]'>Responsible</p>
               <Image src={DownArrowBlackImage} alt='down-arrow' />
             </div>
-            <div role='button' className='flex gap-2 items-center'>
-              <p className='text-[16px] hover:underline'>About</p>
+            <div className='relative group h-full flex items-center'>
+              <div role='button' className='flex gap-2 items-center'>
+                <p className='text-[16px]'>About</p>
+                <Image src={DownArrowBlackImage} alt='down-arrow' />
+              </div>
+
+              {/* About popover */}
+              <div className='transition-all z-10 absolute w-[680px] top-[60px] translate-x-[-10rem] hidden group-hover:flex justify-between bg-white p-4 border-t-[4px] border-t-[#0066B3]'>
+                <div className='max-w-[200px]'>
+                  <Image src={LogoColorImage} alt='logo' className='' />
+                  <p className='mt-4 font-extralight text-[14px]'>
+                    Threeland Travel has been one of leading DMCs in Indochina
+                    for nearly 2 decades. In each country we operate, we’ve
+                    curated in-depth and customized tours that uncover the most
+                    authentic part of each destination while ensuring top-notch
+                    ground services.
+                  </p>
+                </div>
+                <div className='flex-1 max-w-[423px]'>
+                  <div role='button' className='group/about h-[120px]'>
+                    <Link
+                      href=''
+                      className='relative transition-all w-full h-full flex items-center justify-center'
+                    >
+                      <Image src={WhoWeAreImage} alt='who-we-are' />
+                      <div className='flex items-center absolute top-0 left-0 bottom-0 right-0 group-hover/about:bg-black group-hover/about:bg-opacity-[0.3] transition-all'>
+                        <span className='transition-all mx-auto text-white font-semibold text-[18px] group-hover/about:underline'>
+                          WHO WE ARE
+                        </span>
+                      </div>
+                    </Link>
+                  </div>
+                  <div className='flex justify-between mt-2'>
+                    <Link
+                      href='/about/portfolio'
+                      className='group/about relative h-[110px] w-[136px]'
+                    >
+                      <Image
+                        src={PortfolioImage}
+                        alt='about-image'
+                        className='w-full h-full object-cover'
+                      />
+                      <div className='group-hover/about:bg-black group-hover/about:bg-opacity-[0.3] transition-all absolute top-0 left-0 right-0 bottom-0 flex items-center'>
+                        <span className='group-hover/about:underline w-fit mx-[auto] uppercase transition-all text-white font-semibold text-[18px] group-hover/des:underline'>
+                          PORTFOLIO
+                        </span>
+                      </div>
+                    </Link>
+
+                    <Link
+                      href=''
+                      className='group/about relative h-[110px] w-[136px]'
+                    >
+                      <Image
+                        src={WhyUsImage}
+                        alt='about-image'
+                        className='w-full h-full object-cover'
+                      />
+                      <div className='group-hover/about:bg-black group-hover/about:bg-opacity-[0.3] transition-all absolute top-0 left-0 right-0 bottom-0 flex items-center'>
+                        <span className='group-hover/about:underline w-fit mx-[auto] uppercase transition-all text-white font-semibold text-[18px] group-hover/des:underline'>
+                          WHY US
+                        </span>
+                      </div>
+                    </Link>
+
+                    <Link
+                      href=''
+                      className='relative group/about h-[110px] w-[136px]'
+                    >
+                      <Image
+                        src={OurTeamImage}
+                        alt='about-image'
+                        className='w-full h-full object-cover'
+                      />
+                      <div className='group-hover/about:bg-black group-hover/about:bg-opacity-[0.3] transition-all absolute top-0 left-0 right-0 bottom-0 flex items-center'>
+                        <span className='group-hover/about:underline w-fit mx-[auto] uppercase transition-all text-white font-semibold text-[18px] group-hover/des:underline'>
+                          OUR TEAM
+                        </span>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              {/* End about popover */}
             </div>
             <div role='button' className='flex gap-2 items-center'>
               <Link href='/blogs' className='text-[16px] hover:underline'>
