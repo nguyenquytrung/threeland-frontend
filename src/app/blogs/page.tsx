@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+'use client';
+import React from 'react';
 
 import BlogList from '@/components/blogs/blog-list';
 import BannerBlog from '@/components/blogs/banner-blog';
@@ -22,7 +23,9 @@ const Page = () => {
 
       <Tour />
 
-      <div className='flex mx-[100px] mt-20'>
+      <div
+        className={`flex justify-between lg:flex-row flex-col px-[24px] sm:px-[50px] lg:px-[100px] mt-20`}
+      >
         <AllArticles />
         <Categories />
       </div>

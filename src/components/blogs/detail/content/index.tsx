@@ -19,8 +19,6 @@ const Index = () => {
     return () => window.removeEventListener("resize", getwidth);
   }, []);
 
-  console.log(width)
-
   return (
     <>
       <div

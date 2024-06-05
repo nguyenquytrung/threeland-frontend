@@ -11,6 +11,7 @@ type Props = {
   subTitle?: string;
   defaultForm?: boolean;
   url?: string;
+  isMobileFullScreen?: boolean;
   children?: React.ReactNode;
 };
 
@@ -21,13 +22,18 @@ const Banner = (props: Props) => {
     subTitle,
     defaultForm = true,
     url = 'banner1.jpeg',
+    isMobileFullScreen = true,
     children,
   } = props;
   // const bgImg = `bg-[url('/${url}')]`;
   return (
     <section
       style={{ backgroundImage: `url('/${url}')` }}
-      className={`relative bg-banner-1 h-[calc(100vh-144px)] max-[1300px]:h-[calc(100vh-69px)] overflow-hidden bg-cover`}
+      className={`relative bg-banner-1 ${
+        isMobileFullScreen
+          ? 'h-[calc(100vh-144px)] max-[1300px]:h-[calc(100vh-69px)]'
+          : 'h-[clamp(200px,10vw,400px)] lg:max-[1300px]:h-[calc(100vh-69px)] min-[1301px]:h-[calc(100vh-144px)]'
+      } overflow-hidden bg-cover`}
     >
       <div className='absolute inset-0 bg-black bg-opacity-[0.3] flex flex-col items-center justify-center'>
         {title && (

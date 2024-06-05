@@ -45,13 +45,13 @@ const ExploreBeautiful = () => {
               young urban culture with traditional values. In the city, ancient
               temples are just a turn away from modern shops. In the
               countryside, life still flows along the rivers and harvests. This
-              contrast between old and new makes up a large part of Vietnam's
-              appeal. Another reason to visit Vietnam is its natural beauty. The
-              North has majestic mountains and beautiful limestone bays. The
-              Central Coast Road leads to historical relics and romantic
-              beaches. In the South, the sleepless life of Ho Chi Minh City and
-              the riverside villages in the Mekong Delta will make you want to
-              linger forever.
+              contrast between old and new makes up a large part of
+              Vietnam&apos;s appeal. Another reason to visit Vietnam is its
+              natural beauty. The North has majestic mountains and beautiful
+              limestone bays. The Central Coast Road leads to historical relics
+              and romantic beaches. In the South, the sleepless life of Ho Chi
+              Minh City and the riverside villages in the Mekong Delta will make
+              you want to linger forever.
             </p>
 
             <p className=''>
@@ -61,13 +61,13 @@ const ExploreBeautiful = () => {
               young urban culture with traditional values. In the city, ancient
               temples are just a turn away from modern shops. In the
               countryside, life still flows along the rivers and harvests. This
-              contrast between old and new makes up a large part of Vietnam's
-              appeal. Another reason to visit Vietnam is its natural beauty. The
-              North has majestic mountains and beautiful limestone bays. The
-              Central Coast Road leads to historical relics and romantic
-              beaches. In the South, the sleepless life of Ho Chi Minh City and
-              the riverside villages in the Mekong Delta will make you want to
-              linger forever.
+              contrast between old and new makes up a large part of
+              Vietnam&apos;s appeal. Another reason to visit Vietnam is its
+              natural beauty. The North has majestic mountains and beautiful
+              limestone bays. The Central Coast Road leads to historical relics
+              and romantic beaches. In the South, the sleepless life of Ho Chi
+              Minh City and the riverside villages in the Mekong Delta will make
+              you want to linger forever.
             </p>
           </div>
 
