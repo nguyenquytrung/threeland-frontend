@@ -1,0 +1,12 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js",
+  "/about/portfolio/page": "app/about/portfolio/page.js",
+  "/blogs/page": "app/blogs/page.js",
+  "/tour-style/page": "app/tour-style/page.js",
+  "/contact-us/page": "app/contact-us/page.js",
+  "/destination/vietnam/page": "app/destination/vietnam/page.js",
+  "/blogs/detail/page": "app/blogs/detail/page.js",
+  "/destination/vietnam/detail/page": "app/destination/vietnam/detail/page.js"
+}

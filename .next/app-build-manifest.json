@@ -1,0 +1,143 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-29eb335d46b01c5e.js",
+      "static/chunks/fd9d1056-51face16839d2cb0.js",
+      "static/chunks/23-8dba163616d0f949.js",
+      "static/chunks/main-app-e6aecbadd7611903.js",
+      "static/chunks/app/_not-found/page-8022c94d4a8b5013.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-29eb335d46b01c5e.js",
+      "static/chunks/fd9d1056-51face16839d2cb0.js",
+      "static/chunks/23-8dba163616d0f949.js",
+      "static/chunks/main-app-e6aecbadd7611903.js",
+      "static/css/a54a12efe393454e.css",
+      "static/chunks/173-6c1a19c8b5cd38b9.js",
+      "static/chunks/925-15c1936a9df4a48c.js",
+      "static/chunks/app/layout-ba2ff00bb85fe8f7.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-29eb335d46b01c5e.js",
+      "static/chunks/fd9d1056-51face16839d2cb0.js",
+      "static/chunks/23-8dba163616d0f949.js",
+      "static/chunks/main-app-e6aecbadd7611903.js",
+      "static/css/3a24c022f69a36a9.css",
+      "static/chunks/173-6c1a19c8b5cd38b9.js",
+      "static/chunks/271-eea0068127e2019e.js",
+      "static/chunks/app/page-e6fcb2fd0d97343a.js"
+    ],
+    "/about/portfolio/page": [
+      "static/chunks/webpack-29eb335d46b01c5e.js",
+      "static/chunks/fd9d1056-51face16839d2cb0.js",
+      "static/chunks/23-8dba163616d0f949.js",
+      "static/chunks/main-app-e6aecbadd7611903.js",
+      "static/chunks/173-6c1a19c8b5cd38b9.js",
+      "static/chunks/app/about/portfolio/page-80a5301c53a979b2.js"
+    ],
+    "/about/portfolio/layout": [
+      "static/chunks/webpack-29eb335d46b01c5e.js",
+      "static/chunks/fd9d1056-51face16839d2cb0.js",
+      "static/chunks/23-8dba163616d0f949.js",
+      "static/chunks/main-app-e6aecbadd7611903.js",
+      "static/chunks/app/about/portfolio/layout-87b6dd0b4c1f347a.js"
+    ],
+    "/blogs/page": [
+      "static/chunks/webpack-29eb335d46b01c5e.js",
+      "static/chunks/fd9d1056-51face16839d2cb0.js",
+      "static/chunks/23-8dba163616d0f949.js",
+      "static/chunks/main-app-e6aecbadd7611903.js",
+      "static/css/3a24c022f69a36a9.css",
+      "static/chunks/173-6c1a19c8b5cd38b9.js",
+      "static/chunks/271-eea0068127e2019e.js",
+      "static/chunks/688-7ae4a178440087d9.js",
+      "static/chunks/app/blogs/page-5c5a9126419f30c6.js"
+    ],
+    "/blogs/layout": [
+      "static/chunks/webpack-29eb335d46b01c5e.js",
+      "static/chunks/fd9d1056-51face16839d2cb0.js",
+      "static/chunks/23-8dba163616d0f949.js",
+      "static/chunks/main-app-e6aecbadd7611903.js",
+      "static/chunks/app/blogs/layout-9008f4f92d60d2af.js"
+    ],
+    "/tour-style/page": [
+      "static/chunks/webpack-29eb335d46b01c5e.js",
+      "static/chunks/fd9d1056-51face16839d2cb0.js",
+      "static/chunks/23-8dba163616d0f949.js",
+      "static/chunks/main-app-e6aecbadd7611903.js",
+      "static/chunks/173-6c1a19c8b5cd38b9.js",
+      "static/chunks/app/tour-style/page-dbdf112dd5a1670d.js"
+    ],
+    "/tour-style/layout": [
+      "static/chunks/webpack-29eb335d46b01c5e.js",
+      "static/chunks/fd9d1056-51face16839d2cb0.js",
+      "static/chunks/23-8dba163616d0f949.js",
+      "static/chunks/main-app-e6aecbadd7611903.js",
+      "static/chunks/app/tour-style/layout-4dabff200befef56.js"
+    ],
+    "/contact-us/page": [
+      "static/chunks/webpack-29eb335d46b01c5e.js",
+      "static/chunks/fd9d1056-51face16839d2cb0.js",
+      "static/chunks/23-8dba163616d0f949.js",
+      "static/chunks/main-app-e6aecbadd7611903.js",
+      "static/chunks/173-6c1a19c8b5cd38b9.js",
+      "static/chunks/app/contact-us/page-dfd96fbc0bee696b.js"
+    ],
+    "/contact-us/layout": [
+      "static/chunks/webpack-29eb335d46b01c5e.js",
+      "static/chunks/fd9d1056-51face16839d2cb0.js",
+      "static/chunks/23-8dba163616d0f949.js",
+      "static/chunks/main-app-e6aecbadd7611903.js",
+      "static/chunks/app/contact-us/layout-9b7c4a1ee7e742a8.js"
+    ],
+    "/destination/vietnam/page": [
+      "static/chunks/webpack-29eb335d46b01c5e.js",
+      "static/chunks/fd9d1056-51face16839d2cb0.js",
+      "static/chunks/23-8dba163616d0f949.js",
+      "static/chunks/main-app-e6aecbadd7611903.js",
+      "static/css/3a24c022f69a36a9.css",
+      "static/chunks/173-6c1a19c8b5cd38b9.js",
+      "static/chunks/271-eea0068127e2019e.js",
+      "static/chunks/app/destination/vietnam/page-c29c1d4e16efcc47.js"
+    ],
+    "/destination/vietnam/layout": [
+      "static/chunks/webpack-29eb335d46b01c5e.js",
+      "static/chunks/fd9d1056-51face16839d2cb0.js",
+      "static/chunks/23-8dba163616d0f949.js",
+      "static/chunks/main-app-e6aecbadd7611903.js",
+      "static/chunks/app/destination/vietnam/layout-a16bf5353111b03f.js"
+    ],
+    "/blogs/detail/page": [
+      "static/chunks/webpack-29eb335d46b01c5e.js",
+      "static/chunks/fd9d1056-51face16839d2cb0.js",
+      "static/chunks/23-8dba163616d0f949.js",
+      "static/chunks/main-app-e6aecbadd7611903.js",
+      "static/css/3a24c022f69a36a9.css",
+      "static/chunks/173-6c1a19c8b5cd38b9.js",
+      "static/chunks/271-eea0068127e2019e.js",
+      "static/chunks/688-7ae4a178440087d9.js",
+      "static/chunks/app/blogs/detail/page-ab2cfa0605de8337.js"
+    ],
+    "/blogs/detail/layout": [
+      "static/chunks/webpack-29eb335d46b01c5e.js",
+      "static/chunks/fd9d1056-51face16839d2cb0.js",
+      "static/chunks/23-8dba163616d0f949.js",
+      "static/chunks/main-app-e6aecbadd7611903.js",
+      "static/chunks/app/blogs/detail/layout-d434d5af70749cc8.js"
+    ],
+    "/destination/vietnam/detail/page": [
+      "static/chunks/webpack-29eb335d46b01c5e.js",
+      "static/chunks/fd9d1056-51face16839d2cb0.js",
+      "static/chunks/23-8dba163616d0f949.js",
+      "static/chunks/main-app-e6aecbadd7611903.js",
+      "static/chunks/app/destination/vietnam/detail/page-cf8db0566c7c75a1.js"
+    ],
+    "/destination/vietnam/detail/layout": [
+      "static/chunks/webpack-29eb335d46b01c5e.js",
+      "static/chunks/fd9d1056-51face16839d2cb0.js",
+      "static/chunks/23-8dba163616d0f949.js",
+      "static/chunks/main-app-e6aecbadd7611903.js",
+      "static/chunks/app/destination/vietnam/detail/layout-add3f588f77e6545.js"
+    ]
+  }
+}
