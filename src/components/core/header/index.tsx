@@ -210,7 +210,7 @@ const Header = () => {
                 <div className='flex-1 max-w-[423px]'>
                   <div role='button' className='group/about h-[120px]'>
                     <Link
-                      href=''
+                      href='/about/who-we-are'
                       className='relative transition-all w-full h-full flex items-center justify-center'
                     >
                       <Image src={WhoWeAreImage} alt='who-we-are' />
@@ -239,7 +239,7 @@ const Header = () => {
                     </Link>
 
                     <Link
-                      href=''
+                      href='/about/why-us'
                       className='group/about relative h-[110px] w-[136px]'
                     >
                       <Image
@@ -255,7 +255,7 @@ const Header = () => {
                     </Link>
 
                     <Link
-                      href=''
+                      href='/about/our-team'
                       className='relative group/about h-[110px] w-[136px]'
                     >
                       <Image

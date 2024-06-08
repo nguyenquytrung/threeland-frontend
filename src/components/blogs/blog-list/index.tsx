@@ -6,6 +6,7 @@ import Image from 'next/image';
 import post1 from '@/assets/images/blogs/post1.png';
 
 import BlogItem from '@/components/blogs/blog-item';
+import Link from 'next/link';
 
 const BlogList = () => {
   const [chooseBlogs, setChooseBlogs] = useState<any>({
@@ -64,11 +65,13 @@ const BlogList = () => {
           )}
         </div>
       </div>
-      <div
+      <Link
+        href='/blogs/1/'
+        role='button'
         className={`flex min-[945px]:flex-row flex-col items-center min-[945px]:items-start`}
       >
         <BlogItem item={chooseBlogs} />
-      </div>
+      </Link>
     </div>
   );
 };

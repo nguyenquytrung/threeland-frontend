@@ -1,7 +1,7 @@
-import LeftContent from "@/components/blogs/detail/content/leftContent";
-import RightContent from "@/components/blogs/detail/content/rightContent";
-import RelatedTour from "@/components/blogs/related-tour";
-import { useEffect, useRef, useState } from "react";
+import LeftContent from '@/components/blogs/detail/content/leftContent';
+import RightContent from '@/components/blogs/detail/content/rightContent';
+import RelatedTour from '@/components/blogs/related-tour';
+import { useEffect, useRef, useState } from 'react';
 
 const Index = () => {
   const ref = useRef<any>(null);
@@ -14,27 +14,21 @@ const Index = () => {
     const getwidth = () => {
       setWidth(ref.current.offsetWidth);
     };
-    window.addEventListener("resize", getwidth);
+    window.addEventListener('resize', getwidth);
     // remove the event listener before the component gets unmounted
-    return () => window.removeEventListener("resize", getwidth);
+    return () => window.removeEventListener('resize', getwidth);
   }, []);
 
   return (
     <>
       <div
         ref={ref}
-        className={`flex ${
-          width < 1300 ? "flex-col" : ""
-        } w-full px-[100px] py-10`}
+        className={`flex gap-10 xl:flex-row flex-col w-full px-[24px] sm:px-[50px] lg:px-[100px] py-10`}
       >
-        <div className={`${width < 1300 ? '' : 'w-2/3'}`}>
-          <LeftContent width={width} />
-        </div>
-        <div className={`${width < 1300 ? '' : 'w-1/3'} px-10`}>
-          <RightContent width={width} />
-        </div>
+        <LeftContent />
+        <RightContent />
       </div>
-      <div className="">
+      <div className=''>
         <RelatedTour width={width} />
       </div>
     </>

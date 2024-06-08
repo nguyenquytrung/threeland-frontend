@@ -13,20 +13,20 @@ const BannerBlog = (props: any) => {
     <section
       className={`bg-[url('/blogs/backgroundBlog.png')] flex ${
         isDetail ? '' : 'justify-center'
-      } relative bg-banner-1 h-[calc(100vh-144px)] 2xl:h-[650px] overflow-hidden bg-cover text-[#FFFFFF]`}
+      } relative bg-banner-1 h-[calc(100vh-69px)] xl:h-[calc(100vh-144px)] 2xl:h-[650px] overflow-hidden bg-cover text-[#FFFFFF]`}
     >
       {isDetail ? (
-        <div className='flex flex-col justify-end w-3/4 px-[100px] py-[100px]'>
+        <div className='flex flex-col justify-center max-w-[1313px] px-[24px] sm:px-[50px] lg:px-[100px]'>
           <TimeAndShare
             item={{ time: 'June 28, 2018', share: '1K' }}
             theme='dark'
           />
           <p
-            className={`text-[64px] min-w-[1/2] font-bold leading-[66px] py-5`}
+            className={`text-[clamp(30px,4vw,64px)] 2xl:text-[64px] min-w-[1/2] font-bold leading-[clamp(36px,5vw,64px)] py-5`}
           >
             Vietnamese Coffee: Discover the World&apos;s Best Coffee
           </p>
-          <p className='text-[20px] leading-[26px] pb-5'>
+          <p className='text-[20px] leading-[26px] mb-5 line-clamp-[4]'>
             Tasting coffee in Vietnam is an experience that we highly recommend
             to our readers. This simple drink is more than simply a source of
             energy for the day; it is an essential component of Vietnamese
