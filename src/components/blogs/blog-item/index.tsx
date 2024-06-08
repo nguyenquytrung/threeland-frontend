@@ -24,7 +24,7 @@ const Index = ({
       <div className='flex-1 self-center mt-5 min-[945px]:max-w-[670px]'>
         <TimeAndShare item={item} theme={theme} />
         <p
-          className={`my-5 text-[clamp(26px,2vw,32px)] text-[${
+          className={`hover:underline my-5 text-[clamp(26px,2vw,32px)] text-[${
             theme === 'dark' ? '#FFF' : '#6A7373'
           }] font-bold`}
         >

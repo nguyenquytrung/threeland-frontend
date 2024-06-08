@@ -6,6 +6,7 @@ import { ArrayBlogs } from '../const';
 import BlogItem from '@/components/blogs/blog-item';
 
 import TimeAndShare from '@/components/blogs/blog-item/timeAndShare';
+import Link from 'next/link';
 
 const Index = () => {
   return (
@@ -17,9 +18,10 @@ const Index = () => {
         {ArrayBlogs.map(
           (item, index) =>
             index < 3 && (
-              <div
+              <Link
+                href='/blogs/1/'
                 key={item.id}
-                className={`max-[1440px]:flex-col max-[1440px]:items-center flex my-7`}
+                className={`xl:flex-row gap-4 flex-col max-[1440px]:items-center flex my-7`}
               >
                 <BlogItem
                   item={item}
@@ -27,7 +29,7 @@ const Index = () => {
                   theme={'dark'}
                   isContent={false}
                 />
-              </div>
+              </Link>
             ),
         )}
       </div>

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import ArrowDown from '@/assets/images/blogs/arrow_left_alt.svg';
 
 import BlogItem from './blog-item';
+import Link from 'next/link';
 
 const Tag = () => {
   const [tag, setTag] = useState({
@@ -43,9 +44,9 @@ const Tag = () => {
         className={`grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 auto-rows-max`}
       >
         {ArrayBlogs.map((item) => (
-          <div className='' key={item.id}>
+          <Link href='/blogs/1' className='' role='button' key={item.id}>
             <BlogItem item={item} lineClamp={3} />
-          </div>
+          </Link>
         ))}
       </div>
       <div className='flex justify-center m-4 my-20'>

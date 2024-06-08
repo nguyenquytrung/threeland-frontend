@@ -2,10 +2,10 @@ import Image from 'next/image';
 
 import Avatar from '@/assets/images/blogs/avt.png';
 
-import TimeAndShare from '@/components/blogs/blog-item/timeAndShare';
-import AvatarInfo from '@/components/blogs/blog-item/AvatarInfo';
+import TimeAndShare from './time-share';
+import AvatarInfo from './avatar-info';
 
-const Index = ({
+const BlogItem = ({
   item,
   classNameAvt,
   theme = 'light',
@@ -18,13 +18,13 @@ const Index = ({
         alt='see-more'
         className={
           classNameAvt ||
-          'object-cover min-[945px]:w-[clamp(500px,38vw,700px)] h-auto rounded-[8px] mr-[clamp(1rem,2vw,2.5rem)]'
+          'object-cover min-[945px]:w-[clamp(500px,38vw,700px)] h-[379px] rounded-[8px]'
         }
       />
-      <div className='flex-1 self-center mt-5 min-[945px]:max-w-[670px]'>
+      <div className='flex-1 min-[945px]:max-w-[670px]'>
         <TimeAndShare item={item} theme={theme} />
         <p
-          className={`hover:underline my-5 text-[clamp(18px,2vw,24px)] text-[${
+          className={`my-5 line-clamp-[2] text-[16px] text-[${
             theme === 'dark' ? '#FFF' : '#6A7373'
           }] font-bold`}
         >
@@ -32,7 +32,7 @@ const Index = ({
         </p>
         {isContent ? (
           <p
-            className={`line-clamp-[3] text-[16px] text-[${
+            className={`line-clamp-[4] text-[16px] text-[${
               theme === 'dark' ? '#FFF' : '#6A7373'
             }] leading-[24px]`}
           >
@@ -51,4 +51,4 @@ const Index = ({
   );
 };
 
-export default Index;
+export default BlogItem;
