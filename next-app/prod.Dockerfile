@@ -53,7 +53,7 @@ RUN adduser --system --uid 1001 nextjs
 
 COPY --from=builder /app ./
 
-RUN chown -R nextjs:nodejs /app/.next
+RUN chown -R nextjs:nodejs /.next
 
 USER nextjs
 # Automatically leverage output traces to reduce image size
