@@ -35,9 +35,9 @@ ENV NEXT_PUBLIC_ENV_VARIABLE=${NEXT_PUBLIC_ENV_VARIABLE}
 # Build Next.js based on the preferred package manager
 RUN \
   if [ -f yarn.lock ]; then yarn build; \
-  elif [ -f package-lock.json ]; then npm run build; \
+  elif [ -f package-lock.json ]; then npm run deploy; \
   elif [ -f pnpm-lock.yaml ]; then pnpm build; \
-  else npm run build; \
+  else npm run deploy; \
   fi
 
 # Note: It is not necessary to add an intermediate step that does a full copy of `node_modules` here
@@ -57,7 +57,7 @@ COPY --from=builder /app/public ./public
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/standalone/.next/static
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 # Environment variables must be redefined at run time
 ARG ENV_VARIABLE
