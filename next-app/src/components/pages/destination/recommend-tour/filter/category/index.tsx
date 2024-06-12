@@ -68,7 +68,7 @@ const FilterCategory = (props: Props) => {
       {range && (
         <div className='mt-2'>
           <p className='text-[14px] text-[#4A4A4A]'>{range.title}</p>
-          <div className='flex items-center gap-2 mt-2'>
+          <div className='flex flex-wrap items-center gap-2 mt-2'>
             <input
               type='text'
               className='text-[14px] border border-[#D2D6D9] rounded-[4px] h-[36px] w-[128px] max-w-[128px] px-2'
