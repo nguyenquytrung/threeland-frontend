@@ -118,7 +118,7 @@ const Index = () => {
       <Image
         src={BannerOurteam}
         alt="who-we-are"
-        className="object-cover w-[1156px] h-[950px]"
+        className="object-cover max-w-[1156px] w-[100%] max-h-[950px] my-20"
       />
 
     </section>

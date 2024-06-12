@@ -13,7 +13,7 @@ const Index = () => {
           <h3 className="min-[900px]:text-[56px] text-[32px] font-medium pb-5 text-[#fff]">
             Our team - threelanders
           </h3>
-          <p className="text-[20px] text-[#fff] font-light pb-10">
+          <p className="text-[20px] text-[#fff] font-light pb-10 text-justify">
             Threeland has built an impressive team of more than 60 staffs
             engaged in branches, representative offices and alliance partners.
             We are a group of passionate travel coordinators working based on
@@ -24,7 +24,7 @@ const Index = () => {
             partners. We know our strength and our competitive advantage is from
             our people. Without them we would simply be bricks and mortar.
           </p>
-          <p className="text-[20px] text-[#fff] font-light pb-10">
+          <p className="text-[20px] text-[#fff] font-light pb-10 text-justify">
             The success of our trips guaranteed by efforts of the united team
             not only by salesman, tour guide or driver who communicate
             frequently with our clients but also by others who currently are
