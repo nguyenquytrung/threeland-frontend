@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Threeland Travel Detail Blog- Your guide to Indochina',
+  title: 'THREELAND HOTEL BOOKING',
   applicationName: 'Threeland Travel',
   description: 'This is description about the page',
-  keywords: ['travel', 'Vietnam', 'tour', 'destination'],
+  keywords: ['travel', 'Vietnam', 'tour', 'destination', 'halong', 'cruises'],
 };
 
 export default function RootLayout({
