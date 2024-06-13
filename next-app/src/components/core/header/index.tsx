@@ -260,8 +260,9 @@ const Header = () => {
               {/* End extra popover */}
             </div>
             <div role='button' className='flex gap-2 items-center'>
-              <p className='text-[16px]'>Responsible</p>
-              <Image src={DownArrowBlackImage} alt='down-arrow' />
+              <Link href='/responsible' className='text-[16px] hover:underline'>
+                Responsible
+              </Link>
             </div>
             <div className='relative group h-full flex items-center'>
               <div role='button' className='flex gap-2 items-center'>
