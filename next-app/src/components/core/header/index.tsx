@@ -94,7 +94,7 @@ const Header = () => {
                     className="group/des bg-[url('https://threeland.com/images/country/destination-vietnam.jpg')] h-[120px]"
                   >
                     <Link
-                      href='/destination/vietnam'
+                      href='/vietnam-tours'
                       className='transition-all w-full h-full flex items-center justify-center group-hover/des:bg-black group-hover/des:bg-opacity-[0.3]'
                     >
                       <span className='transition-all text-white font-semibold text-[18px] group-hover/des:underline'>

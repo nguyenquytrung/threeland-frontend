@@ -4,6 +4,17 @@ import Image from 'next/image';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/core/ui/dialog';
+
+import SeeMoreImage from '@/assets/images/see-more.svg';
 import Detail1 from '@/assets/images/blogs/detail1.jpg';
 import Detail2 from '@/assets/images/blogs/detail2.jpg';
 import Detail3 from '@/assets/images/blogs/detail3.jpg';
@@ -15,7 +26,8 @@ import Facebook from '@/svg/facebookSocial';
 import In from '@/svg/inSocial';
 import Thread from '@/svg/threadSocial';
 import Twitter from '@/assets/images/twitter.png';
-import TeleIcon from '@/svg/teleIcon';
+import Comment from '@/assets/images/blogs/comment.svg';
+import Comments from './comments';
 
 const Index = () => {
   return (
@@ -227,7 +239,7 @@ const Index = () => {
         </div>
       </div>
       <div className='h-[1px] bg-[#E9ECEF] my-10' />
-      <div className='flex gap-4 flex-wrap'>
+      <div className='flex gap-4 flex-wrap mb-6'>
         <p className='text-[24px] font-semibold pr-5'>Share: </p>
         <div className='self-center flex bg-[#3B5998] h-[48px] px-7 rounded-[4px]'>
           <div className='w-[24px] h-[24px] self-center bg-[#FFF] p-[7.5px] rounded-[20px]'>
@@ -249,23 +261,55 @@ const Index = () => {
             <In />
           </div>
         </div>
+
+        <Dialog>
+          <DialogTrigger asChild>
+            <div
+              role='button'
+              className='flex gap-2 items-center justify-center hover:bg-[#015391] bg-[#0066B3] rounded-full p-[10px 24px 10px 24px] px-3 h-[48px] text-white ml-auto'
+            >
+              <span>Write a comment</span>
+              <Image src={Comment} alt='comment' />
+            </div>
+          </DialogTrigger>
+          <DialogContent className='bg-white md:rounded-[32px] p-0 overflow-hidden border-0 max-w-[749px]'>
+            <div className='bg-[rgba(0,102,179,1)] p-6'>
+              <h3 className='text-white text-[24px]'>Write a comment</h3>
+            </div>
+            <form className='px-5 pb-8 text-[11px]'>
+              <label className='font-extralight'>FULL NAME</label>
+              <br />
+              <input
+                type='text'
+                placeholder='Full Name'
+                className='h-[32px] rounded-[4px] border border-[rgba(205,208,208,1)] mt-2 w-full px-2 mb-6'
+              />
+              <label className='font-extralight'>TITLE</label>
+              <br />
+              <input
+                type='text'
+                placeholder='Title'
+                className='h-[32px] rounded-[4px] border border-[rgba(205,208,208,1)] mt-2 w-full px-2 mb-6'
+              />
+              <label className='font-extralight'>CONTENT</label>
+              <br />
+              <textarea
+                placeholder='Content'
+                className='min-h-[100px] rounded-[4px] border border-[rgba(205,208,208,1)] mt-2 w-full p-2 mb-6'
+              />
+              <button className='flex gap-3 items-center justify-center w-full rounded-[24.85px] bg-[rgba(0,102,179,1)] p-2'>
+                <span className='text-white text-[18px]'>Send</span>
+                <Image src={SeeMoreImage} alt='see-more' />
+              </button>
+            </form>
+          </DialogContent>
+        </Dialog>
       </div>
-      <div className='flex my-8 gap-2 sm:gap-5'>
-        <input
-          type='text'
-          placeholder='Enter comment'
-          className='h-[70px] w-full rounded-[4px] px-2 pl-9 border-[1px] border-[#CDD0D0]'
-        />
-        <div
-          role='button'
-          className='bg-[#0066B3] min-w-[70px] h-[70px] text-[white] rounded-[8px] flex items-center justify-center'
-        >
-          <TeleIcon />
-        </div>
-      </div>
+
+      <Comments />
       <div
         role='button'
-        className='bg-[#0066B3] h-[70px] text-[white] rounded-[8px] flex items-center justify-center'
+        className='bg-[#0066B3] h-[70px] text-[white] rounded-[8px] flex items-center justify-center mt-6'
       >
         <p className='sm:text-[24px] sm:tracking-[5px] tracking-[3px]'>
           VIEW COMMENTS (0)

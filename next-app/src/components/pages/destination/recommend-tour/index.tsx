@@ -13,13 +13,14 @@ import StarHeImage from '@/assets/images/he-star.svg';
 import PopularSaleImage from '@/assets/images/popular-sale.svg';
 import SeeMoreImage from '@/assets/images/see-more.svg';
 import RightSliderImage from '@/assets/images/right-slider.svg';
+import Link from 'next/link';
 
 const recommendTours = [
-  { id: 0, img: RecommendVietnam1 },
-  { id: 1, img: RecommendVietnam2 },
-  { id: 2, img: RecommendVietnam3 },
-  { id: 3, img: RecommendVietnam4 },
-  { id: 4, img: RecommendVietnam1 },
+  { id: 0, img: RecommendVietnam1, title: 'Essential Vietnam with Sapa' },
+  { id: 1, img: RecommendVietnam2, title: 'Essential Vietnam with Sapa 2' },
+  { id: 2, img: RecommendVietnam3, title: 'Essential Vietnam with Sapa 3' },
+  { id: 3, img: RecommendVietnam4, title: 'Essential Vietnam with Sapa 4' },
+  { id: 4, img: RecommendVietnam1, title: 'Essential Vietnam with Sapa 5' },
 ];
 
 const filterCategories = [
@@ -129,7 +130,7 @@ const RecommendTour = () => {
               />
               <div className='max-w-[50%]'>
                 <h5 className='text-[#1E1E1E] text-[22px] leading-[32px] font-medium'>
-                  Essential Vietnam with Sapa
+                  {item.title}
                 </h5>
                 <div className='flex gap-2 items-start mt-2'>
                   <Image src={LocationHeImage} alt='location' />
@@ -175,13 +176,17 @@ const RecommendTour = () => {
                   share their real life, experience their
                 </p>
 
-                <div
+                <Link
+                  href={`/tour/${item.title
+                    .split(' ')
+                    .join('-')
+                    .toLowerCase()}`}
                   role='button'
-                  className='flex gap-2 items-center justify-center bg-[#0066B3] rounded-full p-[10px 24px 10px 24px] w-[177px] h-[48px] text-white mt-4'
+                  className='flex gap-2 items-center justify-center hover:bg-[#015391] bg-[#0066B3] rounded-full p-[10px 24px 10px 24px] w-[177px] h-[48px] text-white mt-4'
                 >
                   <span>Explore tour</span>
                   <Image src={SeeMoreImage} alt='see-more' />
-                </div>
+                </Link>
               </div>
             </div>
           ))}
