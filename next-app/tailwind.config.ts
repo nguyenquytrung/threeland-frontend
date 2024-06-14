@@ -31,6 +31,8 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'extras-banner':
           'linear-gradient(0deg, #0066B3 0%, rgba(80, 115, 119, 0) 40%, rgba(0, 102, 179, 0) 100%)',
+        'extra-service-icons':
+          'linear-gradient(279.69deg, #0066B3 0%, #38BDC6 100%)',
       },
     },
   },

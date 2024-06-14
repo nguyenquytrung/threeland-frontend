@@ -1,9 +1,9 @@
 import React from 'react';
-import Banner from '@/components/pages/extras/banner';
-import BestTourInHalong from '@/components/pages/extras/best-tour-in-halong';
-import ExtrasHighlight from '@/components/pages/extras/highlight';
-import Top10BestCruises from '@/components/pages/extras/top-best-cruises';
-import YouAreUnique from '@/components/pages/extras/you-are-unique';
+import Banner from '@/components/pages/halong-bay-cruises/banner';
+import BestTourInHalong from '@/components/pages/halong-bay-cruises/best-tour-in-halong';
+import ExtrasHighlight from '@/components/pages/halong-bay-cruises/highlight';
+import Top10BestCruises from '@/components/pages/halong-bay-cruises/top-best-cruises';
+import YouAreUnique from '@/components/pages/halong-bay-cruises/you-are-unique';
 import ViewedArticles from '@/components/pages/blogs/viewed-articles';
 import GotQuestion from '@/components/pages/destination/got-question';
 

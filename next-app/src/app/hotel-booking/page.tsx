@@ -1,6 +1,6 @@
 import StaysInHotel from '@/components/pages/booking-hotel';
-import Banner from '@/components/pages/extras/banner';
-import Top10BestCruisesText from '@/components/pages/extras/top-best-cruises-text';
+import Banner from '@/components/pages/halong-bay-cruises/banner';
+import Top10BestCruisesText from '@/components/pages/halong-bay-cruises/top-best-cruises-text';
 import React from 'react';
 
 const Page = () => {
