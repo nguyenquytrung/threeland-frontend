@@ -26,7 +26,7 @@ export default function RootLayout({
       >
         <div
           role='button'
-          className='mt-4 bg-[#0066B3] text-[white] w-[201px] h-[48px] grid place-items-center rounded-[8px]'
+          className='mt-4 hover:bg-[#015391] transition-all bg-[#0066B3] text-[white] w-[201px] h-[48px] grid place-items-center rounded-[8px]'
         >
           <span>Get Free Advice Now</span>
         </div>

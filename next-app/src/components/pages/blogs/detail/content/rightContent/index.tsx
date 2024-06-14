@@ -1,9 +1,11 @@
+import Image from 'next/image';
 import Facebook from '@/svg/facebookSocial';
 import Thread from '@/svg/threadSocial';
 import Twister from '@/svg/twisterSocial';
 import Gmail from '@/svg/gmailSvg';
 import BlogItem from './blog-item';
 import { ArrayBlogs } from '@/components/pages/blogs/const';
+import Twitter from '@/assets/images/twitter.png';
 
 const Index = () => {
   return (
@@ -16,8 +18,8 @@ const Index = () => {
           </div>
         </div>
         <div className='p-2 w-[72px] h-[72px] px-[17px] py-[15px] bg-[#F8F9FA] rounded-[40px] cursor-pointer'>
-          <div className='bg-[#3B5998] w-[40px] h-[40px] py-[10px] px-[11px] rounded-[20px]'>
-            <Twister color='#fff' width={20} height={20} />
+          <div className='bg-[#d3d3d3] w-[40px] h-[40px] py-[10px] px-[11px] rounded-[20px]'>
+            <Image src={Twitter} alt='twitter' width={22} />
           </div>
         </div>
         <div className='p-2 w-[72px] h-[72px] px-[17px] py-[15px] bg-[#F8F9FA] rounded-[40px] cursor-pointer'>

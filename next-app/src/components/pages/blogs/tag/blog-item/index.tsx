@@ -39,13 +39,13 @@ const Index = ({
             {item?.content}
           </p>
         ) : null}
-        <div
+        {/* <div
           style={{
             backgroundColor: theme === 'dark' ? '#f3f3f3' : '#E5E5E5',
           }}
           className={`h-[1px] my-4`}
-        />
-        <AvatarInfo image={Avatar} name={item.name} theme={theme} />
+        /> */}
+        {/* <AvatarInfo image={Avatar} name={item.name} theme={theme} /> */}
       </div>
     </>
   );

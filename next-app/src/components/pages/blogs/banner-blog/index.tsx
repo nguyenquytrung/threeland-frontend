@@ -26,14 +26,6 @@ const BannerBlog = (props: any) => {
           >
             Vietnamese Coffee: Discover the World&apos;s Best Coffee
           </p>
-          <p className='text-[20px] leading-[26px] mb-5 line-clamp-[4]'>
-            Tasting coffee in Vietnam is an experience that we highly recommend
-            to our readers. This simple drink is more than simply a source of
-            energy for the day; it is an essential component of Vietnamese
-            culture. The strong but delicious fragrance of freshly brewed coffee
-            can be found{' '}
-          </p>
-          <AvatarInfo image={Avatar} name='Peter Rowardson' theme='dark' />
         </div>
       ) : (
         <div className='flex flex-col justify-center'>
@@ -49,7 +41,7 @@ const BannerBlog = (props: any) => {
           <div className='flex justify-center py-2'>
             <div
               role='button'
-              className='bg-[#0066B3] w-[200px] h-[48px] text-[white] rounded-[8px] flex items-center justify-center'
+              className='hover:bg-[#015391] transition-all bg-[#0066B3] w-[200px] h-[48px] text-[white] rounded-[8px] flex items-center justify-center'
             >
               <span className='text-[16px] font-semibold'>
                 Get Free Advice Now

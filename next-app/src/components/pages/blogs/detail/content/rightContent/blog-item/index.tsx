@@ -45,7 +45,7 @@ const BlogItem = ({
           }}
           className={`h-[1px] my-4`}
         />
-        <AvatarInfo image={Avatar} name={item.name} theme={theme} />
+        {/* <AvatarInfo image={Avatar} name={item.name} theme={theme} /> */}
       </div>
     </>
   );

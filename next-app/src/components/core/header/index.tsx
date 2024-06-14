@@ -367,7 +367,7 @@ const Header = () => {
             </div>
             <div
               role='button'
-              className='bg-[#0066B3] w-[112px] h-[48px] text-[white] rounded-[8px] flex items-center justify-center'
+              className='hover:bg-[#015391] transition-all bg-[#0066B3] w-[112px] h-[48px] text-[white] rounded-[8px] flex items-center justify-center'
             >
               <span className='text-[16px]'>Sign up</span>
             </div>

@@ -189,7 +189,7 @@ const RecommendTour = () => {
 
         <div
           role='button'
-          className='mt-6 mx-auto border border-[#E6E8E8] hover:bg-[#f3f3f3] rounded-[8px] w-[235px] h-[48px] flex gap-2 items-center justify-center'
+          className='mt-6 mx-auto border border-[#E6E8E8] transition-all hover:bg-[#f3f3f3] rounded-[8px] w-[235px] h-[48px] flex gap-2 items-center justify-center'
         >
           <span className='text-[#071516] text-[18px]'>
             View more tour{' '}

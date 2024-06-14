@@ -21,7 +21,7 @@ const Index = (props: any) => {
           {item?.time}
         </p>
       </div>
-      <div className='flex gap-2 w-max'>
+      {/* <div className='flex gap-2 w-max'>
         <div className='w-2 h-2 self-center'>
           <DotSvg color={theme === 'dark' ? '#ffffff' : '#6A7373'} />
         </div>
@@ -35,7 +35,7 @@ const Index = (props: any) => {
         >
           {item?.share} Share
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };

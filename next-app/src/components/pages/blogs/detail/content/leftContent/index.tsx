@@ -14,7 +14,7 @@ import TickSvg from '@/svg/tick';
 import Facebook from '@/svg/facebookSocial';
 import In from '@/svg/inSocial';
 import Thread from '@/svg/threadSocial';
-import Twister from '@/svg/twisterSocial';
+import Twitter from '@/assets/images/twitter.png';
 import TeleIcon from '@/svg/teleIcon';
 
 const Index = () => {
@@ -233,31 +233,21 @@ const Index = () => {
           <div className='w-[24px] h-[24px] self-center bg-[#FFF] p-[7.5px] rounded-[20px]'>
             <Facebook />
           </div>
-          <p className='text-[#FFF] text-[18px] self-center font-bold px-3'>
-            Shares
-          </p>
-          <p className='text-[#FFF] text-[18px] self-center '>636</p>
         </div>
-        <div className='self-center flex bg-[#00ACED] h-[48px] px-7 rounded-[4px]'>
-          <div className='self-center pr-5 rounded-[20px]'>
-            <Twister />
+        <div className='self-center flex bg-[#d3d3d3] h-[48px] px-7 rounded-[4px]'>
+          <div className='self-center rounded-[20px]'>
+            <Image src={Twitter} alt='twitter' width={22} />
           </div>
-          <p className='text-[#FFF] text-[18px] self-center '>636</p>
         </div>
         <div className='self-center flex bg-[#FF0000] h-[48px] px-7 rounded-[4px]'>
           <div className='w-[24px] h-[24px] self-center bg-[#FFF] p-[7.5px] rounded-[20px]'>
             <Thread />
           </div>
-          <p className='text-[#FFF] text-[18px] self-center font-bold px-3'>
-            Shares
-          </p>
-          <p className='text-[#FFF] text-[18px] self-center '>636</p>
         </div>
         <div className='self-center flex bg-[#007BB6] h-[48px] px-7 rounded-[4px]'>
-          <div className=' self-center pr-5 rounded-[20px]'>
+          <div className=' self-center rounded-[20px]'>
             <In />
           </div>
-          <p className='text-[#FFF] text-[18px] self-center '>636</p>
         </div>
       </div>
       <div className='flex my-8 gap-2 sm:gap-5'>

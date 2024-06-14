@@ -19,19 +19,6 @@ const Index = (props: any) => {
       >
         {item?.time}
       </p>
-      <div className='mx-5 w-2 h-2 self-center'>
-        <DotSvg color={theme === 'dark' ? '#ffffff' : '#6A7373'} />
-      </div>
-      <div className='w-15 h-15 self-center'>
-        <ShareSvg color={theme === 'dark' ? '#ffffff' : '#6A7373'} />
-      </div>
-      <p
-        className={`mx-5 text-[${
-          theme === 'dark' ? '#FFF' : '#6A7373'
-        }] self-center`}
-      >
-        {item?.share} Share
-      </p>
     </div>
   );
 };

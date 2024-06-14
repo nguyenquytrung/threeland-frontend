@@ -26,7 +26,7 @@ const Index = () => {
         )}
       </div>
       <div className='flex justify-center m-4 my-20'>
-        <div className='flex border-[1px] px-5 py-3 border-[#E6E8E8] rounded-[8px] cursor-pointer'>
+        <div className='hover:bg-[#f1f1f1] transition-all flex border-[1px] px-5 py-3 border-[#E6E8E8] rounded-[8px] cursor-pointer'>
           <p className='text-center text-[18px]'>View more (100)</p>
           <Image
             src={ArrowDown}

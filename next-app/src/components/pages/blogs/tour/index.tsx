@@ -25,7 +25,7 @@ const Index = () => {
         <div className='flex justify-center py-[20px]'>
           <div
             role='button'
-            className='bg-[#0066B3] w-[220px] h-[64px] text-[white] rounded-[8px] flex items-center justify-center'
+            className='bg-[#0066B3] hover:bg-[#015391] transition-all w-[220px] h-[64px] text-[white] rounded-[8px] flex items-center justify-center'
           >
             <span className='text-[20px] font-semibold'>Request a tour</span>
           </div>

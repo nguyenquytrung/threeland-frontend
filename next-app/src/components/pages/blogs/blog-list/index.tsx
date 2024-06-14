@@ -48,14 +48,20 @@ const BlogList = () => {
                       className={`hidden min-[1181px]:block w-[clamp(40px,4vw,62px)] h-[2px] rounded-[5px] bg-[#C4C4C4] self-center mr-6`}
                     ></div>
 
-                    <div className='text-[#0066B3] text-[32px] self-center font-bold justify-end'>
+                    <div
+                      role='button'
+                      className='text-[#0066B3] text-[32px] self-center font-bold justify-end'
+                    >
                       {item.stt}
                     </div>
                   </>
                 ) : (
                   <>
                     <div className='hidden min-[1181px]:block w-[62px] h-[2px] rounded-[5px] self-center mr-6'></div>
-                    <div className='text=[#6A7373] self-center text-[14px]'>
+                    <div
+                      role='button'
+                      className='text=[#6A7373] self-center text-[14px]'
+                    >
                       {item.stt}
                     </div>
                   </>
