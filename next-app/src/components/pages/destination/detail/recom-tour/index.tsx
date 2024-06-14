@@ -57,7 +57,7 @@ const Index = () => {
     slider?.current?.slickNext();
   };
   return (
-    <div className="2xl:mx-[600px] xl:mx-[300px] lg:mx-[200px] md:mx-[100px] sm:mx-[50px] mx-5 text-[#555] mt-10">
+    <div className="min-[1500px]:mx-[30%] 2xl:mx-[20%] xl:mx-[15%] lg:mx-[10%] md:mx-[5%] sm:mx-[3%] mx-5 text-[#555] mt-10">
       <div className="flex justify-center text-[#555] py-10">
         <Image
           src={iconVali}
