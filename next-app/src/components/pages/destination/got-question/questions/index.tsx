@@ -8,6 +8,7 @@ export type QuestionType = {
   index: string;
   question: string;
   answer: string;
+  arrayAnswer?: Array<any>[any];
 };
 
 const Questions = () => {
