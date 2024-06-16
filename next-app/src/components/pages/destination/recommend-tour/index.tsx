@@ -110,8 +110,11 @@ const RecommendTour = ({
   title?: string;
 }) => {
   return (
-    <section className='flex gap-6 px-[100px] 2xl:max-w-[1584px] mx-auto w-full py-10'>
-      <Filter filterCategories={filterCategories} className='w-[30%]' />
+    <section className='flex gap-6 px-[24px] sm:px-[50px] lg:px-[100px] 2xl:max-w-[1584px] mx-auto w-full py-10'>
+      <Filter
+        filterCategories={filterCategories}
+        className='hidden min-[1180px]:block w-[30%]'
+      />
       <div className='flex-1'>
         <h3 className='text-[#394445] text-center text-[32px] leading-[54px] font-semibold'>
           {title}
@@ -125,14 +128,14 @@ const RecommendTour = ({
           {recommendTours.map((item) => (
             <div
               key={item.id}
-              className='bg-[#F7F7F7] flex gap-4 p-3 pr-4 rounded-[24px]'
+              className='bg-[#F7F7F7] flex flex-col md:flex-row gap-4 p-3 pr-4 rounded-[24px]'
             >
               <Image
                 src={item.img}
                 alt='recommend-vietnam-1'
-                className='max-w-[50%]'
+                className='md:max-w-[50%] w-full object-cover rounded-[16px]'
               />
-              <div className='max-w-[50%]'>
+              <div className='md:max-w-[50%]'>
                 <h5 className='text-[#1E1E1E] text-[22px] leading-[32px] font-medium'>
                   {item.title}
                 </h5>

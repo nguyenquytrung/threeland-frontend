@@ -60,8 +60,23 @@ export const tourStyleCountriesTooltip = [
 ];
 
 export const extrasTooltip = [
-  { id: 0, img: VietnamTourImage, name: 'Halong Bay Cruises' },
-  { id: 1, img: LaosTourImage, name: 'Mekong River Cruises' },
-  { id: 2, img: CambodiaTourImage, name: 'Hotel Booking' },
-  { id: 3, img: MyanmarTourImage, name: 'And-On Service' },
+  {
+    id: 0,
+    img: VietnamTourImage,
+    name: 'Halong Bay Cruises',
+    route: '/halong-bay-cruises',
+  },
+  {
+    id: 1,
+    img: LaosTourImage,
+    name: 'Mekong River Cruises',
+    route: '/mekong-river-cruises',
+  },
+  {
+    id: 2,
+    img: CambodiaTourImage,
+    name: 'Hotel Booking',
+    route: '/hotel-booking',
+  },
+  { id: 3, img: MyanmarTourImage, name: 'And-On Service', route: '/extra' },
 ];

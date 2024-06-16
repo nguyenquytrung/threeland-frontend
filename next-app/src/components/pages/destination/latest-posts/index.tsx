@@ -40,15 +40,29 @@ const LatestPosts = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: false,
-    // responsive: [
-    //   {
-    //     breakpoint: 1441,
-    //     settings: {
-    //       slidesToShow: 2,
-    //       slidesToScroll: 1,
-    //     },
-    //   },
-    // ],
+    responsive: [
+      {
+        breakpoint: 840,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   const handleClickPrev = () => {
@@ -62,9 +76,9 @@ const LatestPosts = () => {
   };
 
   return (
-    <section className='max-w-[1910px] px-[100px] mx-auto py-[4rem]'>
-      <div className='flex justify-between mb-3 pr-[1rem]'>
-        <h3 className='text-[56px] font-semibold leading-[54px]'>
+    <section className='max-w-[1910px] px-[24px] sm:px-[50px] lg:px-[100px] mx-auto py-[4rem]'>
+      <div className='min-[460px]:flex justify-between mb-3 pr-[1rem]'>
+        <h3 className='text-[clamp(30px,3vw,40px)] xl:text-[56px] font-semibold leading-[30px,4vw,54px]'>
           Latest Posts
         </h3>
         <div className='flex items-center gap-3'>
@@ -93,9 +107,13 @@ const LatestPosts = () => {
 
       <Slider className='mt-8' ref={slider} {...settings}>
         {slideImages.map((slideImage, index) => (
-          <div key={index} className='pr-4'>
+          <div key={index} className='min-[600px]:pr-4'>
             <div>
-              <Image src={slideImage.url} alt={slideImage.caption} />
+              <Image
+                src={slideImage.url}
+                alt={slideImage.caption}
+                className='w-full'
+              />
               <div className='flex items-center gap-2 mt-2'>
                 <Image
                   src={ClockHeImage}
@@ -107,7 +125,7 @@ const LatestPosts = () => {
               <h4 className='text-[24px] font-medium mt-2 leading-[32px]'>
                 Discover the most majestic cave in Laos
               </h4>
-              <p className='text-[18px] font-extralight mt-2 text-[rgba(57,68,69,1)]'>
+              <p className='text-[18px] font-extralight mt-2 text-[rgba(57,68,69,1)] line-clamp-[4]'>
                 Solar panels convert sunlight into electricity. Photovoltaic
                 (PV) cells on these panels capture the energy from the sun
                 electrical power.

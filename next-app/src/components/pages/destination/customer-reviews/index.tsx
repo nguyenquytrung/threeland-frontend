@@ -33,25 +33,41 @@ const CustomerReviews = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 6,
+    slidesToScroll: 1,
     arrows: false,
-    // responsive: [
-    //   {
-    //     breakpoint: 1441,
-    //     settings: {
-    //       slidesToShow: 2,
-    //       slidesToScroll: 1,
-    //     },
-    //   },
-    // ],
+    responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
     <section className='flex bg-[#f3f3f3] gap-6 pt-[3rem] pb-[6rem]'>
-      <div className='max-w-[1910px] px-[100px] mx-auto w-full'>
-        <div className='flex justify-between mb-[2rem] pr-[1rem]'>
-          <h3 className='text-[56px] font-semibold leading-[54px]'>
+      <div className='max-w-[1910px] px-[24px] sm:px-[50px] lg:px-[100px] mx-auto w-full'>
+        <div className='sm:flex gap-6 justify-between mb-[2rem] pr-[1rem]'>
+          <h3 className='text-[clamp(26px,3vw,40px)] min-[1360px]:text-[56px] font-semibold leading-[clamp(42px,3vw,52.44px)] min-[1360px]:leading-[54px'>
             Customer Reviews{' '}
-            <span className='text-[32px] font-light'>(15 reviews)</span>
+            <span className='text-[clamp(20px,2vw,32px)] font-light'>
+              (15 reviews)
+            </span>
           </h3>
           <div className='flex items-center gap-3'>
             <div
@@ -75,7 +91,7 @@ const CustomerReviews = () => {
         <Slider className='mt-[4rem]' ref={slider} {...settingsCustomerReview}>
           {slideImagesCustomerReview.map((slideImage, index) => (
             <div key={index} className='pr-2'>
-              <div className='p-8 max-w-[413px] bg-white rounded-[16px] border-[rgba(87, 92, 86, 0.16)] border'>
+              <div className='p-8 sm:max-w-[413px] bg-white rounded-[16px] border-[rgba(87, 92, 86, 0.16)] border'>
                 <p className='text-[#1D1F1E] text-[18px] 2xl:text-[24px] font-extralight'>
                   “Flow transformed my energy use. Efficient, green tech,
                   outstanding service!”rgba(54, 74, 54, 0.06)
