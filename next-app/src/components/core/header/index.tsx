@@ -1,3 +1,4 @@
+// import { useRouter } from 'next/navigation';
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -31,6 +32,14 @@ import HotelBookingImage from '@/assets/images/extras-tooltip/hotel-booking.jpeg
 import ExtraServiceImage from '@/assets/images/extras-tooltip/extra-service.jpeg';
 
 const Header = () => {
+  // const router = useRouter();
+  // const navigateTourStyle = (title: string) => {
+  //   router.push({
+  //     pathname: `/tours/${title.split(' ').join('-').toLowerCase()}`,
+  //     query: { title },
+  //   });
+  // };
+
   return (
     <>
       <header className='hidden min-[1300px]:flex flex-col h-[144px] bg-[white] text-[black]'>
@@ -70,6 +79,8 @@ const Header = () => {
                 Home
               </Link>
             </div>
+
+            {/* Destination */}
             <div className='relative group h-full flex items-center'>
               <div role='button' className='flex gap-2 items-center'>
                 <p className='text-[16px]'>Destinations</p>
@@ -167,6 +178,8 @@ const Header = () => {
               </div>
               {/* End destination popover */}
             </div>
+
+            {/* Tour Style */}
             <div className='relative group h-full flex items-center'>
               <div role='button' className='flex gap-2 items-center'>
                 <p className='text-[16px]'>Tour Style</p>
@@ -178,9 +191,16 @@ const Header = () => {
                 <div className='grid grid-cols-4 gap-3'>
                   {tourStyleTooltip.map((item) => (
                     <Link
+                      role='button'
                       key={item.id}
-                      href='/tour-style'
                       className='group/ts flex gap-2 items-center'
+                      href={{
+                        pathname: `/tours/${item.name
+                          .split(' ')
+                          .join('-')
+                          .toLowerCase()}`,
+                        query: { title: item.name },
+                      }}
                     >
                       <Image src={item.img} alt='top-selling-tour' />
                       <p className='group-hover/ts:underline text-[#0a284a] text-[14px]'>
@@ -213,6 +233,8 @@ const Header = () => {
               </div>
               {/* End tour style popover */}
             </div>
+
+            {/* Extras */}
             <div className='relative group h-full flex items-center'>
               <div role='button' className='flex gap-2 items-center'>
                 <p className='text-[16px]'>Extras</p>
@@ -236,7 +258,7 @@ const Header = () => {
                 </div>
                 <div className='flex gap-2 justify-between mt-2'>
                   <Link
-                    href='/mekong-cruises'
+                    href='/mekong-river-cruises'
                     className='group/about relative h-[110px] flex-1'
                   >
                     <Image
@@ -286,11 +308,15 @@ const Header = () => {
               </div>
               {/* End extra popover */}
             </div>
+
+            {/* Responsible */}
             <div role='button' className='flex gap-2 items-center'>
               <Link href='/responsible' className='text-[16px] hover:underline'>
                 Responsible
               </Link>
             </div>
+
+            {/* About */}
             <div className='relative group h-full flex items-center'>
               <div role='button' className='flex gap-2 items-center'>
                 <p className='text-[16px]'>About</p>
@@ -376,11 +402,15 @@ const Header = () => {
               </div>
               {/* End about popover */}
             </div>
+
+            {/* Blog */}
             <div role='button' className='flex gap-2 items-center'>
               <Link href='/blogs' className='text-[16px] hover:underline'>
                 Blog
               </Link>
             </div>
+
+            {/* Contact Us */}
             <div role='button' className='flex gap-2 items-center'>
               <Link href='/contact-us' className='text-[16px] hover:underline'>
                 Contact Us

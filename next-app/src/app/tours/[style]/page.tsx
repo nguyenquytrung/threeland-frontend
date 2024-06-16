@@ -1,9 +1,15 @@
+'use client';
 import React from 'react';
+import type { GetStaticProps } from 'next';
+
 import Banner from '@/components/core/banner';
 import RecommendTour from '@/components/pages/destination/recommend-tour';
 import GotQuestion from '@/components/pages/destination/got-question';
+import { useSearchParams } from 'next/navigation';
 
 const Page = () => {
+  const searchParams = useSearchParams();
+  const title = searchParams.get('title');
   return (
     <main className=''>
       <Banner
@@ -13,7 +19,7 @@ const Page = () => {
       />
 
       {/* Recommend Tour Section */}
-      <RecommendTour />
+      <RecommendTour title={title as string} />
 
       {/* Got Question Section */}
       <GotQuestion />

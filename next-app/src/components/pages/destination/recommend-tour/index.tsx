@@ -104,13 +104,17 @@ const filterCategories = [
   },
 ];
 
-const RecommendTour = () => {
+const RecommendTour = ({
+  title = 'Top Recommended Vietnam Tour Packages',
+}: {
+  title?: string;
+}) => {
   return (
     <section className='flex gap-6 px-[100px] 2xl:max-w-[1584px] mx-auto w-full py-10'>
       <Filter filterCategories={filterCategories} className='w-[30%]' />
       <div className='flex-1'>
         <h3 className='text-[#394445] text-center text-[32px] leading-[54px] font-semibold'>
-          Top Recommended Vietnam Tour Packages
+          {title}
         </h3>
         <p className='text-[#9CA1A2] text-[18px] leading-[28px] font-extralight text-center mt-2 w-[80%] mx-auto'>
           Seeking an unforgettable holiday in Vietnam? Check out our 10 best
