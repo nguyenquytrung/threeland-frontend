@@ -6,11 +6,12 @@ import ExploreTourImage from '@/assets/images/explore-tour.svg';
 import LeftSliderWhiteImage from '@/assets/images/left-slider-white.svg';
 import RightSliderWhiteImage from '@/assets/images/right-slider-white.svg';
 import VietnamFlagImage from '@/assets/images/vietnam-flag.svg';
-import VietnamTextImage from '@/assets/images/vietnam-text.png';
+// import VietnamTextImage from '@/assets/images/vietnam-text.png';
 import DanangCardImage from '@/assets/images/danang-card.png';
 import HanoiCardImage from '@/assets/images/hanoi-card.png';
 import HagiangCardImage from '@/assets/images/hagiang-card.png';
 import NinhbinhCardImage from '@/assets/images/ninhbinh-card.png';
+import CountryText from '@/components/core/country-text';
 
 const Destination = () => {
   const slider = useRef(null);
@@ -34,10 +35,14 @@ const Destination = () => {
               Destination
             </p>
             <Image src={VietnamFlagImage} alt='vietnam-flag' className='mt-6' />
-            <Image
+            {/* <Image
               src={VietnamTextImage}
               alt='vietnam-text'
               className='mt-8 w-[clamp(100px,30vw,400px)]'
+            /> */}
+            <CountryText
+              name='Vietnam'
+              className='text-[clamp(60px,8vw,100px)] min-[1800px]:text-[128px] leading-[clamp(60px,12vw,120.6px)] mt-4'
             />
             <div className='flex items-center gap-3 mt-20'>
               <div
@@ -130,10 +135,14 @@ const Destination = () => {
                 </p>
                 <Image src={VietnamFlagImage} alt='vietnam-flag' className='' />
               </div>
-              <Image
+              {/* <Image
                 src={VietnamTextImage}
                 alt='vietnam-text'
                 className='mt-4 w-[clamp(100px,30vw,400px)]'
+              /> */}
+              <CountryText
+                name='Vietnam'
+                className='text-[clamp(60px,8vw,100px)] min-[1800px]:text-[128px] leading-[clamp(60px,8vw,100px)] mt-4'
               />
             </div>
           </div>

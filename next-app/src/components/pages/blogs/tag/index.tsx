@@ -43,11 +43,14 @@ const Tag = () => {
       <div
         className={`grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 auto-rows-max`}
       >
-        {ArrayBlogs.map((item) => (
-          <Link href='/blogs/1' className='' role='button' key={item.id}>
-            <BlogItem item={item} lineClamp={3} />
-          </Link>
-        ))}
+        {ArrayBlogs.map((item, index) => {
+          const className = index % 2 ? 'h-[512px]' : 'h-[277px]';
+          return (
+            <Link href='/blogs/1' className='' role='button' key={item.id}>
+              <BlogItem item={item} lineClamp={3} classNameAvt={className} />
+            </Link>
+          );
+        })}
       </div>
       <div className='flex justify-center m-4 my-20'>
         <div className='hover:bg-[#f1f1f1] transition-all flex border-[1px] px-5 py-3 border-[#E6E8E8] rounded-[8px] cursor-pointer'>

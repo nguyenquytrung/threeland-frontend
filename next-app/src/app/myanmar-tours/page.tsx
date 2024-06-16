@@ -12,7 +12,7 @@ const Page = () => {
   return (
     <main>
       {/* Banner Section */}
-      <DestinationBanner country='Vietnam' />
+      <DestinationBanner country='Myanmar' url='myanmar-tours-banner.jpeg' />
 
       {/* Top Recommended Vietnam Tour Packages Section */}
       <RecommendTour />
