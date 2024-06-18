@@ -92,7 +92,6 @@ const Top10BestCruises = () => {
             {...settingsCustomerReview}
           >
             {slideImagesCustomerReview.map((slideImage, index) => {
-              console.log(slideImage);
               return (
                 <div key={index} role='button' className='group px-2'>
                   <div className=''>

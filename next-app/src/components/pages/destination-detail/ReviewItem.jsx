@@ -4,7 +4,6 @@ import ReactStars from 'react-stars'
 const ReviewItem = ({ props }) => {
   const { id, content, star, avatar, desc, name } = props;
   const ratingChanged = (newRating) => {
-    console.log(newRating)
   }
   return (
     <div className="p-[40px] mt-2 rounded-xl bg-white max-h-[360px] max-w-[400px] text-black">
