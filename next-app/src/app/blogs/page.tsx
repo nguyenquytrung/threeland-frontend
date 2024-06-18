@@ -7,6 +7,7 @@ import AllArticles from '@/components/pages/blogs/all-articles';
 import RelatedTour from '@/components/pages/blogs/related-tour';
 import Helper from '@/lib/utils/helper';
 import routes from '@/configs/apiRoutes';
+import { Suspense } from 'react';
 
 const getData = async () => {
   const res = await fetch(Helper.apiRoutes(routes.blogs.data));
@@ -35,7 +36,9 @@ const Page = async () => {
 
       <Tag initialList={data.list} />
 
-      <ViewedArticles data={data.mostViewed} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <ViewedArticles />
+      </Suspense>
 
       <Tour />
 

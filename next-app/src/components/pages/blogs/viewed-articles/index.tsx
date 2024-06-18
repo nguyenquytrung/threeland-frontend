@@ -1,20 +1,29 @@
-'use client';
-
-import { url } from 'inspector';
-import { ArrayBlogs } from '../const';
-
 import BlogItem from '@/components/pages/blogs/blog-item';
-
 import TimeAndShare from '@/components/pages/blogs/blog-item/timeAndShare';
-import Link from 'next/link';
+import routes from '@/configs/apiRoutes';
 import Blog from '@/lib/models/blog';
+import Helper from '@/lib/utils/helper';
+import Link from 'next/link';
 
 type Props = {
-  data: Blog[],
   title?: string
 }
 
-const Index = ({ title = 'Most viewed articles', data }: Props) => {
+const getData = async () => {
+  const res = await fetch(Helper.apiRoutes(routes.blogs.highlights));
+  if (!res.ok) {
+      console.log(res.statusText);
+      throw new Error('Server Error');
+  }
+  const data = await res.json();
+
+  return data.mostViewed;
+}
+
+const Index = async ({ title = 'Most viewed articles' }: Props) => {
+
+  const data: Blog[] = await getData();
+
   return (
     <div className={`min-[1439px]:flex-row flex-col flex`}>
       <div className='bg-[#0066B3] flex-1 pl-[100px] pr-[24px] 2xl:pr-[100px] pt-[50px]'>
