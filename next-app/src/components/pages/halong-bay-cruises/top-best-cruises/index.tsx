@@ -6,8 +6,8 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import ArrowLeft from '@/svg/arrow_left';
-import ArrowRight from '@/svg/arrow_right';
+import ArrowLeft from '@/components/svg/arrow_left';
+import ArrowRight from '@/components/svg/arrow_right';
 import LocationHeImage from '@/assets/images/he-loc.svg';
 import DynastyCruiseImage from '@/assets/images/extras/dynasty-cruise.png';
 import Top10BestCruisesText from '../top-best-cruises-text';

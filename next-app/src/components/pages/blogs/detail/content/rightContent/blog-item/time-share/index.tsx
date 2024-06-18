@@ -1,6 +1,6 @@
-import DotSvg from '@/svg/dotSvg';
-import ClockSvg from '@/svg/clockSvg';
-import ShareSvg from '@/svg/shareSvg';
+import DotSvg from '@/components/svg/dotSvg';
+import ClockSvg from '@/components/svg/clockSvg';
+import ShareSvg from '@/components/svg/shareSvg';
 
 const Index = (props: any) => {
   const { theme, item, size } = props;

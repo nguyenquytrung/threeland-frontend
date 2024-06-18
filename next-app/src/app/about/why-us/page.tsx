@@ -1,13 +1,13 @@
+import dynamic from 'next/dynamic';
 import React from 'react';
 
 // components
-import Content from '@/components/pages/why-us/content';
+const Content = dynamic(() => import('@/components/pages/why-us/content'));
 
 const Page = () => {
   return (
     <main>
-        <Content />
-
+      <Content />
     </main>
   );
 };

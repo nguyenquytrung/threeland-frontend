@@ -24,6 +24,7 @@ import Hotels from '@/components/pages/destination-detail/Hotels';
 import Tour from '@/components/pages/destination-detail/Tour';
 import OurTerms from '@/components/pages/destination-detail/OurTerms';
 import Review from '@/components/pages/destination-detail/Review';
+import MapWithDirections from '@/components/core/map-with-direction';
 
 const Page = () => {
   return (
@@ -350,11 +351,18 @@ const Page = () => {
         <h2 className='text-[48px] font-bold leading-[62.5px] mt-4 mb-4'>
           Itinerary
         </h2>
-        <div className=' grid grid-cols-3'>
+        <div className='grid grid-cols-3 gap-4'>
           <div className='col-span-2'>
             <TimeLine />
           </div>
-          <Image className='ml-6' layout='reponse' src={map} alt='' />
+          {/* <Image className='ml-6' layout='reponse' src={map} alt='' /> */}
+          <div className=''>
+            <MapWithDirections
+              origin={{ lat: 21.0278, lng: 105.8342 }}
+              destination={{ lat: 16.4637, lng: 107.5909 }}
+              height='700px'
+            />
+          </div>
         </div>
       </section>
       <section className='bg-[#F9F9F9] relative px-[24px] mx-auto w-full pb-4'>

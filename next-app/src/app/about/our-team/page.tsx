@@ -1,18 +1,25 @@
+import dynamic from 'next/dynamic';
 import React from 'react';
 
 // components
-import OurTeam from '@/components/pages/our-team/our-team-threeland';
-import OurTeamLogo from '@/components/pages/our-team/our-team-logo';
-import OurActivity from '@/components/pages/our-team/our-activities';
+const OurTeam = dynamic(
+  () => import('@/components/pages/our-team/our-team-threeland'),
+);
+const OurTeamLogo = dynamic(
+  () => import('@/components/pages/our-team/our-team-logo'),
+);
+const OurActivity = dynamic(
+  () => import('@/components/pages/our-team/our-activities'),
+);
 
 const Page = () => {
   return (
     <main>
-        <OurTeam />
+      <OurTeam />
 
-        <OurTeamLogo />
+      <OurTeamLogo />
 
-        <OurActivity />
+      <OurActivity />
     </main>
   );
 };

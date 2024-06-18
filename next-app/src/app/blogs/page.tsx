@@ -1,13 +1,26 @@
-import BlogList from '@/components/pages/blogs/blog-list';
-import BannerBlog from '@/components/pages/blogs/banner-blog';
-import Tag from '@/components/pages/blogs/tag';
+import React, { Suspense } from 'react';
+import dynamic from 'next/dynamic';
+import Loading from './loading';
 import ViewedArticles from '@/components/pages/blogs/viewed-articles';
-import Tour from '@/components/pages/blogs/tour';
-import AllArticles from '@/components/pages/blogs/all-articles';
-import RelatedTour from '@/components/pages/blogs/related-tour';
 import Helper from '@/lib/utils/helper';
 import routes from '@/configs/apiRoutes';
-import { Suspense } from 'react';
+
+const BlogList = dynamic(() => import('@/components/pages/blogs/blog-list'));
+const BannerBlog = dynamic(
+  () => import('@/components/pages/blogs/banner-blog'),
+  {
+    loading: () => <Loading />,
+  },
+);
+const Tag = dynamic(() => import('@/components/pages/blogs/tag'));
+const Tour = dynamic(() => import('@/components/pages/blogs/tour'));
+const AllArticles = dynamic(
+  () => import('@/components/pages/blogs/all-articles'),
+);
+const Categories = dynamic(() => import('@/components/pages/blogs/categories'));
+const RelatedTour = dynamic(
+  () => import('@/components/pages/blogs/related-tour'),
+);
 
 const getData = async () => {
   const res = await fetch(Helper.apiRoutes(routes.blogs.data));
@@ -23,7 +36,7 @@ const getData = async () => {
     list: data.list,
     categories: data.categories ?? [],
   };
-}
+};
 
 const Page = async () => {
   const data = await getData();

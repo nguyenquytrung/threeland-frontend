@@ -1,14 +1,33 @@
+import dynamic from 'next/dynamic';
 import Banner from '@/components/core/banner';
-import BestTravelAgencyVietnam from '@/components/pages/home/best-travel-agency-vietnam';
-import TopSellingTour from '@/components/pages/home/top-selling-tour';
-import WhyThreeland from '@/components/pages/home/why-threeland';
-import Destination from '@/components/pages/home/destination';
-import HighlightedExperiences from '@/components/pages/home/highlighted-experiences';
-import PopularMultiCountryTours from '@/components/pages/home/popular-multi-country-tours';
-import TravelStories from '@/components/pages/home/travel-stories';
-import ToursByTheme from '@/components/pages/home/tours-by-theme';
-import LatestNewsletter from '@/components/pages/home/latest-newsletter';
-import Partners from '@/components/pages/home/partners';
+const BestTravelAgencyVietnam = dynamic(
+  () => import('@/components/pages/home/best-travel-agency-vietnam'),
+);
+const TopSellingTour = dynamic(
+  () => import('@/components/pages/home/top-selling-tour'),
+);
+const WhyThreeland = dynamic(
+  () => import('@/components/pages/home/why-threeland'),
+);
+const Destination = dynamic(
+  () => import('@/components/pages/home/destination'),
+);
+const HighlightedExperiences = dynamic(
+  () => import('@/components/pages/home/highlighted-experiences'),
+);
+const PopularMultiCountryTours = dynamic(
+  () => import('@/components/pages/home/popular-multi-country-tours'),
+);
+const TravelStories = dynamic(
+  () => import('@/components/pages/home/travel-stories'),
+);
+const ToursByTheme = dynamic(
+  () => import('@/components/pages/home/tours-by-theme'),
+);
+const LatestNewsletter = dynamic(
+  () => import('@/components/pages/home/latest-newsletter'),
+);
+const Partners = dynamic(() => import('@/components/pages/home/partners'));
 
 export default function Home() {
   return (

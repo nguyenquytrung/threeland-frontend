@@ -6,23 +6,30 @@ import Helper from '@/lib/utils/helper';
 import Link from 'next/link';
 
 type Props = {
-  title?: string
-}
+  title?: string;
+  data?: Blog[];
+};
 
 const getData = async () => {
   const res = await fetch(Helper.apiRoutes(routes.blogs.highlights));
   if (!res.ok) {
-      console.log(res.statusText);
-      throw new Error('Server Error');
+    console.log(res.statusText);
+    throw new Error('Server Error');
   }
   const data = await res.json();
 
   return data.mostViewed;
+};
+
+export async function getServerSideProps() {
+  const data = await getData();
+  return {
+    props: { data },
+  };
 }
 
-const Index = async ({ title = 'Most viewed articles' }: Props) => {
-
-  const data: Blog[] = await getData();
+const Index = ({ data = [], title = 'Most viewed articles' }: Props) => {
+  // const data: Blog[] = await getData();
 
   return (
     <div className={`min-[1439px]:flex-row flex-col flex`}>
@@ -30,9 +37,9 @@ const Index = async ({ title = 'Most viewed articles' }: Props) => {
         <p className='text-[clamp(30px,3vw,48px)] 2xl:text-[48px] font-bold text-[#FFF]'>
           {title}
         </p>
-        {data.map(
+        {data?.map(
           (item, index) =>
-            (index > 0) && (
+            index > 0 && (
               <Link
                 href={`/blogs/${item.slug}`}
                 key={item.id}
@@ -52,14 +59,17 @@ const Index = async ({ title = 'Most viewed articles' }: Props) => {
       <section
         className={`flex-1 justify-center overflow-hidden text-[#FFFFFF]`}
         style={{
-          background: `url(${data[0].avatar ?? ''})`
+          background: `url(${data[0].avatar ?? ''})`,
         }}
       >
         <div
           className={`flex max-[144px]:h-[700px] flex-col justify-end p-20 h-full`}
         >
           <TimeAndShare item={data[0]} theme='dark' size='normal' />
-          <Link href={`/blogs/${data[0].slug}`} className='text-[36px] font-medium cursor-pointer hover:underline'>
+          <Link
+            href={`/blogs/${data[0].slug}`}
+            className='text-[36px] font-medium cursor-pointer hover:underline'
+          >
             {data[0].name}
           </Link>
         </div>

@@ -1,11 +1,26 @@
+import dynamic from 'next/dynamic';
 import React from 'react';
-import RecommendTour from '@/components/pages/destination/recommend-tour';
-import CustomerReviews from '@/components/pages/destination/customer-reviews';
-import ExploreBeautiful from '@/components/pages/destination/explore-beautiful';
-import FestivalVietnam from '@/components/pages/destination/festival-vietnam';
-import TopVietnamTravel from '@/components/pages/destination/top-vietnam-travel';
-import LatestPosts from '@/components/pages/destination/latest-posts';
-import GotQuestion from '@/components/pages/destination/got-question';
+const RecommendTour = dynamic(
+  () => import('@/components/pages/destination/recommend-tour'),
+);
+const CustomerReviews = dynamic(
+  () => import('@/components/pages/destination/customer-reviews'),
+);
+const ExploreBeautiful = dynamic(
+  () => import('@/components/pages/destination/explore-beautiful'),
+);
+const FestivalVietnam = dynamic(
+  () => import('@/components/pages/destination/festival-vietnam'),
+);
+const TopVietnamTravel = dynamic(
+  () => import('@/components/pages/destination/top-vietnam-travel'),
+);
+const LatestPosts = dynamic(
+  () => import('@/components/pages/destination/latest-posts'),
+);
+const GotQuestion = dynamic(
+  () => import('@/components/pages/destination/got-question'),
+);
 import DestinationBanner from '@/components/pages/destination/banner';
 
 const Page = () => {

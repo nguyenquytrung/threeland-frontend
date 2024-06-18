@@ -3,12 +3,12 @@ import { useRef } from 'react';
 import Slider from 'react-slick';
 import { relatedTourList } from '../const';
 
-import Locate from '@/svg/locate';
-import Clock from '@/svg/clockSvg';
-import Star from '@/svg/star';
-import ArrowLeft from '@/svg/arrow_left';
-import ArrowRight from '@/svg/arrow_right';
-import SeeMore from '@/svg/seeMore';
+import Locate from '@/components/svg/locate';
+import Clock from '@/components/svg/clockSvg';
+import Star from '@/components/svg/star';
+import ArrowLeft from '@/components/svg/arrow_left';
+import ArrowRight from '@/components/svg/arrow_right';
+import SeeMore from '@/components/svg/seeMore';
 
 // Import css files
 import 'slick-carousel/slick/slick.css';

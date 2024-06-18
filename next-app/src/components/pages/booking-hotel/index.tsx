@@ -4,7 +4,7 @@ import Filter from '../destination/recommend-tour/filter';
 import HotelThumb from '@/assets/images/hotel-booking/hotel-thumb.png';
 import StarImage from '@/assets/images/user-vote.svg';
 import LocationHeImage from '@/assets/images/he-loc.svg';
-import SeeMore from '@/svg/seeMore';
+import SeeMore from '@/components/svg/seeMore';
 import GardenViewImage from '@/assets/images/hotel-booking/garden-view.svg';
 import WifiImage from '@/assets/images/hotel-booking/wifi.svg';
 import FreeWasherImage from '@/assets/images/hotel-booking/free-washer.svg';

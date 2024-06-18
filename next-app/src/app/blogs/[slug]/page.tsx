@@ -1,11 +1,21 @@
-import BannerBlog from '@/components/pages/blogs/banner-blog';
-import Content from '@/components/pages/blogs/detail/content';
 import routes from '@/configs/apiRoutes';
 import Blog from '@/lib/models/blog';
 import Helper from '@/lib/utils/helper';
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+const BannerBlog = dynamic(
+  () => import('@/components/pages/blogs/banner-blog'),
+);
+const Content = dynamic(
+  () => import('@/components/pages/blogs/detail/content'),
+);
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   const blog: Blog = await getData(params.slug);
 
   return {
@@ -13,24 +23,23 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     applicationName: 'Threeland Travel',
     description: blog.meta_description,
     keywords: blog.meta_keyword,
-  }
+  };
 }
 
 const getData = async (slug: string) => {
   const res = await fetch(Helper.apiRoutes(routes.blogs.detail + slug), {
     next: {
-      revalidate: 60 * 10
-    }
+      revalidate: 60 * 10,
+    },
   });
   if (!res.ok) {
     console.log(res.statusText);
     throw new Error('Server Error');
   }
   return res.json();
-}
+};
 
 const Index = async ({ params }: { params: { slug: string } }) => {
-
   const blog: Blog = await getData(params.slug);
 
   return (

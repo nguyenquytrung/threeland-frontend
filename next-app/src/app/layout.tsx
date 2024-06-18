@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import { DM_Sans } from 'next/font/google';
 import './globals.css';
-import Header from '@/components/core/header';
-import Footer from '@/components/core/footer';
+import dynamic from 'next/dynamic';
+const Header = dynamic(() => import('@/components/core/header'));
+const Footer = dynamic(() => import('@/components/core/footer'));
 
 const inter = DM_Sans({ subsets: ['latin'] });
 
