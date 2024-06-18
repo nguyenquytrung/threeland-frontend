@@ -1,322 +1,102 @@
+"use client";
+
 import DotSvg from '@/svg/dotSvg';
 import Image from 'next/image';
 // Import css files
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/core/ui/dialog';
-
-import SeeMoreImage from '@/assets/images/see-more.svg';
-import Detail1 from '@/assets/images/blogs/detail1.jpg';
-import Detail2 from '@/assets/images/blogs/detail2.jpg';
-import Detail3 from '@/assets/images/blogs/detail3.jpg';
-import Detail4 from '@/assets/images/blogs/detail4.jpg';
-import Detail5 from '@/assets/images/blogs/detail5.jpg';
-
-import TickSvg from '@/svg/tick';
 import Facebook from '@/svg/facebookSocial';
 import In from '@/svg/inSocial';
 import Thread from '@/svg/threadSocial';
 import Twitter from '@/assets/images/twitter.png';
-import Comment from '@/assets/images/blogs/comment.svg';
 import Comments from './comments';
+import Blog from '@/lib/models/blog';
+import DOMPurify from 'isomorphic-dompurify';
+import React from 'react';
+import Form from './form';
 
-const Index = () => {
-  return (
-    <div className='lg:max-w-[1128px]'>
-      <p className='leading-[35px] pb-10 text-justify'>
-        Tasting coffee in Vietnam is an experience that we highly recommend to
-        our readers. This simple drink is more than simply a source of energy
-        for the day; it is an essential component of Vietnamese culture. The
-        strong but delicious fragrance of freshly brewed coffee can be found on
-        practically every street in Vietnam, whether at roadside vendors or
-        trendy cafés. Vietnam has evolved into one of the world&apos;s leading
-        suppliers of high-quality coffee. Vietnam has also perfected the process
-        of roasting and brewing, and it now offers a variety of coffee varieties
-        that are gaining appeal internationally. Vietnam was a French colony in
-        the nineteenth century, and the French introduced coffee around 1850.
-        Within a few years, coffee cultivation had spread throughout much of
-        Vietnam. Initially, output was centered on poor-quality Robusta beans.
-        After gaining independence, the Vietnamese adopted coffee as their own
-        drink, enhanced quality by cultivating many species of coffee beans in
-        Vietnam, and improved the production and export infrastructure. Today,
-        Vietnam is the world&apos;s second-largest coffee producer, behind
-        Brazil.
-      </p>
-      <div className='lr-[200px]'>
-        <div className='h-[1px] bg-[#E9ECEF]' />
-        <div className='py-5'>
-          <p className='font-bold text-[24px]'>TABLE OF CONTENTS</p>
-          <div className='flex mx-10 my-5'>
-            <p className='text-[20px] w-[30px] h-[30px] rounded-[20px] bg-[#0066B3] text-[#FFF] text-center'>
-              1
+type Props = {
+    blog: Blog,
+}
+
+const Index = ({ blog }: Props) => {
+    
+    const url = encodeURIComponent(process.env.NEXT_PUBLIC_BASE_URL + `blogs/${blog.slug}`);
+
+    const scrollTo = (id: string) => {
+        document.querySelector(`#${id}`)?.scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+
+    return (
+        <div className='lg:max-w-[1128px]'>
+            <p className='leading-[35px] pb-10 text-justify'>
+                {blog.description}
             </p>
-            <p className='text-[20px] mx-5 text-[#0066B3]'>
-              Tasting coffee in Vietnam
-            </p>
-          </div>
-          <div className='flex mx-10 my-5'>
-            <p className='text-[20px] w-[30px] h-[30px] text-[#FFF] rounded-[20px] bg-[#0066B3] text-center'>
-              2
-            </p>
-            <div>
-              <p className='text-[20px] mx-5 text-[#0066B3] mb-5'>
-                Many of life&apos;s failures
-              </p>
-              <div className='mx-5 flex'>
-                <div className='w-2 h-2 self-center'>
-                  <DotSvg color='#0066B3' />
+            <div className='lr-[200px]'>
+                <div className='h-[1px] bg-[#E9ECEF]' />
+                <div className='py-5'>
+                    <p className='font-bold text-[24px]'>TABLE OF CONTENTS</p>
+                    {blog.tableContent?.map((item, idx) => (
+                        <React.Fragment key={item.id}>
+                            <div className='flex mx-10 my-5'>
+                                <p className='text-[20px] w-[30px] h-[30px] text-[#FFF] rounded-[20px] bg-[#0066B3] text-center'>
+                                    {idx + 1}
+                                </p>
+                                <div>
+                                    <p className='text-[20px] mx-5 text-[#0066B3] mb-5 cursor-pointer' onClick={() => scrollTo(item.id)}>
+                                        {item.name}
+                                    </p>
+                                    {item.children?.map((child) => (
+                                        <div className='mx-5 flex' key={child.id}>
+                                            <div className='w-2 h-2 self-center'>
+                                                <DotSvg color='#0066B3' />
+                                            </div>
+                                            <p className='mx-5 text-[20px] text-[#0066B3]'>
+                                                {child.name}
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </React.Fragment>
+                    ))}
                 </div>
-                <p className='mx-5 text-[20px] text-[#0066B3]'>
-                  Vietnamese Coffee: Discover the World&apos;s Best Coffee
-                </p>
-              </div>
-              <div className='mx-5 flex'>
-                <div className='w-2 h-2 self-center'>
-                  <DotSvg color='#0066B3' />
-                </div>
-                <p className='mx-5 text-[20px] text-[#0066B3]'>
-                  Tasting coffee in Vietnam is an experience
-                </p>
-              </div>
+                <div className='h-[1px] bg-[#E9ECEF]' />
             </div>
-          </div>
-          <div className='flex mx-10 my-5'>
-            <p className='text-[20px] w-[30px] h-[30px] text-[#FFF] rounded-[20px] bg-[#0066B3] text-center'>
-              3
-            </p>
-            <p className='text-[20px] mx-5 text-[#0066B3]'>
-              Tasting coffee in Vietnam
-            </p>
-          </div>
-        </div>
-        <div className='h-[1px] bg-[#E9ECEF]' />
-      </div>
-      <div>
-        <p className='text-[25px] font-bold leading-[40px] py-10 w-3/4'>
-          Many of life&apos;s failures are people who did not realize how close
-          they were to success when they gave up.
-        </p>
-        <p className='text-[16px] leading-[25px] pb-8'>
-          Quickly monetize synergistic portals via efficient e-commerce.
-          Phosfluorescently reinvent frictionless intellectual capital vis-a-vis
-          an expanded array of niches. Efficiently provide access to interactive
-          scenarios vis-a-vis bleeding-edge value. Energistically maximize
-          premium meta-services and multifunctional collaboration and
-          idea-sharing. Dramatically unleash front-end value after
-          out-of-the-box opportunities. Energistically streamline magnetic
-          action items after global markets. Collaboratively scale
-          backward-compatible leadership skills and 24/7 best practices.
-          Objectively exploit emerging methodologies vis-a-vis functionalized
-          ideas. Energistically reconceptualize out-of-the-box innovation
-          vis-a-vis cooperative methods of empowerment. Uniquely foster
-          revolutionary value whereas accurate communities.
-        </p>
-        <p className='text-[16px] leading-[25px]'>
-          Conveniently engineer robust experiences after performance based
-          initiatives. Credibly communicate strategic technology whereas turnkey
-          functionalities. Professionally re-engineer magnetic markets for
-          highly efficient functionalities. Efficiently fabricate user friendly
-          opportunities for backward-compatible experiences. Competently scale
-          team building relationships through real-time solutions.
-        </p>
-        <div>
-          <div className='flex gap-5 h-auto max-h-[380px] py-5 max-w-full'>
-            <div className='max-w-1/2'>
-              <Image
-                src={Detail1}
-                alt='duration'
-                className='flex-1 object-cover h-full'
-              />
-            </div>
-            <div className='max-w-1/2'>
-              <Image
-                src={Detail2}
-                alt='duration'
-                className='flex-1 object-cover h-full'
-              />
-            </div>
-          </div>
-          <div className='flex gap-5 h-auto max-h-[380px] pb-5 w-full'>
-            <div className='max-w-3/4'>
-              <Image
-                src={Detail3}
-                alt='duration'
-                className='object-cover h-full'
-              />
-            </div>
-            <div className='max-w-1/3'>
-              <Image
-                src={Detail4}
-                alt='duration'
-                className='object-cover h-full'
-              />
-            </div>
-          </div>
-        </div>
-        <p className='text-[16px] leading-[33px]'>
-          Sit dis sed ante integer ullamcorper vel donec tellus a. Nisi vici
-          vulputate elit quis adipiscing aenean imperdiet justo varius. Vel eget
-          luctus a sem pede sit metus nulla maecenas. Etiam eleifend curabitur
-          lorem. Viverra faucibus sem ultricies vitae etiam quam id feugiat in
-          tellus vici ut. Tellus quam varius commodo luctus aliquam nec amet
-          nullam quis viverra sit fringilla consectetuer.
-        </p>
-        <div className='py-5'>
-          <div className='flex py-2'>
-            <TickSvg />
-            <p className='px-3 text-[16px] italic font-bold'>
-              Ultricies sit semper leo dolor maecenas.
-            </p>
-          </div>
-          <div className='flex py-2'>
-            <TickSvg />
-            <p className='px-3 text-[16px] italic font-bold'>
-              Magnis nam penatibus justo nec quis eget amet venenatis integer
-              rutrum eleifend commodo tincidunt.
-            </p>
-          </div>
-          <div className='flex py-2'>
-            <TickSvg />
-            <p className='px-3 text-[16px] italic font-bold'>
-              Aenean nunc pretium lorem ullamcorper leo.
-            </p>
-          </div>
-          <div className='flex py-2'>
-            <TickSvg />
-            <p className='px-3 text-[16px] italic font-bold'>
-              Nec arcu ullamcorper lorem mus eu.
-            </p>
-          </div>
-          <div className='flex py-2'>
-            <TickSvg />
-            <p className='px-3 text-[16px] italic font-bold'>
-              Elit natoque mollis quisque..
-            </p>
-          </div>
-        </div>
-        <p className='text-[16px] leading-[33px] pb-5'>
-          Sit dis sed ante integer ullamcorper vel donec tellus a. Nisi vici
-          vulputate elit quis adipiscing aenean imperdiet justo varius. Vel eget
-          luctus a sem pede sit metus nulla maecenas. Etiam eleifend curabitur
-          lorem. Viverra faucibus sem ultricies vitae etiam quam id feugiat in
-          tellus vici ut. Tellus quam varius commodo luctus aliquam nec amet
-          nullam quis viverra sit fringilla consectetuer.
-        </p>
-        <p className='text-[16px] leading-[33px] pb-5'>
-          Sociis consequat adipiscing sit curabitur donec sem luctus cras
-          natoque vulputate dolor eget dapibus. Nec vitae eros ullamcorper
-          laoreet dapibus mus ac ante viverra. A aenean sit augue curabitur et
-          parturient nisi sed enim. Nulla nec quis sit quisque sem commodo
-          ultricies neque. Lorem eget venenatis dui ante luctus ultricies tellus
-          montes. Quis in sapien tempus.
-        </p>
-        <Image
-          src={Detail3}
-          alt='duration'
-          className='flex-3 h-[600px] object-cover pb-5'
-        />
-        <p className='text-[16px] leading-[33px] pb-5'>
-          Sociis consequat adipiscing sit curabitur donec sem luctus cras
-          natoque vulputate dolor eget dapibus. Nec vitae eros ullamcorper
-          laoreet dapibus mus ac ante viverra. A aenean sit augue curabitur et
-          parturient nisi sed enim. Nulla nec quis sit quisque sem commodo
-          ultricies neque. Lorem eget venenatis dui ante luctus ultricies tellus
-          montes. Quis in sapien tempus.
-        </p>
-        <div className='grid grid-cols-3 gap-5'>
-          <Image src={Detail5} alt='duration' className='h-full object-cover' />
-          <Image src={Detail5} alt='duration' className='h-full object-cover' />
-          <Image src={Detail5} alt='duration' className='h-full object-cover' />
-        </div>
-      </div>
-      <div className='h-[1px] bg-[#E9ECEF] my-10' />
-      <div className='flex gap-4 flex-wrap mb-6'>
-        <p className='text-[24px] font-semibold pr-5'>Share: </p>
-        <div className='self-center flex bg-[#3B5998] h-[48px] px-7 rounded-[4px]'>
-          <div className='w-[24px] h-[24px] self-center bg-[#FFF] p-[7.5px] rounded-[20px]'>
-            <Facebook />
-          </div>
-        </div>
-        <div className='self-center flex bg-[#d3d3d3] h-[48px] px-7 rounded-[4px]'>
-          <div className='self-center rounded-[20px]'>
-            <Image src={Twitter} alt='twitter' width={22} />
-          </div>
-        </div>
-        <div className='self-center flex bg-[#FF0000] h-[48px] px-7 rounded-[4px]'>
-          <div className='w-[24px] h-[24px] self-center bg-[#FFF] p-[7.5px] rounded-[20px]'>
-            <Thread />
-          </div>
-        </div>
-        <div className='self-center flex bg-[#007BB6] h-[48px] px-7 rounded-[4px]'>
-          <div className=' self-center rounded-[20px]'>
-            <In />
-          </div>
-        </div>
+            <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.detail ?? '') }}></div>
+            <div className='h-[1px] bg-[#E9ECEF] my-10' />
+            <div className='flex gap-4 flex-wrap mb-6'>
+                <p className='text-[24px] font-semibold pr-5'>Share: </p>
+                <a className='self-center flex bg-[#3B5998] h-[48px] px-7 rounded-[4px]' href={`https://www.facebook.com/sharer/sharer.php?u=${url}`} target="_blank">
+                    <div className='w-[24px] h-[24px] self-center bg-[#FFF] p-[7.5px] rounded-[20px]'>
+                        <Facebook />
+                    </div>
+                </a>
+                <a className='self-center flex bg-[#d3d3d3] h-[48px] px-7 rounded-[4px]' href={`https://twitter.com/share?url=${url}`} target='_blank'>
+                    <div className='self-center rounded-[20px]'>
+                        <Image src={Twitter} alt='twitter' width={22} />
+                    </div>
+                </a>
+                <a className='self-center flex bg-[#FF0000] h-[48px] px-7 rounded-[4px]' href={`https://pinterest.com/pin/create/button/?url=${url}`} target='_blank'>
+                    <div className='w-[24px] h-[24px] self-center bg-[#FFF] p-[7.5px] rounded-[20px]'>
+                        <Thread />
+                    </div>
+                </a>
+                <a className='self-center flex bg-[#007BB6] h-[48px] px-7 rounded-[4px]' href={`http://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${blog.meta_title}&source=${process.env.NEXT_PUBLIC_BASE_URL}`} target='_blank'>
+                    <div className=' self-center rounded-[20px]'>
+                        <In />
+                    </div>
+                </a>
 
-        <Dialog>
-          <DialogTrigger asChild>
-            <div
-              role='button'
-              className='flex gap-2 items-center justify-center hover:bg-[#015391] bg-[#0066B3] rounded-full p-[10px 24px 10px 24px] px-3 h-[48px] text-white ml-auto'
-            >
-              <span>Write a comment</span>
-              <Image src={Comment} alt='comment' />
+                <Form blog={blog} />
             </div>
-          </DialogTrigger>
-          <DialogContent className='bg-white md:rounded-[32px] p-0 overflow-hidden border-0 max-w-[749px]'>
-            <div className='bg-[rgba(0,102,179,1)] p-6'>
-              <h3 className='text-white text-[24px]'>Write a comment</h3>
-            </div>
-            <form className='px-5 pb-8 text-[11px]'>
-              <label className='font-extralight'>FULL NAME</label>
-              <br />
-              <input
-                type='text'
-                placeholder='Full Name'
-                className='h-[32px] rounded-[4px] border border-[rgba(205,208,208,1)] mt-2 w-full px-2 mb-6'
-              />
-              <label className='font-extralight'>TITLE</label>
-              <br />
-              <input
-                type='text'
-                placeholder='Title'
-                className='h-[32px] rounded-[4px] border border-[rgba(205,208,208,1)] mt-2 w-full px-2 mb-6'
-              />
-              <label className='font-extralight'>CONTENT</label>
-              <br />
-              <textarea
-                placeholder='Content'
-                className='min-h-[100px] rounded-[4px] border border-[rgba(205,208,208,1)] mt-2 w-full p-2 mb-6'
-              />
-              <button className='flex gap-3 items-center justify-center w-full rounded-[24.85px] bg-[rgba(0,102,179,1)] p-2'>
-                <span className='text-white text-[18px]'>Send</span>
-                <Image src={SeeMoreImage} alt='see-more' />
-              </button>
-            </form>
-          </DialogContent>
-        </Dialog>
-      </div>
 
-      <Comments />
-      <div
-        role='button'
-        className='bg-[#0066B3] h-[70px] text-[white] rounded-[8px] flex items-center justify-center mt-6'
-      >
-        <p className='sm:text-[24px] sm:tracking-[5px] tracking-[3px]'>
-          VIEW COMMENTS (0)
-        </p>
-      </div>
-    </div>
-  );
+            <Comments blog={blog} />
+        </div>
+    );
 };
 
 export default Index;

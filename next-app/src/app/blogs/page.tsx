@@ -1,34 +1,45 @@
-'use client';
-import React from 'react';
-
 import BlogList from '@/components/pages/blogs/blog-list';
 import BannerBlog from '@/components/pages/blogs/banner-blog';
 import Tag from '@/components/pages/blogs/tag';
 import ViewedArticles from '@/components/pages/blogs/viewed-articles';
 import Tour from '@/components/pages/blogs/tour';
 import AllArticles from '@/components/pages/blogs/all-articles';
-import Categories from '@/components/pages/blogs/categories';
 import RelatedTour from '@/components/pages/blogs/related-tour';
+import Helper from '@/lib/utils/helper';
+import routes from '@/configs/apiRoutes';
 
-const Page = () => {
+const getData = async () => {
+  const res = await fetch(Helper.apiRoutes(routes.blogs.data));
+  if (!res.ok) {
+    console.log(res.statusText);
+    throw new Error('Server Error');
+  }
+  const data = await res.json();
+
+  return {
+    highlights: data.highlights,
+    mostViewed: data.mostViewed,
+    list: data.list,
+    categories: data.categories ?? [],
+  };
+}
+
+const Page = async () => {
+  const data = await getData();
+
   return (
     <main>
-      <BannerBlog />
+      <BannerBlog isDetail={false} />
 
-      <BlogList />
+      <BlogList blogs={data.highlights} />
 
-      <Tag />
+      <Tag initialList={data.list} />
 
-      <ViewedArticles />
+      <ViewedArticles data={data.mostViewed} />
 
       <Tour />
 
-      <div
-        className={`flex justify-between lg:flex-row flex-col px-[24px] sm:px-[50px] lg:px-[100px] mt-20`}
-      >
-        <AllArticles />
-        <Categories />
-      </div>
+      <AllArticles initialList={data.list} categories={data.categories} />
 
       <RelatedTour />
       {/* <Banner

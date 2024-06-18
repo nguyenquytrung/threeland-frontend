@@ -12,9 +12,9 @@ export default function locate({ theme }: any) {
       <path
         d="M11.183 20.8177L20.4733 11.5273M20.4733 11.5273H14.2798M20.4733 11.5273V17.7209"
         stroke={theme === 'dark' ? "#0066B3" : "#071516"}
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

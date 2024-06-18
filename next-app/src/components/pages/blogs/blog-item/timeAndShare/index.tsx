@@ -17,7 +17,7 @@ const Index = (props: any) => {
           theme === 'dark' ? '#FFF' : '#6A7373'
         }] self-center`}
       >
-        {item?.time}
+        {item?.created_at}
       </p>
     </div>
   );

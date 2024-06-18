@@ -1,52 +1,65 @@
-import React from 'react';
+"use client";
 
-const comments = [
-  {
-    id: 0,
-    userName: 'Luci Avetisyan',
-    comment:
-      'Sed cras nec a nulla sapien adipiscing ut etiam. In sem viverra mollis metus quam adipiscing vel nascetur condimentum felis sapien. Pede consequat laoreet enim sit aliquet mollis semper.',
-  },
-  {
-    id: 1,
-    userName: 'Luci Avetisyan',
-    comment:
-      'Sed cras nec a nulla sapien adipiscing ut etiam. In sem viverra mollis metus quam adipiscing vel nascetur condimentum felis sapien. Pede consequat laoreet enim sit aliquet mollis semper.',
-  },
-  {
-    id: 2,
-    userName: 'Luci Avetisyan',
-    comment:
-      'Sed cras nec a nulla sapien adipiscing ut etiam. In sem viverra mollis metus quam adipiscing vel nascetur condimentum felis sapien. Pede consequat laoreet enim sit aliquet mollis semper.',
-  },
-  {
-    id: 3,
-    userName: 'Luci Avetisyan',
-    comment:
-      'Sed cras nec a nulla sapien adipiscing ut etiam. In sem viverra mollis metus quam adipiscing vel nascetur condimentum felis sapien. Pede consequat laoreet enim sit aliquet mollis semper.',
-  },
-  {
-    id: 4,
-    userName: 'Luci Avetisyan',
-    comment:
-      'Sed cras nec a nulla sapien adipiscing ut etiam. In sem viverra mollis metus quam adipiscing vel nascetur condimentum felis sapien. Pede consequat laoreet enim sit aliquet mollis semper.',
-  },
-];
+import { getComments } from '@/app/action';
+import Blog from '@/lib/models/blog';
+import Comment from '@/lib/models/comment';
+import Swal from '@/lib/sweetalert';
+import React, { useState } from 'react';
 
-const Comments = () => {
-  return (
-    <div>
-      {comments.map((cmt, index) => (
-        <React.Fragment key={cmt.id}>
-          <div>
-            <h4 className='text-[24px] font-semibold'>{cmt.userName}</h4>
-            <p className='text-[18px] font-extralight mt-3'>{cmt.comment}</p>
-          </div>
-          {index !== comments.length - 1 && <hr className='my-5' />}
-        </React.Fragment>
-      ))}
-    </div>
-  );
+type Props = {
+    blog: Blog
+}
+
+const Comments = ({ blog }: Props) => {
+
+    const [comments, setComments] = useState<Comment[]>([]);
+    const [loading, setLoading] = useState(false);
+
+    const loadComments = async () => {
+        if (!blog.id) return;
+
+        setLoading(true);
+        const res = await getComments(blog.id);
+        setLoading(false);
+        if (!res) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Something went wrong!",
+                showConfirmButton: false,
+                timer: 1500,
+            });
+            return;
+        }
+        setComments(res);
+    }
+
+    return (
+        <>
+            <div>
+                {comments.map((cmt, index) => (
+                    <React.Fragment key={cmt.id}>
+                        <div>
+                            <h4 className='text-[24px] font-semibold'>{cmt.name}</h4>
+                            <p className='text-[18px] font-extralight mt-3'>{cmt.content}</p>
+                        </div>
+                        {index !== comments.length - 1 && <hr className='my-5' />}
+                    </React.Fragment>
+                ))}
+            </div>
+            {(blog.comments_count !== comments.length) && <form action={loadComments}>
+                <button
+                    role='button'
+                    className='bg-[#0066B3] h-[70px] text-[white] rounded-[8px] flex items-center justify-center mt-6 w-full disabled:opacity-75 disabled:cursor-not-allowed'
+                    disabled={loading}
+                >
+                    <p className='sm:text-[24px] sm:tracking-[5px] tracking-[3px]'>
+                        VIEW COMMENTS ({blog.comments_count})
+                    </p>
+                </button>
+            </form>}
+        </>
+    );
 };
 
 export default Comments;
