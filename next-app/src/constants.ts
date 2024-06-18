@@ -14,6 +14,7 @@ import VietnamTourImage from '@/assets/images/tour-style-tooltip/vietnam-tour.jp
 import LaosTourImage from '@/assets/images/tour-style-tooltip/laos-tour.jpeg';
 import CambodiaTourImage from '@/assets/images/tour-style-tooltip/cambodia-tour.jpeg';
 import MyanmarTourImage from '@/assets/images/tour-style-tooltip/myanmar-tour.jpeg';
+import ThailandTourImage from '@/assets/images/tour-style-tooltip/thailand-tour.jpeg';
 
 export const tourStyleTooltip = [
   { id: 0, img: TopSellingTourImage, name: 'Top Selling Tour' },
@@ -31,15 +32,51 @@ export const tourStyleTooltip = [
 ];
 
 export const tourStyleCountriesTooltip = [
-  { id: 0, img: VietnamTourImage, name: 'Vietnam Tours' },
-  { id: 1, img: LaosTourImage, name: 'Cambodia Tours' },
-  { id: 2, img: CambodiaTourImage, name: 'Laos Tours' },
-  { id: 3, img: MyanmarTourImage, name: 'Myanmar Tours' },
+  {
+    id: 0,
+    img: VietnamTourImage,
+    name: 'Vietnam Tours',
+    route: '/vietnam-tours',
+  },
+  {
+    id: 1,
+    img: LaosTourImage,
+    name: 'Cambodia Tours',
+    route: '/cambodia-tours',
+  },
+  { id: 2, img: CambodiaTourImage, name: 'Laos Tours', route: '/laos-tours' },
+  {
+    id: 3,
+    img: MyanmarTourImage,
+    name: 'Myanmar Tours',
+    route: '/myanmar-tours',
+  },
+  {
+    id: 4,
+    img: ThailandTourImage,
+    name: 'Thailand Tours',
+    route: '/thailand-tours',
+  },
 ];
 
 export const extrasTooltip = [
-  { id: 0, img: VietnamTourImage, name: 'Halong Bay Cruises' },
-  { id: 1, img: LaosTourImage, name: 'Mekong River Cruises' },
-  { id: 2, img: CambodiaTourImage, name: 'Hotel Booking' },
-  { id: 3, img: MyanmarTourImage, name: 'And-On Service' },
+  {
+    id: 0,
+    img: VietnamTourImage,
+    name: 'Halong Bay Cruises',
+    route: '/halong-bay-cruises',
+  },
+  {
+    id: 1,
+    img: LaosTourImage,
+    name: 'Mekong River Cruises',
+    route: '/mekong-river-cruises',
+  },
+  {
+    id: 2,
+    img: CambodiaTourImage,
+    name: 'Hotel Booking',
+    route: '/hotel-booking',
+  },
+  { id: 3, img: MyanmarTourImage, name: 'And-On Service', route: '/extra' },
 ];

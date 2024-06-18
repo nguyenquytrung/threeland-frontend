@@ -37,7 +37,7 @@ export const ArrayBlogs = [
     image: post1,
   },
   {
-    id: 1,
+    id: 4,
     stt: '01',
     time: 'June 28, 2018',
     share: '4k',
@@ -48,7 +48,7 @@ export const ArrayBlogs = [
     image: post2,
   },
   {
-    id: 2,
+    id: 5,
     stt: '02',
     time: 'June 28, 2018',
     share: '5k',
@@ -59,7 +59,7 @@ export const ArrayBlogs = [
     image: post1,
   },
   {
-    id: 3,
+    id: 6,
     stt: '03',
     time: 'June 28, 2018',
     share: '6k',
@@ -70,7 +70,7 @@ export const ArrayBlogs = [
     image: post2,
   },
   {
-    id: 1,
+    id: 7,
     stt: '01',
     time: 'June 28, 2018',
     share: '7k',
@@ -81,7 +81,7 @@ export const ArrayBlogs = [
     image: post1,
   },
   {
-    id: 2,
+    id: 8,
     stt: '02',
     time: 'June 28, 2018',
     share: '8k',

@@ -33,7 +33,7 @@ const Banner = (props: Props) => {
         isMobileFullScreen
           ? 'h-[calc(100vh-144px)] max-[1300px]:h-[calc(100vh-69px)]'
           : 'h-[clamp(200px,10vw,400px)] lg:max-[1300px]:h-[calc(100vh-69px)] min-[1301px]:h-[calc(100vh-144px)]'
-      } overflow-hidden bg-cover`}
+      } overflow-hidden bg-cover bg-center`}
     >
       <div className='absolute inset-0 bg-black bg-opacity-[0.3] flex flex-col items-center justify-center'>
         {title && (

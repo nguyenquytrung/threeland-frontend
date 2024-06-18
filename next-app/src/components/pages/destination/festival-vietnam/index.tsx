@@ -4,10 +4,10 @@ import FestivalVietnamImage from '@/assets/images/festival-vietnam.png';
 
 const FestivalVietnam = () => {
   return (
-    <section className='max-w-[1910px] px-[100px] mx-auto py-[4rem]'>
+    <section className='max-w-[1910px] px-[24px] sm:px-[50px] lg:px-[100px] mx-auto py-[4rem]'>
       <h3 className='text-[56px] font-semibold'>Festival Vietnam</h3>
       <div className='flex gap-4'>
-        <div className='max-w-[50%] flex flex-col gap-6'>
+        <div className='min-[960px]:max-w-[50%] flex flex-col gap-6'>
           <p className='text-[rgba(106,115,115,1)] font-extralight'>
             For those who are deeply interested in cultural and spiritual
             events, choosing tours and taking part in festivals will be one of
@@ -33,6 +33,11 @@ const FestivalVietnam = () => {
                 Explore
               </span>
             </div>
+            <Image
+              src={FestivalVietnamImage}
+              alt='festival-vietnam'
+              className='object-cover w-full mt-4'
+            />
           </div>
 
           <p className='text-[32px] text-[rgba(156,161,162,1)] font-extralight'>
@@ -43,7 +48,7 @@ const FestivalVietnam = () => {
             Dien Bien Phu Victory Day
           </p>
         </div>
-        <div className='max-w-[50%] flex-1 rounded-[20px] overflow-hidden'>
+        <div className='max-w-[50%] flex-1 rounded-[20px] overflow-hidden hidden min-[960px]:block'>
           <Image
             src={FestivalVietnamImage}
             alt='festival-vietnam'

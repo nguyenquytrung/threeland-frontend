@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 export default function shareSvg({ color }: any) {
   return (
     <svg
-      width="17"
-      height="18"
-      viewBox="0 0 17 18"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+      width='17'
+      height='18'
+      viewBox='0 0 17 18'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
     >
       <path
         d="M3.04545 11C4.17513 11 5.09091 10.1046 5.09091 9C5.09091 7.89543 4.17513 7 3.04545 7C1.91578 7 1 7.89543 1 9C1 10.1046 1.91578 11 3.04545 11Z"

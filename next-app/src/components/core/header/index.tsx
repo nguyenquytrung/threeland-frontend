@@ -1,3 +1,4 @@
+// import { useRouter } from 'next/navigation';
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -31,6 +32,14 @@ import HotelBookingImage from '@/assets/images/extras-tooltip/hotel-booking.jpeg
 import ExtraServiceImage from '@/assets/images/extras-tooltip/extra-service.jpeg';
 
 const Header = () => {
+  // const router = useRouter();
+  // const navigateTourStyle = (title: string) => {
+  //   router.push({
+  //     pathname: `/tours/${title.split(' ').join('-').toLowerCase()}`,
+  //     query: { title },
+  //   });
+  // };
+
   return (
     <>
       <header className='hidden min-[1300px]:flex flex-col h-[144px] bg-[white] text-[black]'>
@@ -70,6 +79,8 @@ const Header = () => {
                 Home
               </Link>
             </div>
+
+            {/* Destination */}
             <div className='relative group h-full flex items-center'>
               <div role='button' className='flex gap-2 items-center'>
                 <p className='text-[16px]'>Destinations</p>
@@ -77,8 +88,8 @@ const Header = () => {
               </div>
 
               {/* Destination popover */}
-              <div className='transition-all z-10 absolute w-[680px] top-[60px] hidden group-hover:flex justify-between bg-white p-4 border-t-[4px] border-t-[#0066B3]'>
-                <div className='max-w-[200px]'>
+              <div className='transition-all z-10 absolute w-max top-[60px] hidden group-hover:flex justify-between gap-2 bg-white p-4 border-t-[4px] border-t-[#0066B3]'>
+                <div className='max-w-[200px] flex-1'>
                   <h5 className='font-semibold'>OUR DESTINATION</h5>
                   <p className='mt-4 font-extralight text-[14px]'>
                     Blessed with stunning landscape & seascape, founded as a
@@ -88,10 +99,10 @@ const Header = () => {
                     adventure to wellness, luxury holidays.
                   </p>
                 </div>
-                <div className='flex-1 max-w-[423px]'>
+                <div className='flex-1'>
                   <div
                     role='button'
-                    className="group/des bg-[url('https://threeland.com/images/country/destination-vietnam.jpg')] h-[120px]"
+                    className="group/des bg-[url('https://threeland.com/images/country/destination-vietnam.jpg')] h-[180px] bg-no-repeat bg-cover"
                   >
                     <Link
                       href='/vietnam-tours'
@@ -102,44 +113,73 @@ const Header = () => {
                       </span>
                     </Link>
                   </div>
-                  <div className='flex justify-between mt-2'>
+                  <div className='flex justify-between mt-2 gap-2'>
+                    {/* LAOS */}
                     <div
                       role='button'
                       className="group/des bg-[url('https://threeland.com/images/country/destination-laos.jpg')] h-[110px] w-[136px]"
                     >
-                      <div className='transition-all w-full h-full flex items-center justify-center group-hover/des:bg-black group-hover/des:bg-opacity-[0.3]'>
+                      <Link
+                        href='/laos-tours'
+                        className='transition-all w-full h-full flex items-center justify-center group-hover/des:bg-black group-hover/des:bg-opacity-[0.3]'
+                      >
                         <span className='transition-all text-white font-semibold text-[18px] group-hover/des:underline'>
                           LAOS
                         </span>
-                      </div>
+                      </Link>
                     </div>
 
+                    {/* CAMBODIA */}
                     <div
                       role='button'
                       className="group/des bg-[url('https://threeland.com/images/country/destination-cambodia.jpg')] h-[110px] w-[136px]"
                     >
-                      <div className='transition-all w-full h-full flex items-center justify-center group-hover/des:bg-black group-hover/des:bg-opacity-[0.3]'>
+                      <Link
+                        href='/cambodia-tours'
+                        className='transition-all w-full h-full flex items-center justify-center group-hover/des:bg-black group-hover/des:bg-opacity-[0.3]'
+                      >
                         <span className='transition-all text-white font-semibold text-[18px] group-hover/des:underline'>
                           CAMBODIA
                         </span>
-                      </div>
+                      </Link>
                     </div>
 
+                    {/* MYANMAR */}
                     <div
                       role='button'
                       className="group/des bg-[url('https://threeland.com/image/country/myanmar3.jpg')] h-[110px] w-[136px] bg-contain"
                     >
-                      <div className='transition-all w-full h-full flex items-center justify-center group-hover/des:bg-black group-hover/des:bg-opacity-[0.3]'>
+                      <Link
+                        href='/myanmar-tours'
+                        className='transition-all w-full h-full flex items-center justify-center group-hover/des:bg-black group-hover/des:bg-opacity-[0.3]'
+                      >
                         <span className='transition-all text-white font-semibold text-[18px] group-hover/des:underline'>
                           MYANMAR
                         </span>
-                      </div>
+                      </Link>
+                    </div>
+
+                    {/* THAILAND */}
+                    <div
+                      role='button'
+                      className="group/des bg-[url('https://media.istockphoto.com/id/547216392/photo/wat-phra-kaew-bangkok-thailand.webp?b=1&s=170667a&w=0&k=20&c=vPdu9mQpLO-cXP8UgLzK5ZC6DtgulNJqc02Nt-51Cts=')] h-[110px] w-[136px] bg-contain"
+                    >
+                      <Link
+                        href='/thailand-tours'
+                        className='transition-all w-full h-full flex items-center justify-center group-hover/des:bg-black group-hover/des:bg-opacity-[0.3]'
+                      >
+                        <span className='transition-all text-white font-semibold text-[18px] group-hover/des:underline'>
+                          THAILAND
+                        </span>
+                      </Link>
                     </div>
                   </div>
                 </div>
               </div>
               {/* End destination popover */}
             </div>
+
+            {/* Tour Style */}
             <div className='relative group h-full flex items-center'>
               <div role='button' className='flex gap-2 items-center'>
                 <p className='text-[16px]'>Tour Style</p>
@@ -147,13 +187,20 @@ const Header = () => {
               </div>
 
               {/* Tour style popover */}
-              <div className='transition-all z-10 absolute w-[780px] top-[60px] hidden group-hover:block bg-white p-4 border-t-[4px] border-t-[#0066B3]'>
+              <div className='transition-all z-10 absolute w-[880px] top-[60px] hidden group-hover:block bg-white p-4 border-t-[4px] border-t-[#0066B3]'>
                 <div className='grid grid-cols-4 gap-3'>
                   {tourStyleTooltip.map((item) => (
                     <Link
+                      role='button'
                       key={item.id}
-                      href='/tour-style'
                       className='group/ts flex gap-2 items-center'
+                      href={{
+                        pathname: `/tours/${item.name
+                          .split(' ')
+                          .join('-')
+                          .toLowerCase()}`,
+                        query: { title: item.name },
+                      }}
                     >
                       <Image src={item.img} alt='top-selling-tour' />
                       <p className='group-hover/ts:underline text-[#0a284a] text-[14px]'>
@@ -163,11 +210,11 @@ const Header = () => {
                   ))}
                 </div>
 
-                <div className='grid grid-cols-4 mt-3 gap-2 w-full'>
+                <div className='grid grid-cols-5 mt-3 gap-2 w-full'>
                   {tourStyleCountriesTooltip.map((item) => (
                     <Link
                       key={item.id}
-                      href='/tour-style'
+                      href={item.route}
                       className='group/countries-tour relative group/des h-[120px]'
                     >
                       <Image
@@ -186,6 +233,8 @@ const Header = () => {
               </div>
               {/* End tour style popover */}
             </div>
+
+            {/* Extras */}
             <div className='relative group h-full flex items-center'>
               <div role='button' className='flex gap-2 items-center'>
                 <p className='text-[16px]'>Extras</p>
@@ -209,7 +258,7 @@ const Header = () => {
                 </div>
                 <div className='flex gap-2 justify-between mt-2'>
                   <Link
-                    href='/mekong-cruises'
+                    href='/mekong-river-cruises'
                     className='group/about relative h-[110px] flex-1'
                   >
                     <Image
@@ -259,11 +308,15 @@ const Header = () => {
               </div>
               {/* End extra popover */}
             </div>
+
+            {/* Responsible */}
             <div role='button' className='flex gap-2 items-center'>
               <Link href='/responsible' className='text-[16px] hover:underline'>
                 Responsible
               </Link>
             </div>
+
+            {/* About */}
             <div className='relative group h-full flex items-center'>
               <div role='button' className='flex gap-2 items-center'>
                 <p className='text-[16px]'>About</p>
@@ -349,11 +402,15 @@ const Header = () => {
               </div>
               {/* End about popover */}
             </div>
+
+            {/* Blog */}
             <div role='button' className='flex gap-2 items-center'>
               <Link href='/blogs' className='text-[16px] hover:underline'>
                 Blog
               </Link>
             </div>
+
+            {/* Contact Us */}
             <div role='button' className='flex gap-2 items-center'>
               <Link href='/contact-us' className='text-[16px] hover:underline'>
                 Contact Us

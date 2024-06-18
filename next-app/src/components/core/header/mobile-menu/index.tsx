@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import {
   Accordion,
   AccordionContent,
@@ -5,7 +6,6 @@ import {
   AccordionTrigger,
 } from '@/components/core/ui/accordion';
 import { extrasTooltip, tourStyleTooltip } from '@/constants';
-import Link from 'next/link';
 
 export function MobileMenu() {
   return (
@@ -16,35 +16,40 @@ export function MobileMenu() {
     >
       <AccordionItem value='item-0'>
         <AccordionTrigger isCollapse={false} className='uppercase'>
-          Home
+          <Link href='/' className='w-full text-left'>
+            Home
+          </Link>
         </AccordionTrigger>
       </AccordionItem>
       <AccordionItem value='item-1'>
         <AccordionTrigger className='uppercase'>Destination</AccordionTrigger>
         <AccordionContent className='flex flex-col gap-4'>
           <Link
-            href='/destination'
+            href='/vietnam-tours'
             className='uppercase block hover:underline '
           >
             Vietname tour
           </Link>
-          <Link
-            href='/destination'
-            className='uppercase block hover:underline '
-          >
+          <Link href='/laos-tours' className='uppercase block hover:underline '>
             Laos tour
           </Link>
           <Link
-            href='/destination'
+            href='/cambodia-tours'
             className='uppercase block hover:underline '
           >
             Cambodia tour
           </Link>
           <Link
-            href='/destination'
+            href='/myanmar-tours'
             className='uppercase block hover:underline '
           >
             Myanmar tour
+          </Link>
+          <Link
+            href='/thailand-tours'
+            className='uppercase block hover:underline '
+          >
+            Thailand tour
           </Link>
         </AccordionContent>
       </AccordionItem>
@@ -54,7 +59,13 @@ export function MobileMenu() {
           {tourStyleTooltip.map((item) => (
             <Link
               key={item.id}
-              href='/tour-style'
+              href={{
+                pathname: `/tours/${item.name
+                  .split(' ')
+                  .join('-')
+                  .toLowerCase()}`,
+                query: { title: item.name },
+              }}
               className='uppercase block hover:underline '
             >
               {item.name}
@@ -68,7 +79,7 @@ export function MobileMenu() {
           {extrasTooltip.map((item) => (
             <Link
               key={item.id}
-              href='/tour-style'
+              href={item.route}
               className='uppercase block hover:underline '
             >
               {item.name}
@@ -78,25 +89,55 @@ export function MobileMenu() {
       </AccordionItem>
       <AccordionItem value='item-4'>
         <AccordionTrigger isCollapse={false} className='uppercase'>
-          Responsible
+          <Link href='/responsible' className='w-full text-left'>
+            Responsible
+          </Link>
         </AccordionTrigger>
       </AccordionItem>
 
       <AccordionItem value='item-5'>
-        <AccordionTrigger isCollapse={false} className='uppercase'>
-          About
-        </AccordionTrigger>
+        <AccordionTrigger className='uppercase'>About</AccordionTrigger>
+        <AccordionContent className='flex flex-col gap-4'>
+          <Link
+            href='/about/who-we-are'
+            className='uppercase block hover:underline '
+          >
+            Who we are
+          </Link>
+          <Link
+            href='/about/portfolio'
+            className='uppercase block hover:underline '
+          >
+            Portfolio
+          </Link>
+          <Link
+            href='/about/why-us'
+            className='uppercase block hover:underline '
+          >
+            Why us
+          </Link>
+          <Link
+            href='/about/our-team'
+            className='uppercase block hover:underline '
+          >
+            Our team
+          </Link>
+        </AccordionContent>
       </AccordionItem>
 
       <AccordionItem value='item-6'>
         <AccordionTrigger isCollapse={false} className='uppercase'>
-          Blog
+          <Link href='/blogs' className='w-full text-left'>
+            Blog
+          </Link>
         </AccordionTrigger>
       </AccordionItem>
 
       <AccordionItem value='item-7'>
         <AccordionTrigger isCollapse={false} className='uppercase'>
-          Contact Us
+          <Link href='/contact-us' className='w-full text-left'>
+            Contact us
+          </Link>
         </AccordionTrigger>
       </AccordionItem>
     </Accordion>

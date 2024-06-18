@@ -21,12 +21,9 @@ const Index = ({
       <Image
         src={item?.avatar ?? ''}
         alt='see-more'
-        className={
-          classNameAvt ||
-          'object-cover min-[945px]:w-[clamp(500px,38vw,700px)] h-auto rounded-[8px] mr-[clamp(1rem,2vw,2.5rem)]'
-        }
         width={500}
         height={500}
+        className={`object-cover min-[945px]:w-[clamp(500px,38vw,700px)] rounded-[8px] mr-[clamp(1rem,2vw,2.5rem)] ${classNameAvt}`}
       />
       <div className='flex-1 self-center mt-5 min-[945px]:max-w-[670px]'>
         <TimeAndShare item={item} theme={theme} />

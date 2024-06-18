@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 export default function locate({ color }: any) {
   return (
     <svg
-      width="18"
-      height="22"
-      viewBox="0 0 18 22"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+      width='18'
+      height='22'
+      viewBox='0 0 18 22'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
     >
       <path
         d="M9 12C10.6569 12 12 10.6569 12 9C12 7.34315 10.6569 6 9 6C7.34315 6 6 7.34315 6 9C6 10.6569 7.34315 12 9 12Z"

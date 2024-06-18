@@ -7,19 +7,23 @@ import BehindPersonWithNonla from '@/assets/images/behind-person-with-nonla.png'
 const ExploreBeautiful = () => {
   return (
     <>
-      <section className='flex gap-6 max-w-[1910px] px-[100px] mx-auto py-[4rem]'>
-        <div className='relative flex-1 max-w-[561px] w-[40%]'>
-          <p className='text-[40px] font-light'>Explore beautiful</p>
-          <h2 className='text-[96px] font-semibold leading-[131px]'>Vietnam</h2>
+      <section className='lg:flex gap-6 max-w-[1910px] px-[24px] sm:px-[50px] lg:px-[100px] mx-auto py-[4rem]'>
+        <div className='relative flex-1 lg:max-w-[561px] lg:w-[40%]'>
+          <p className='text-[clamp(20px,3vw,40px)] xl:text-[40px] font-light'>
+            Explore beautiful
+          </p>
+          <h2 className='text-[clamp(46px,7vw,80px)] xl:text-[96px] font-semibold leading-[60px,7vw,90px] xl:leading-[131px]'>
+            Vietnam
+          </h2>
 
           <Image
             src={VietnamMapImage}
             alt='vietnam-map'
-            className='absolute left-0 top-[10rem]'
+            className='lg:absolute left-0 top-[10rem] w-full'
           />
         </div>
 
-        <div className='w-[60%] text-justify 2xl:text-[18px] leading-[28.8px] font-light'>
+        <div className='lg:w-[60%] text-justify 2xl:text-[18px] leading-[28.8px] font-light'>
           <div className='flex flex-col gap-8 text-ellipsis overflow-hidden'>
             <p className=''>
               Vietnam Being located in South-East Asia, on the eastern margin of
