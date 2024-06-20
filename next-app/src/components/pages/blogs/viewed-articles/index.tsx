@@ -21,13 +21,6 @@ const getData = async () => {
   return data.mostViewed;
 };
 
-export async function getServerSideProps() {
-  const data = await getData();
-  return {
-    props: { data },
-  };
-}
-
 const Index = ({ data = [], title = 'Most viewed articles' }: Props) => {
   // const data: Blog[] = await getData();
 
@@ -56,26 +49,40 @@ const Index = ({ data = [], title = 'Most viewed articles' }: Props) => {
         )}
       </div>
 
-      <section
-        className={`flex-1 justify-center overflow-hidden text-[#FFFFFF]`}
-        style={{
-          background: `url(${data[0].avatar ?? ''})`,
-        }}
-      >
-        <div
-          className={`flex max-[144px]:h-[700px] flex-col justify-end p-20 h-full`}
+      {data[0] && (
+        <section
+          className={`flex-1 justify-center overflow-hidden text-[#FFFFFF]`}
+          style={{
+            background: data[0].avatar ? `url(${data[0].avatar ?? ''})` : '',
+          }}
         >
-          <TimeAndShare item={data[0]} theme='dark' size='normal' />
-          <Link
-            href={`/blogs/${data[0].slug}`}
-            className='text-[36px] font-medium cursor-pointer hover:underline'
+          <div
+            className={`flex max-[144px]:h-[700px] flex-col justify-end p-20 h-full`}
           >
-            {data[0].name}
-          </Link>
-        </div>
-      </section>
+            <TimeAndShare item={data[0]} theme='dark' size='normal' />
+            <Link
+              href={data[0] && `/blogs/${data[0].slug}`}
+              className='text-[36px] font-medium cursor-pointer hover:underline'
+            >
+              {data[0].name}
+            </Link>
+          </div>
+        </section>
+      )}
     </div>
   );
 };
+
+export async function getServerSideProps() {
+  let data = [];
+  try {
+    data = await getData();
+  } catch (error) {
+    console.error('Error fetching data');
+  }
+  return {
+    props: { data },
+  };
+}
 
 export default Index;

@@ -1,15 +1,15 @@
-"use client";
+'use client';
 import Image from 'next/image';
 
 import TimeAndShare from '@/components/pages/blogs/blog-item/timeAndShare';
 import Blog from '@/lib/models/blog';
 
 type Props = {
-  item: Blog,
-  classNameAvt?: string,
-  theme?: string,
-  isContent?: boolean,
-}
+  item: Blog;
+  classNameAvt?: string;
+  theme?: string;
+  isContent?: boolean;
+};
 
 const Index = ({
   item,
@@ -20,7 +20,7 @@ const Index = ({
   return (
     <>
       <Image
-        src={item.avatar ?? ''}
+        src={item?.avatar ?? ''}
         alt='see-more'
         className={
           classNameAvt ||

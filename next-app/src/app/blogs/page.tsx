@@ -23,19 +23,38 @@ const RelatedTour = dynamic(
 );
 
 const getData = async () => {
-  const res = await fetch(Helper.apiRoutes(routes.blogs.data));
-  if (!res.ok) {
-    console.log(res.statusText);
-    throw new Error('Server Error');
-  }
-  const data = await res.json();
+  try {
+    const apiUrl = Helper.apiRoutes(routes?.blogs?.data);
+    console.log('API URL:', apiUrl); // Log the API URL to check its correctness
 
-  return {
-    highlights: data.highlights,
-    mostViewed: data.mostViewed,
-    list: data.list,
-    categories: data.categories ?? [],
-  };
+    if (!apiUrl) {
+      console.error(
+        'API URL is undefined. Check routes.blogs.data and Helper.apiRoutes.',
+      );
+      throw new Error('Invalid API URL');
+    }
+
+    const res = await fetch(apiUrl);
+
+    if (!res.ok) {
+      console.error(
+        `Error fetching data: ${res.statusText} (status: ${res.status})`,
+      );
+      throw new Error('Server Error');
+    }
+
+    const data = await res.json();
+
+    return {
+      highlights: data.highlights ?? [],
+      mostViewed: data.mostViewed ?? [],
+      list: data.list ?? [],
+      categories: data.categories ?? [],
+    };
+  } catch (error) {
+    console.error('Failed to fetch data:', error);
+    // throw error;
+  }
 };
 
 const Page = async () => {
@@ -45,9 +64,9 @@ const Page = async () => {
     <main>
       <BannerBlog isDetail={false} />
 
-      <BlogList blogs={data.highlights} />
+      <BlogList blogs={data?.highlights} />
 
-      <Tag initialList={data.list} />
+      <Tag initialList={data?.list} />
 
       <Suspense fallback={<div>Loading...</div>}>
         <ViewedArticles />
@@ -55,7 +74,7 @@ const Page = async () => {
 
       <Tour />
 
-      <AllArticles initialList={data.list} categories={data.categories} />
+      <AllArticles initialList={data?.list} categories={data?.categories} />
 
       <RelatedTour />
       {/* <Banner

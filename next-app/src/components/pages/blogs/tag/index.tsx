@@ -13,9 +13,9 @@ import Helper from '@/lib/utils/helper';
 import routes from '@/configs/apiRoutes';
 
 type Props = {
-  initialList: Pagination,
-  onChange?: (id: number) => void,
-}
+  initialList: Pagination;
+  onChange?: (id: number) => void;
+};
 
 const Tag = ({ initialList, onChange }: Props) => {
   const [tag, setTag] = useState(countries[0]);
@@ -24,12 +24,14 @@ const Tag = ({ initialList, onChange }: Props) => {
 
   const onChangeTag = async (newTag: any) => {
     if (tag.id === newTag.id) return;
-    
+
     setTag(newTag);
     onChange?.(newTag.id);
 
     setLoading(true);
-    const res = await fetch(Helper.apiRoutes(routes.blogs.list) + `?country=${newTag.id}`);
+    const res = await fetch(
+      Helper.apiRoutes(routes.blogs.list) + `?country=${newTag.id}`,
+    );
     setLoading(false);
     if (!res.ok) {
       console.log(res.statusText);
@@ -37,11 +39,14 @@ const Tag = ({ initialList, onChange }: Props) => {
     }
     const data = await res.json();
     setList(new Pagination(data));
-  }
+  };
 
   const onViewMore = async () => {
     setLoading(true);
-    const res = await fetch(Helper.apiRoutes(routes.blogs.list) + `?cursor=${list.meta.next_cursor}&country=${tag.id}`);
+    const res = await fetch(
+      Helper.apiRoutes(routes.blogs.list) +
+        `?cursor=${list.meta.next_cursor}&country=${tag.id}`,
+    );
     setLoading(false);
     if (!res.ok) {
       console.log(res.statusText);
@@ -49,9 +54,9 @@ const Tag = ({ initialList, onChange }: Props) => {
     }
     const data = await res.json();
     const newList = new Pagination(data);
-    newList.data = [...list.data, ...newList.data];
+    newList.data = [...list.data, ...newList?.data];
     setList(newList);
-  }
+  };
 
   return (
     <div className='sm:px-[50px] lg:px-[100px]'>
@@ -78,18 +83,23 @@ const Tag = ({ initialList, onChange }: Props) => {
       <div
         className={`grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 auto-rows-max`}
       >
-        {list.data.map((item: Blog, index: number) => {
+        {list?.data.map((item: Blog, index: number) => {
           const className = index % 2 ? 'h-[512px]' : 'h-[277px]';
 
           return (
-            <Link href={`/blogs/${item.slug}`} className='' role='button' key={item.id}>
+            <Link
+              href={`/blogs/${item.slug}`}
+              className=''
+              role='button'
+              key={item.id}
+            >
               <BlogItem item={item} classNameAvt={className} />
             </Link>
-          )
+          );
         })}
       </div>
       <div className='flex justify-center m-4 my-20'>
-        {list.hasMoreCursor() &&
+        {list.hasMoreCursor() && (
           <button
             disabled={loading}
             className='hover:bg-[#f1f1f1] transition-all flex border-[1px] px-5 py-3 border-[#E6E8E8] rounded-[8px] cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed'
@@ -101,7 +111,8 @@ const Tag = ({ initialList, onChange }: Props) => {
               alt='x-mark'
               className='w-3 h-3 mx-2 self-center'
             />
-          </button>}
+          </button>
+        )}
       </div>
     </div>
   );

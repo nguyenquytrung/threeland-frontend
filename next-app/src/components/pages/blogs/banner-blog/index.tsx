@@ -2,27 +2,23 @@ import TimeAndShare from '@/components/pages/blogs/blog-item/timeAndShare';
 import Blog from '@/lib/models/blog';
 
 type Props = {
-  isDetail?: boolean,
-  blog?: Blog,
-}
+  isDetail?: boolean;
+  blog?: Blog;
+};
 
 const BannerBlog = ({ isDetail, blog }: Props) => {
-
   return (
     <section
       className={`flex ${
         isDetail ? '' : 'justify-center'
       } relative bg-banner-1 h-[calc(100vh-69px)] xl:h-[calc(100vh-144px)] 2xl:h-[650px] overflow-hidden bg-cover text-[#FFFFFF]`}
       style={{
-        background: `url(${blog?.banner ?? '/blogs/backgroundBlog.png'})`
+        background: `url(${blog?.banner ?? '/blogs/backgroundBlog.png'})`,
       }}
     >
       {isDetail ? (
         <div className='flex flex-col justify-center max-w-[1313px] px-[24px] sm:px-[50px] lg:px-[100px]'>
-          <TimeAndShare
-            item={blog}
-            theme='dark'
-          />
+          <TimeAndShare item={blog} theme='dark' />
           <p
             className={`text-[clamp(30px,4vw,64px)] 2xl:text-[64px] min-w-[1/2] font-bold leading-[clamp(36px,5vw,64px)] py-5`}
           >
