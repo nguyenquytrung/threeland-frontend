@@ -66,7 +66,7 @@ const Index = ({ initialList, categories }: Props) => {
       <div className='lg:mr-[clamp(1rem,3vw,5rem)]'>
         <p className='text-[48px] font-bold'>All articles</p>
         <div className='grid lg:grid-cols-1 grid-cols-2 gap-6'>
-          {list?.data.map((item: Blog) => (
+          {list?.data?.map((item: Blog) => (
             <Link
               key={item.id}
               className={`py-10 flex min-[1760px]:flex-row flex-col items-center lg:items-start`}

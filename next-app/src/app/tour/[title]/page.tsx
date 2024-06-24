@@ -70,10 +70,6 @@ const Page = () => {
             <p className='ml-2 text-customGray  mr-5 text-[18px]'>
               9Day 9Night
             </p>
-            <Image src={Star} alt='Star-detail' />
-            <p className='ml-2 text-customGray text-[18px]'>
-              4.8 (3454 reviews)
-            </p>
           </div>
           <p className='text-[32px] font-semibold text-[#394445] pt-2'>
             Highlights of Vietnam from North to South 12 days

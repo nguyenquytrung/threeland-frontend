@@ -1,16 +1,24 @@
 'use client';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
 // Import css files
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTrigger,
+} from '@/components/core/ui/dialog';
 import ArrowLeft from '@/components/svg/arrow_left';
+import WifiImage from '@/assets/images/hotel-booking/wifi.svg';
 import ArrowRight from '@/components/svg/arrow_right';
 import LocationHeImage from '@/assets/images/he-loc.svg';
 import DynastyCruiseImage from '@/assets/images/extras/dynasty-cruise.png';
+import OrchidCruise from '@/assets/images/extras/orchid_cruise.jpg';
 import Top10BestCruisesText from '../top-best-cruises-text';
+import { DialogTitle } from '@radix-ui/react-dialog';
 
 const slideImagesCustomerReview = [
   {
@@ -29,6 +37,7 @@ const slideImagesCustomerReview = [
 
 const Top10BestCruises = () => {
   const slider = useRef(null);
+  const [open, setOpen] = useState(false);
   const settingsCustomerReview = {
     dots: false,
     infinite: true,
@@ -93,20 +102,83 @@ const Top10BestCruises = () => {
           >
             {slideImagesCustomerReview.map((slideImage, index) => {
               return (
-                <div key={index} role='button' className='group px-2'>
-                  <div className=''>
-                    <Image src={slideImage.url} alt='url' />
-                  </div>
-                  <h5 className='group-hover:underline text-[clamp(24px,3vw,32px)] font-medium mt-2'>
-                    Dynasty Cruise
-                  </h5>
-                  <div className='flex items-center gap-1'>
-                    <Image src={LocationHeImage} alt='location' />
-                    <p className='text-[rgba(156,161,162,1)] xl:text-[20px]'>
-                      Ha Long, Quang ninh, Viet Nam
-                    </p>
-                  </div>
-                </div>
+                <Dialog open={open} onOpenChange={setOpen}>
+                  <DialogTrigger asChild>
+                    <div key={index} role='button' className='group px-2'>
+                      <div className=''>
+                        <Image src={slideImage.url} alt='url' />
+                      </div>
+                      <h5 className='group-hover:underline text-[clamp(24px,3vw,32px)] font-medium mt-2'>
+                        Dynasty Cruise
+                      </h5>
+                      <div className='flex items-center gap-1'>
+                        <Image src={LocationHeImage} alt='location' />
+                        <p className='text-[rgba(156,161,162,1)] xl:text-[20px]'>
+                          Ha Long, Quang ninh, Viet Nam
+                        </p>
+                      </div>
+                    </div>
+                  </DialogTrigger>
+                  <DialogContent className='bg-white overflow-hidden border-0 max-w-[1000px]'>
+                    <DialogHeader>
+                      <DialogTitle>Orchid Cruise</DialogTitle>
+                    </DialogHeader>
+                    <div className='grid md:grid-cols-2 gap-8 font-extralight'>
+                      <div className='flex flex-col gap-2'>
+                        <p>
+                          Pelican Halong Cruise provides taichi, fishing
+                          services, cooking classes. All rooms and suites have
+                          private bathrooms, minibar, and air conditioning. The
+                          suites are spacious and equipped with a bathtub.
+                        </p>
+                        <Image src={OrchidCruise} alt='OrchidCruise' />
+                      </div>
+                      <div className=''>
+                        <div className='flex gap-1 mb-2'>
+                          <Image src={LocationHeImage} alt='LocationHeImage' />
+                          <span>Location</span>
+                        </div>
+                        <hr />
+                        <p className='mt-2'>
+                          Address:# 5/33B, Pham Ngu Lao str. Hoan Kiem Dist,
+                          Hanoi
+                        </p>
+
+                        <div className='flex items-center gap-1 mb-2 mt-8'>
+                          <Image src={WifiImage} alt='WifiImage' />
+                          <span>Hotel Facilities & Service</span>
+                        </div>
+                        <hr />
+                        <div className='grid grid-cols-2 gap-6 mt-2'>
+                          <div className=''>
+                            <h5>Hotel Facilities</h5>
+                            <p>
+                              <li>Laundry and valet service</li>
+                              <li>Bar- Sauna and steam bath</li>
+                              <li>Non-smoking rooms</li>
+                              <li>Restaurant</li>
+                              <li>Laundry and valet service</li>
+                            </p>
+                          </div>
+
+                          <div className=''>
+                            <h5>Guest Service</h5>
+                            <p>
+                              <li>Wifi</li>
+                              <li>Fitness</li>
+                              <li>Room service (24-hour)</li>
+                              <li>Massages</li>
+                              <li>Catering services</li>
+                              <li>Concierge services</li>
+                              <li>Doctor on call</li>
+                              <li>Ironing service</li>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               );
             })}
           </Slider>

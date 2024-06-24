@@ -83,7 +83,7 @@ const Tag = ({ initialList, onChange }: Props) => {
       <div
         className={`grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 auto-rows-max`}
       >
-        {list?.data.map((item: Blog, index: number) => {
+        {list?.data?.map((item: Blog, index: number) => {
           const className = index % 2 ? 'h-[512px]' : 'h-[277px]';
 
           return (

@@ -6,7 +6,7 @@ import CallingImage from '@/assets/images/call-calling.svg';
 import EmailImage from '@/assets/images/email-footer.svg';
 import LocationImage from '@/assets/images/loc-footer.svg';
 import SendEmailButtonImage from '@/assets/images/send-email-button.svg';
-import FbImage from '@/assets/images/fb-footer.svg';
+import FbImage from '@/assets/images/fb-footer-2.svg';
 import TwitterImage from '@/assets/images/twitter-footer.svg';
 import IgImage from '@/assets/images/ig-footer.svg';
 import TiktokImage from '@/assets/images/tiktok-footer.svg';
@@ -61,35 +61,38 @@ const Footer = () => {
           <div className='grid grid-cols-1 min-[540px]:grid-cols-2 min-[1180px]:grid-cols-4 gap-10 min-[540px]:gap-[clamp(0.5rem,3vw,3rem)]'>
             <div className='flex flex-col gap-4'>
               <h5 className='text-[24px] font-medium'>TO KNOW</h5>
-              <Link href='' className='text-[18px] font-light'>
+              <Link href='' className='text-[18px] font-light hover:underline'>
                 Why Travel With Us
               </Link>
-              <Link href='' className='text-[18px] font-light'>
+              <Link
+                href='/careers/all'
+                className='text-[18px] font-light hover:underline'
+              >
                 Jobs At Threeland
               </Link>
-              <Link href='' className='text-[18px] font-light'>
+              <Link href='' className='text-[18px] font-light hover:underline'>
                 Blogs
               </Link>
-              <Link href='' className='text-[18px] font-light'>
+              <Link href='' className='text-[18px] font-light hover:underline'>
                 Contact Us
               </Link>
             </div>
 
             <div className='flex flex-col gap-4'>
               <h5 className='text-[24px] font-medium'>TO EXPLORE</h5>
-              <Link href='' className='text-[18px] font-light'>
+              <Link href='' className='text-[18px] font-light hover:underline'>
                 Vietnam
               </Link>
-              <Link href='' className='text-[18px] font-light'>
+              <Link href='' className='text-[18px] font-light hover:underline'>
                 Laos
               </Link>
-              <Link href='' className='text-[18px] font-light'>
+              <Link href='' className='text-[18px] font-light hover:underline'>
                 Cambodia
               </Link>
-              <Link href='' className='text-[18px] font-light'>
+              <Link href='' className='text-[18px] font-light hover:underline'>
                 Myanmar
               </Link>
-              <Link href='' className='text-[18px] font-light'>
+              <Link href='' className='text-[18px] font-light hover:underline'>
                 Travel Guide
               </Link>
             </div>
@@ -98,38 +101,47 @@ const Footer = () => {
               <h5 className='text-[24px] font-medium min-w-max'>
                 TO EXPERIENCE
               </h5>
-              <Link href='' className='text-[18px] font-light'>
+              <Link href='' className='text-[18px] font-light hover:underline'>
                 Vietnam Tours
               </Link>
-              <Link href='' className='text-[18px] font-light'>
+              <Link href='' className='text-[18px] font-light hover:underline'>
                 Laos Tours
               </Link>
-              <Link href='' className='text-[18px] font-light'>
+              <Link href='' className='text-[18px] font-light hover:underline'>
                 Cambodia Tours
               </Link>
-              <Link href='' className='text-[18px] font-light'>
+              <Link href='' className='text-[18px] font-light hover:underline'>
                 Myanmar Tours
               </Link>
-              <Link href='' className='text-[18px] font-light'>
+              <Link href='' className='text-[18px] font-light hover:underline'>
                 Vietnam Cambodia Tours
               </Link>
             </div>
 
             <div className='flex flex-col gap-4'>
               <h5 className='text-[24px] font-medium'>USEFUL LINKS</h5>
-              <Link href='' className='text-[18px] font-light'>
+              <Link href='' className='text-[18px] font-light hover:underline'>
                 Download Brochure
               </Link>
-              <Link href='' className='text-[18px] font-light'>
+              <Link href='' className='text-[18px] font-light hover:underline'>
                 Photo Stock
               </Link>
-              <Link href='' className='text-[18px] font-light'>
+              <Link
+                href='/page/privacy-policy'
+                className='text-[18px] font-light hover:underline'
+              >
                 Privacy
               </Link>
-              <Link href='' className='text-[18px] font-light'>
+              <Link
+                href='/page/threeland-travel-terms-conditions'
+                className='text-[18px] font-light hover:underline'
+              >
                 Terms & Conditions
               </Link>
-              <Link href='' className='text-[18px] font-light'>
+              <Link
+                href='/page/faqs'
+                className='text-[18px] font-light hover:underline'
+              >
                 FAQs
               </Link>
             </div>

@@ -15,6 +15,7 @@ import StarImage from '@/assets/images/star.svg';
 import SellingTour1Image from '@/assets/images/selling-tour-1.png';
 import SellingTour2Image from '@/assets/images/selling-tour-2.png';
 import SellingTour3Image from '@/assets/images/selling-tour-3.png';
+import Link from 'next/link';
 
 const slideImagesSellingTour = [
   {
@@ -83,6 +84,7 @@ const settingsSellingTourSmall = {
 
 const TopSellingTour = () => {
   const slider = useRef(null);
+  const sliderSmall = useRef(null);
 
   const handleClickPrev = () => {
     // @ts-ignore
@@ -126,10 +128,6 @@ const TopSellingTour = () => {
                     <Image src={ClockImage} alt='location' />
                     <p className='font-light'>8Day 9Night</p>
                   </div>
-                  <div className='flex items-center gap-2 flex-1 justify-center'>
-                    <Image src={StarImage} alt='location' />
-                    <p className='font-light'>4.8 (3454 reviews)</p>
-                  </div>
                 </div>
                 <p className='mt-4 font-light opacity-90 ml-6 leading-[25.6px] 2xl:text-[16px] text-[14px]'>
                   Lorem ipsum dolor sit amet, consecteturadipiscing elit. Mauris
@@ -139,17 +137,15 @@ const TopSellingTour = () => {
                 <div className='flex justify-between mt-6 pl-2 2xl:pl-10 2xl:pr-5'>
                   <p className='flex gap-2 items-center'>
                     <span className='text-[36px] font-medium'>$150</span>
-                    <span className='line-through text-[18px] font-extralight mt-1'>
-                      $320/d
-                    </span>
                   </p>
-                  <div
+                  <Link
+                    href={`/tour/essential-vietnam-with-sapa`}
                     role='button'
-                    className='flex items-center justify-center gap-3 h-[48px] w-[181px] rounded-[24.85px] border-[0.8px] border-[white]'
+                    className='flex items-center justify-center gap-3 hover:opacity-[0.6] h-[48px] w-[181px] rounded-[24.85px] border-[0.8px] border-[white]'
                   >
                     <p className='text-[18px] font-extralight'>Explore tour</p>
                     <Image src={ExploreTourImage} alt='explore-tour' />
-                  </div>
+                  </Link>
                 </div>
               </div>
 
@@ -157,14 +153,14 @@ const TopSellingTour = () => {
                 <div
                   role='button'
                   onClick={handleClickPrev}
-                  className='rounded-[43px] border-[#9CA1A2] border w-[68px] h-[48px] flex items-center justify-center'
+                  className='rounded-[43px] hover:opacity-[0.6] border-[#9CA1A2] border w-[68px] h-[48px] flex items-center justify-center'
                 >
                   <Image src={LeftSliderImage} alt='left-slider' />
                 </div>
                 <div
                   role='button'
                   onClick={handleClickNext}
-                  className='rounded-[43px] border-[#9CA1A2] border w-[115px] h-[48px] flex gap-2 items-center justify-center'
+                  className='rounded-[43px] hover:opacity-[0.6] border-[#9CA1A2] border w-[115px] h-[48px] flex gap-2 items-center justify-center'
                 >
                   <p className='text-[#071516]'>Next</p>
                   <Image src={RightSliderImage} alt='left-slider' />
@@ -178,14 +174,18 @@ const TopSellingTour = () => {
                 nextArrow={<button>next</button>}
               >
                 {slideImagesSellingTour.map((slideImage, index) => (
-                  <div key={index} className={`flex justify-center px-2`}>
+                  <Link
+                    href={'/tours/top-selling-tour'}
+                    key={index}
+                    className={`flex justify-center px-2`}
+                  >
                     <Image
                       className='w-full'
                       key={index}
                       src={slideImage.url}
                       alt={slideImage.caption}
                     />
-                  </div>
+                  </Link>
                 ))}
               </Slider>
             </div>
@@ -223,19 +223,23 @@ const TopSellingTour = () => {
 
           <div className='w-full min-[1800px]:w-[calc(100%-500px)]'>
             <Slider
-              ref={slider}
+              ref={sliderSmall}
               {...settingsSellingTourSmall}
               nextArrow={<button>next</button>}
             >
               {slideImagesSellingTour.map((slideImage, index) => (
-                <div key={index} className={`flex justify-center px-2`}>
+                <Link
+                  href={'/tours/top-selling-tour'}
+                  key={index}
+                  className={`flex justify-center px-2`}
+                >
                   <Image
                     className='w-full'
                     key={index}
                     src={slideImage.url}
                     alt={slideImage.caption}
                   />
-                </div>
+                </Link>
               ))}
             </Slider>
           </div>
@@ -261,10 +265,6 @@ const TopSellingTour = () => {
                 <Image src={ClockImage} alt='location' />
                 <p className='font-light'>8Day 9Night</p>
               </div>
-              <div className='flex items-center gap-2 flex-1 justify-center'>
-                <Image src={StarImage} alt='location' />
-                <p className='font-light'>4.8 (3454 reviews)</p>
-              </div>
             </div>
             <p className='mt-4 font-light opacity-90 ml-6 leading-[25.6px] 2xl:text-[16px] text-[14px]'>
               Lorem ipsum dolor sit amet, consecteturadipiscing elit. Mauris
@@ -276,11 +276,9 @@ const TopSellingTour = () => {
                 <span className='text-[clamp(20px,6vw,36px)] font-medium'>
                   $150
                 </span>
-                <span className='line-through min-[480px]:text-[18px] font-extralight mt-1'>
-                  $320/d
-                </span>
               </p>
-              <div
+              <Link
+                href={`/tour/essential-vietnam-with-sapa`}
                 role='button'
                 className='flex items-center justify-center gap-3 h-[48px] w-[181px] rounded-[24.85px] border-[0.8px] border-[white]'
               >
@@ -288,7 +286,7 @@ const TopSellingTour = () => {
                   Explore tour
                 </p>
                 <Image src={ExploreTourImage} alt='explore-tour' />
-              </div>
+              </Link>
             </div>
           </div>
         </div>

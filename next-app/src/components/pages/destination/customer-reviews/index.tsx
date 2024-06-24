@@ -59,6 +59,17 @@ const CustomerReviews = () => {
       },
     ],
   };
+
+  const handleClickPrev = () => {
+    // @ts-ignore
+    slider?.current?.slickPrev();
+  };
+
+  const handleClickNext = () => {
+    // @ts-ignore
+    slider?.current?.slickNext();
+  };
+
   return (
     <section className='flex bg-[#f3f3f3] gap-6 pt-[3rem] pb-[6rem]'>
       <div className='max-w-[1910px] px-[24px] sm:px-[50px] lg:px-[100px] mx-auto w-full'>
@@ -72,14 +83,14 @@ const CustomerReviews = () => {
           <div className='flex items-center gap-3'>
             <div
               role='button'
-              //   onClick={handleClickPrev}
+              onClick={handleClickPrev}
               className='rounded-[43px] border-[#9CA1A2] border w-[68px] h-[48px] flex items-center justify-center'
             >
               <Image src={LeftSliderImage} alt='left-slider' />
             </div>
             <div
               role='button'
-              //   onClick={handleClickNext}
+              onClick={handleClickNext}
               className='rounded-[43px] border-[#9CA1A2] border w-[115px] h-[48px] flex gap-2 items-center justify-center'
             >
               <p className='text-[#071516]'>Next</p>

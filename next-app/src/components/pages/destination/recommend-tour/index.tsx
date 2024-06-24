@@ -3,6 +3,7 @@ import React from 'react';
 
 import Filter from './filter';
 import RecommendVietnam1 from '@/assets/images/recommend-vietnam-1.png';
+import SaleImage from '@/assets/images/sale.svg';
 import RecommendVietnam2 from '@/assets/images/recommend-vietnam-2.png';
 import RecommendVietnam3 from '@/assets/images/recommend-vietnam-3.png';
 import RecommendVietnam4 from '@/assets/images/recommend-vietnam-4.png';
@@ -128,8 +129,14 @@ const RecommendTour = ({
           {recommendTours.map((item) => (
             <div
               key={item.id}
-              className='bg-[#F7F7F7] flex flex-col md:flex-row gap-4 p-3 pr-4 rounded-[24px]'
+              className='relative bg-[#F7F7F7] flex flex-col md:flex-row gap-4 p-3 pr-4 rounded-[24px]'
             >
+              <div className='absolute w-[66px] h-[77px] ml-10'>
+                <Image src={SaleImage} alt='sale' className='absolute' />
+                <span className='z-10 absolute bottom-9 w-full text-center text-[20px] font-semibold text-white'>
+                  -30%
+                </span>
+              </div>
               <Image
                 src={item.img}
                 alt='recommend-vietnam-1'
@@ -153,28 +160,13 @@ const RecommendTour = ({
                       8Day 9Night
                     </p>
                   </div>
-                  <div className='flex items-center gap-2'>
-                    <Image src={StarHeImage} alt='location' />
-                    <p className='font-light text-[12px] 2xl:text-[16px]'>
-                      4.8 (3454 reviews)
-                    </p>
-                  </div>
                 </div>
                 <div className='flex gap-4 my-3'>
                   <p className='flex gap-2 items-center'>
                     <span className='text-[26px] 2xl:text-[36px] font-medium'>
                       $150
                     </span>
-                    <span className='line-through 2xl:text-[18px] font-extralight mt-1'>
-                      $320/d
-                    </span>
                   </p>
-                  <div className='relative flex items-center justify-center align-middle'>
-                    <Image src={PopularSaleImage} alt='popular-sale' />
-                    <p className='text-white absolute mx-auto right-0 left-0 text-center'>
-                      -30%
-                    </p>
-                  </div>
                 </div>
 
                 <p className='text-[#6A7373] font-light text-justify'>

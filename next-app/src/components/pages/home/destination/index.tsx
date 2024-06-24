@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 
 import ExploreTourImage from '@/assets/images/explore-tour.svg';
@@ -13,22 +13,74 @@ import HagiangCardImage from '@/assets/images/hagiang-card.png';
 import NinhbinhCardImage from '@/assets/images/ninhbinh-card.png';
 import CountryText from '@/components/core/country-text';
 
+const destinations = [
+  { id: 0, name: 'Vietnam', url: '/vietnam-3-people.png', active: true },
+  { id: 1, name: 'Laos', url: '/laos-tours-banner.jpeg', active: false },
+  {
+    id: 2,
+    name: 'Cambodia',
+    url: '/cambodia-tours-banner.jpeg',
+    active: false,
+  },
+  {
+    id: 3,
+    name: 'Thailand',
+    url: '/thailand-tours-banner.jpeg',
+    active: false,
+  },
+  { id: 4, name: 'Myanmar', url: '/myanmar-tours-banner.jpeg', active: false },
+];
+
 const Destination = () => {
-  const slider = useRef(null);
+  const [data, setData] = useState(destinations);
 
   const handleClickPrev = () => {
-    // @ts-ignore
-    slider?.current?.slickPrev();
+    !isFirstItem &&
+      setData((preState) => {
+        let activeIndex: number | null = null;
+        const prevState = [...preState];
+        const newData = prevState.map((item, index) => {
+          if (prevState[index + 1]?.active) {
+            return { ...item, active: true };
+          } else if (item.active) {
+            return { ...item, active: false };
+          }
+          return item;
+        });
+        return newData;
+      });
   };
 
   const handleClickNext = () => {
-    // @ts-ignore
-    slider?.current?.slickNext();
+    !isLastItem &&
+      setData((preState) => {
+        let activeIndex: number | null = null;
+        const newData = [...preState].map((item, index) => {
+          if (item.active) {
+            activeIndex = index;
+            return { ...item, active: false };
+          } else if (activeIndex !== null && index === activeIndex + 1) {
+            activeIndex = null;
+            return { ...item, active: true };
+          }
+          return item;
+        });
+        return newData;
+      });
   };
+
+  const activeItem = data.find((item) => item.active);
+  const activeItemIndex = data.findIndex((item) => item.active);
+  const url = `url('${activeItem?.url}')`;
+  const isFirstItem = activeItemIndex === 0;
+  const isLastItem = activeItemIndex === data.length - 1;
 
   return (
     <>
-      <section className="hidden md:block text-white bg-[url('/vietnam-3-people.png')] h-[905px] pt-[clamp(4rem,12vw,12rem)]">
+      <section
+        style={{ backgroundImage: url }}
+        className={`hidden md:block text-white h-[905px] bg-black bg-opacity-[0.3] bg-cover pt-[clamp(4rem,12vw,12rem)]`}
+      >
         <div className='max-w-[1910px] px-[50px] lg:px-[100px] mx-auto w-full h-full flex justify-between'>
           <div className='min-w-[clamp(300px,35vw,500px)] flex-1'>
             <p className='tracking-[5px] text-[32px] font-extralight'>
@@ -41,12 +93,13 @@ const Destination = () => {
               className='mt-8 w-[clamp(100px,30vw,400px)]'
             /> */}
             <CountryText
-              name='Vietnam'
+              name={activeItem?.name ?? ''}
               className='text-[clamp(60px,8vw,100px)] min-[1800px]:text-[128px] leading-[clamp(60px,12vw,120.6px)] mt-4'
             />
             <div className='flex items-center gap-3 mt-20'>
               <div
                 role='button'
+                style={{ opacity: isFirstItem ? 0.6 : 1 }}
                 onClick={handleClickPrev}
                 className='rounded-[43px] border-[##EEEEEE] border w-[68px] h-[48px] flex items-center justify-center'
               >
@@ -54,6 +107,7 @@ const Destination = () => {
               </div>
               <div
                 role='button'
+                style={{ opacity: isLastItem ? 0.6 : 1 }}
                 onClick={handleClickNext}
                 className='rounded-[43px] border-[##EEEEEE] border w-[115px] h-[48px] flex gap-2 items-center justify-center'
               >
@@ -81,7 +135,7 @@ const Destination = () => {
             </p>
             <div
               role='button'
-              className='flex items-center justify-center mt-10 gap-3 h-[48px] w-[181px] rounded-[24.85px] border-[0.8px] border-[white]'
+              className='flex items-center justify-center mt-10 hover:opacity-[0.6] gap-3 h-[48px] w-[181px] rounded-[24.85px] border-[0.8px] border-[white]'
             >
               <p className='text-[18px] font-extralight'>Explore tour</p>
               <Image src={ExploreTourImage} alt='explore-tour' />

@@ -176,9 +176,6 @@ const PopularMultiCountryTours = () => {
                         <span className='text-[26px] 2xl:text-[36px] font-medium'>
                           $240
                         </span>
-                        <span className='line-through 2xl:text-[18px] font-extralight mt-1'>
-                          $320/d
-                        </span>
                       </p>
                       <div className='relative flex items-center justify-center align-middle'>
                         <Image src={PopularSaleImage} alt='popular-sale' />

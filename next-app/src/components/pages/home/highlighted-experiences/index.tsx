@@ -147,19 +147,10 @@ const HighlightedExperiences = () => {
                       8Day 9Night
                     </p>
                   </div>
-                  <div className='flex items-center gap-2 flex-1 mt-4 min-[1330px]:mt-0 min-[1330px]:justify-center'>
-                    <Image src={StarHeImage} alt='location' />
-                    <p className='font-light text-[12px] 2xl:text-[16px] min-w-max'>
-                      4.8 (3454 reviews)
-                    </p>
-                  </div>
                 </div>
                 <p className='flex gap-2 items-center my-4'>
                   <span className='text-[26px] 2xl:text-[36px] font-medium'>
                     $150
-                  </span>
-                  <span className='line-through 2xl:text-[18px] font-extralight mt-1'>
-                    $320/d
                   </span>
                 </p>
               </div>
