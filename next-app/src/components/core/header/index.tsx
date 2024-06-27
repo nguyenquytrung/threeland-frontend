@@ -43,21 +43,21 @@ const Header = () => {
   return (
     <>
       <header className='hidden min-[1300px]:flex flex-col h-[144px] bg-[white] text-[black]'>
-        <div className='border-b border-[#f6f8fe] h-[69px] bg-[#0066B3]'>
+        <div className='border-b border-[#f6f8fe] h-[69px] bg-[#fff]'>
           <div className='relative flex items-center h-full justify-between max-w-[1480px] mx-auto w-full px-[24px]'>
             <div className='flex gap-7 items-center'>
               <div className='flex items-center gap-2'>
                 <Image src={EmailImage} alt='email-header' />
-                <p className='text-[white] text-[14px]'>threeland@gmail.com</p>
+                <p className='text-[black] text-[14px]'>threeland@gmail.com</p>
               </div>
               <div className='flex items-center gap-2'>
                 <Image src={PhoneImage} alt='phone-header' />
-                <p className='text-[white] text-[14px]'>(+84)979-016-928</p>
+                <p className='text-[black] text-[14px]'>(+84)979-016-928</p>
               </div>
             </div>
 
             <Image
-              src={LogoImage}
+              src={LogoColorImage}
               alt='logo'
               className='absolute left-0 right-0 mx-auto'
             />
@@ -65,7 +65,7 @@ const Header = () => {
             <div className='flex items-center gap-1'>
               <Image src={AmericaImage} alt='america-header' />
               <div role='button' className='flex items-center gap-1'>
-                <p className='text-[white]'>ENG</p>
+                <p className='text-[black]'>ENG</p>
                 <Image src={DownArrowImage} alt='down-arrow-header' />
               </div>
             </div>
@@ -419,7 +419,7 @@ const Header = () => {
           </div>
 
           <div className='flex gap-1 items-center'>
-            <div role='button' className='px-3'>
+            {/* <div role='button' className='px-3'>
               <span>Login</span>
             </div>
             <div
@@ -427,41 +427,61 @@ const Header = () => {
               className='hover:bg-[#015391] transition-all bg-[#0066B3] w-[112px] h-[48px] text-[white] rounded-[8px] flex items-center justify-center'
             >
               <span className='text-[16px]'>Sign up</span>
+            </div> */}
+            <div
+              role='button'
+              className='rounded-[8px] transition-all hover:bg-[#e3e3e3] border border-[rgba(0,102,179,1)] text-[rgba(0,102,179,1)] font-medium w-[122px] h-[40px] grid place-items-center'
+            >
+              <span>Plan a trip</span>
             </div>
           </div>
         </div>
       </header>
 
       <header className='flex min-[1300px]:hidden flex-col h-fit w-full bg-[white] text-[black]'>
-        <div className='border-b border-[#f6f8fe] h-[69px] bg-[#0066B3]'>
+        <div className='border-b border-[#f6f8fe] h-[69px] bg-[white]'>
           <div className='relative flex items-center h-full justify-between max-w-[1480px] mx-auto w-full px-[24px]'>
-            <Image src={LogoImage} alt='logo' className='' />
+            <Image src={LogoColorImage} alt='logo' className='' />
+            <div className='flex gap-4 items-center'>
+              <div
+                role='button'
+                className='rounded-[8px] hidden min-[480px]:grid transition-all hover:bg-[#e3e3e3] border border-[rgba(0,102,179,1)] text-[rgba(0,102,179,1)] font-medium w-[122px] h-[40px] place-items-center'
+              >
+                <span>Plan a trip</span>
+              </div>
 
-            <Sheet>
-              <SheetTrigger asChild>
-                <div role='button'>
-                  <Image src={MobileMenuImage} alt='mobile-menu' />
-                </div>
-              </SheetTrigger>
-              <SheetContent className='bg-white flex flex-col'>
-                <SheetHeader>
-                  <SheetTitle>
-                    <Image src={LogoColorImage} alt='logo' className='' />
-                  </SheetTitle>
-                </SheetHeader>
-                <MobileMenu />
-                <SheetFooter>
-                  <div className='flex items-center gap-2'>
-                    <Image src={EmailImage} alt='email-header' />
-                    <p className='text-[14px]'>threeland@gmail.com</p>
+              <Sheet>
+                <SheetTrigger asChild>
+                  <div role='button'>
+                    <Image src={MobileMenuImage} alt='mobile-menu' />
                   </div>
-                  <div className='flex items-center gap-2 mt-2'>
-                    <Image src={PhoneImage} alt='phone-header' />
-                    <p className='text-[14px]'>(+84)979-016-928</p>
+                </SheetTrigger>
+                <SheetContent className='bg-white flex flex-col'>
+                  <SheetHeader>
+                    <SheetTitle>
+                      <Image src={LogoColorImage} alt='logo' className='' />
+                    </SheetTitle>
+                  </SheetHeader>
+                  <MobileMenu />
+                  <div
+                    role='button'
+                    className='rounded-[8px] grid min-[480px]:hidden transition-all hover:bg-[#e3e3e3] border border-[rgba(0,102,179,1)] text-[rgba(0,102,179,1)] font-medium w-[122px] h-[40px] place-items-center'
+                  >
+                    <span>Plan a trip</span>
                   </div>
-                </SheetFooter>
-              </SheetContent>
-            </Sheet>
+                  <SheetFooter>
+                    <div className='flex items-center gap-2'>
+                      <Image src={EmailImage} alt='email-header' />
+                      <p className='text-[14px]'>threeland@gmail.com</p>
+                    </div>
+                    <div className='flex items-center gap-2 mt-2'>
+                      <Image src={PhoneImage} alt='phone-header' />
+                      <p className='text-[14px]'>(+84)979-016-928</p>
+                    </div>
+                  </SheetFooter>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </header>
