@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
 // Import css files
@@ -16,6 +16,7 @@ import Popular3Image from '@/assets/images/popular-3.png';
 import Popular4Image from '@/assets/images/popular-4.png';
 import SeparateImage from '@/assets/images/separate-white.svg';
 import PopularSaleImage from '@/assets/images/popular-sale.svg';
+import Tour from '@/lib/models/tour';
 
 const slideImagesPopular = [
   {
@@ -69,8 +70,14 @@ const settingsHighLightedExperiences = {
   ],
 };
 
-const PopularMultiCountryTours = () => {
+type Props = {
+  tours: Tour[],
+}
+
+const PopularMultiCountryTours = ({ tours }: Props) => {
   const slider = useRef(null);
+
+  const [data, _] = useState<Tour[]>(tours.filter(t => t.countries_count && t.countries_count > 1).slice(0, 8));
 
   const handleClickPrev = () => {
     // @ts-ignore
@@ -134,19 +141,19 @@ const PopularMultiCountryTours = () => {
           {...settingsHighLightedExperiences}
           nextArrow={<button>next</button>}
         >
-          {slideImagesPopular.map((slideImage, index) => (
+          {data.map((tour, index) => (
             <div key={index} className='w-[411px] pr-4'>
               <div className='relative h-full overflow-hidden'>
                 <div className='absolute h-[50%] left-0 right-0 bottom-0 bg-card-title p-4 flex flex-col justify-end'>
                   <div className='h-fit mt-auto'>
-                    <h5 className='text-[22px]'>Azure Paradise Estate</h5>
+                    <h5 className='text-[22px]'>{tour.name}</h5>
                     <div className='flex flex-wrap'>
-                      <div className='flex gap-2'>
+                      {/* <div className='flex gap-2'>
                         <Image src={LocationImage} alt='location' />
                         <p className='font-extralight text-[12px] 2xl:text-[16px] mt-[1px]'>
                           Los Angeles
                         </p>
-                      </div>
+                      </div> */}
                       <Image
                         src={SeparateImage}
                         alt='location'
@@ -155,7 +162,7 @@ const PopularMultiCountryTours = () => {
                       <div className='flex gap-2'>
                         <Image src={ClockImage} alt='location' />
                         <p className='font-extralight text-[12px] 2xl:text-[16px] mt-[1px]'>
-                          8Day 9Night
+                          {tour.duration}
                         </p>
                       </div>
                       <Image
@@ -163,18 +170,18 @@ const PopularMultiCountryTours = () => {
                         alt='location'
                         className='mx-2'
                       />
-                      <div className='flex gap-2'>
+                      {/* <div className='flex gap-2'>
                         <Image src={StarImage} alt='location' />
                         <p className='font-extralight text-[12px] 2xl:text-[16px] mt-[1px]'>
                           4.8
                         </p>
-                      </div>
+                      </div> */}
                     </div>
 
                     <div className='flex gap-4 mt-4 sm:my-4'>
                       <p className='flex gap-2 items-center'>
                         <span className='text-[26px] 2xl:text-[36px] font-medium'>
-                          $240
+                          ${tour.price}
                         </span>
                       </p>
                       <div className='relative flex items-center justify-center align-middle'>
@@ -189,8 +196,10 @@ const PopularMultiCountryTours = () => {
                 <Image
                   className='w-full'
                   key={index}
-                  src={slideImage.url}
-                  alt={slideImage.caption}
+                  src={tour.avatar ?? ''}
+                  alt={tour.name ?? ''}
+                  width={420}
+                  height={521}
                 />
               </div>
             </div>

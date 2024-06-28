@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
 // Import css files
@@ -16,6 +16,7 @@ import SellingTour1Image from '@/assets/images/selling-tour-1.png';
 import SellingTour2Image from '@/assets/images/selling-tour-2.png';
 import SellingTour3Image from '@/assets/images/selling-tour-3.png';
 import Link from 'next/link';
+import Tour from '@/lib/models/tour';
 
 const slideImagesSellingTour = [
   {
@@ -82,19 +83,37 @@ const settingsSellingTourSmall = {
   ],
 };
 
-const TopSellingTour = () => {
+type Props = {
+  tours: Tour[],
+}
+
+const TopSellingTour = ({ tours }: Props) => {
   const slider = useRef(null);
   const sliderSmall = useRef(null);
 
+  const [activeKey, setActiveKey] = useState(0);
+
   const handleClickPrev = () => {
+    setActiveKey(prev => {
+      if (prev > 0) return prev - 1;
+      if (tours.length >= 5) return 4;
+      return tours.length - 1;
+    });
     // @ts-ignore
     slider?.current?.slickPrev();
   };
 
   const handleClickNext = () => {
+    setActiveKey(prev => {
+      const maxKey = tours.length >= 5 ? 4 : tours.length;
+      if (prev < maxKey) return prev + 1;
+      return 0;
+    });
     // @ts-ignore
     slider?.current?.slickNext();
   };
+
+  const slideTours = tours.filter(t => t.countries_count === 1).slice(0, 8);
 
   return (
     <>
@@ -114,32 +133,30 @@ const TopSellingTour = () => {
                   </span>
                 </div>
                 <h3 className='text-[26px] 2xl:text-[40px] min-[1800px]:text-[48px] font-medium min-[1800px]:leading-[55.2px] mt-4'>
-                  Essential Vietnam with Sapa
+                  {slideTours[activeKey]?.name}
                 </h3>
                 <div className='flex gap-2 items-start mt-5'>
                   <Image src={LocationImage} alt='location' />
                   <p className='font-light'>
-                    Saigon – Mekong Delta – Hoi An – Hue – Hanoi – Sapa – Halong
-                    Bay
+                    {slideTours[activeKey]?.route}
                   </p>
                 </div>
                 <div className='flex mt-4'>
                   <div className='flex items-center gap-2 w-fit'>
                     <Image src={ClockImage} alt='location' />
-                    <p className='font-light'>8Day 9Night</p>
+                    <p className='font-light'>{slideTours[activeKey]?.duration}</p>
                   </div>
                 </div>
-                <p className='mt-4 font-light opacity-90 ml-6 leading-[25.6px] 2xl:text-[16px] text-[14px]'>
-                  Lorem ipsum dolor sit amet, consecteturadipiscing elit. Mauris
-                  accumsan urna eupharetra elementum. Suspendisse potenti.
+                <p className='mt-4 font-light opacity-90 ml-6 leading-[25.6px] 2xl:text-[16px] text-[14px] line-clamp-4'>
+                  {slideTours[activeKey]?.description}
                 </p>
                 <hr className='mt-4 2xl:mt-8 ml-6 bg-[#FFFFFF4D]' />
                 <div className='flex justify-between mt-6 pl-2 2xl:pl-10 2xl:pr-5'>
                   <p className='flex gap-2 items-center'>
-                    <span className='text-[36px] font-medium'>$150</span>
+                    <span className='text-[36px] font-medium'>${slideTours[activeKey]?.price}</span>
                   </p>
                   <Link
-                    href={`/tour/essential-vietnam-with-sapa`}
+                    href={`/tour/${slideTours[activeKey]?.slug}`}
                     role='button'
                     className='flex items-center justify-center gap-3 hover:opacity-[0.6] h-[48px] w-[181px] rounded-[24.85px] border-[0.8px] border-[white]'
                   >
@@ -173,17 +190,19 @@ const TopSellingTour = () => {
                 {...settingsSellingTour}
                 nextArrow={<button>next</button>}
               >
-                {slideImagesSellingTour.map((slideImage, index) => (
+                {slideTours.map((tour, index) => (
                   <Link
-                    href={'/tours/top-selling-tour'}
+                    href={`/tours/${tour.slug}`}
                     key={index}
                     className={`flex justify-center px-2`}
                   >
                     <Image
                       className='w-full'
                       key={index}
-                      src={slideImage.url}
-                      alt={slideImage.caption}
+                      src={tour.avatar ?? ''}
+                      alt={tour.name ?? ''}
+                      width={500}
+                      height={500}
                     />
                   </Link>
                 ))}
@@ -227,7 +246,7 @@ const TopSellingTour = () => {
               {...settingsSellingTourSmall}
               nextArrow={<button>next</button>}
             >
-              {slideImagesSellingTour.map((slideImage, index) => (
+              {slideTours.map((tour, index) => (
                 <Link
                   href={'/tours/top-selling-tour'}
                   key={index}
@@ -236,8 +255,10 @@ const TopSellingTour = () => {
                   <Image
                     className='w-full'
                     key={index}
-                    src={slideImage.url}
-                    alt={slideImage.caption}
+                    src={tour.avatar ?? ''}
+                    alt={tour.name ?? ''}
+                    width={200}
+                    height={200}
                   />
                 </Link>
               ))}
@@ -252,33 +273,32 @@ const TopSellingTour = () => {
               </span>
             </div>
             <h3 className='text-[26px] 2xl:text-[40px] min-[1800px]:text-[48px] font-medium min-[1800px]:leading-[55.2px] mt-4'>
-              Essential Vietnam with Sapa
+              {slideTours[activeKey]?.name}
             </h3>
             <div className='flex gap-2 items-start mt-5'>
               <Image src={LocationImage} alt='location' />
               <p className='font-light'>
-                Saigon – Mekong Delta – Hoi An – Hue – Hanoi – Sapa – Halong Bay
+                {slideTours[activeKey]?.route}
               </p>
             </div>
             <div className='flex mt-4'>
               <div className='flex items-center gap-2 w-fit'>
                 <Image src={ClockImage} alt='location' />
-                <p className='font-light'>8Day 9Night</p>
+                <p className='font-light'>{slideTours[activeKey]?.duration}</p>
               </div>
             </div>
             <p className='mt-4 font-light opacity-90 ml-6 leading-[25.6px] 2xl:text-[16px] text-[14px]'>
-              Lorem ipsum dolor sit amet, consecteturadipiscing elit. Mauris
-              accumsan urna eupharetra elementum. Suspendisse potenti.
+              {slideTours[activeKey]?.description}
             </p>
             <hr className='mt-4 2xl:mt-8 ml-6 bg-[#FFFFFF4D]' />
             <div className='flex gap-2 justify-between mt-6 pl-2 2xl:pl-10 2xl:pr-5'>
               <p className='flex gap-2 items-center'>
                 <span className='text-[clamp(20px,6vw,36px)] font-medium'>
-                  $150
+                  ${slideTours[activeKey]?.price}
                 </span>
               </p>
               <Link
-                href={`/tour/essential-vietnam-with-sapa`}
+                href={`/tour/${slideTours[activeKey]?.slug}`}
                 role='button'
                 className='flex items-center justify-center gap-3 h-[48px] w-[181px] rounded-[24.85px] border-[0.8px] border-[white]'
               >

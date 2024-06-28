@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
 // Import css files
@@ -9,31 +9,8 @@ import LeftSliderImage from '@/assets/images/left-slider.svg';
 import RightSliderImage from '@/assets/images/right-slider.svg';
 import LocationHeImage from '@/assets/images/he-loc.svg';
 import ClockHeImage from '@/assets/images/he-clock.svg';
-import StarHeImage from '@/assets/images/he-star.svg';
 import ExploreColorImage from '@/assets/images/explore-color.svg';
-import HE1Image from '@/assets/images/he-1.png';
-import HE2Image from '@/assets/images/he-2.png';
-import HE3Image from '@/assets/images/he-3.png';
-import HE4Image from '@/assets/images/he-4.png';
-
-const slideImagesHighLightedExperiences = [
-  {
-    url: HE1Image,
-    caption: 'Slide 1',
-  },
-  {
-    url: HE2Image,
-    caption: 'Slide 2',
-  },
-  {
-    url: HE3Image,
-    caption: 'Slide 3',
-  },
-  {
-    url: HE4Image,
-    caption: 'Slide 3',
-  },
-];
+import Tour, { TYPE } from '@/lib/models/tour';
 
 const settingsHighLightedExperiences = {
   dots: false,
@@ -68,8 +45,15 @@ const settingsHighLightedExperiences = {
   ],
 };
 
-const HighlightedExperiences = () => {
+type Props = {
+  tours: Tour[],
+}
+
+const HighlightedExperiences = ({ tours }: Props) => {
   const slider = useRef(null);
+
+  const [data, _] = useState<Tour[]>(tours.filter(t => t.countries_count === 1).slice(8, 16));
+  const [type, setType] = useState<TYPE>(TYPE.GROUP);
 
   const handleClickPrev = () => {
     // @ts-ignore
@@ -108,13 +92,15 @@ const HighlightedExperiences = () => {
       <div className='flex gap-2 mb-4 min-[520px]:mb-8'>
         <div
           role='button'
-          className='w-[107px] h-[48px] flex items-center justify-center border border-[#9CA1A2] text-[#9CA1A2] rounded-[8px]'
+          className={`w-[107px] h-[48px] flex items-center justify-center rounded-[8px] ${type === TYPE.PRIVATE ? 'bg-[#0066B3] text-white' : 'border border-[#9CA1A2] text-[#9CA1A2]'}`}
+          onClick={() => setType(TYPE.PRIVATE)}
         >
           <span>Private</span>
         </div>
         <div
           role='button'
-          className='w-[107px] h-[48px] text-white flex items-center justify-center bg-[#0066B3] rounded-[8px]'
+          onClick={() => setType(TYPE.GROUP)}
+          className={`w-[107px] h-[48px] flex items-center justify-center rounded-[8px] ${type === TYPE.GROUP ? 'bg-[#0066B3] text-white' : 'border border-[#9CA1A2] text-[#9CA1A2]'}`}
         >
           Group
         </div>
@@ -126,39 +112,40 @@ const HighlightedExperiences = () => {
         {...settingsHighLightedExperiences}
         nextArrow={<button>next</button>}
       >
-        {slideImagesHighLightedExperiences.map((slideImage, index) => (
+        {data.filter(tour => tour.type == type).map((tour, index) => (
           <div key={index} className='w-[411px] pr-4'>
             <div className='relative rounded-[24px] bg-[#F7F7F7] h-full p-3 pb-5 overflow-hidden'>
               <div className='p-1'>
                 <h5 className='font-medium 2xl:text-[22px] leading-[clamp(24px,2vw,32px)]'>
-                  Highlights of Singapore 3 Weeks
+                  {tour.name}
                 </h5>
                 <div className='flex gap-2 items-start mt-4'>
                   <Image src={LocationHeImage} alt='location' />
                   <p className='font-light text-[#6A7373] text-[12px] 2xl:text-[16px]'>
-                    Saigon – Mekong Delta – Hoi An – Hue – Hanoi – Sapa – Halong
-                    Bay
+                    {tour.route}
                   </p>
                 </div>
                 <div className='min-[1330px]:flex flex-wrap mt-4'>
                   <div className='flex items-center gap-2 w-fit'>
                     <Image src={ClockHeImage} alt='location' />
                     <p className='font-light text-[12px] 2xl:text-[16px]'>
-                      8Day 9Night
+                      {tour.duration}
                     </p>
                   </div>
                 </div>
                 <p className='flex gap-2 items-center my-4'>
                   <span className='text-[26px] 2xl:text-[36px] font-medium'>
-                    $150
+                    ${tour.price}
                   </span>
                 </p>
               </div>
               <Image
                 className='w-full'
                 key={index}
-                src={slideImage.url}
-                alt={slideImage.caption}
+                src={tour.avatar ?? ''}
+                alt={tour.name ?? ''}
+                width={416}
+                height={250}
               />
               <div
                 role='button'

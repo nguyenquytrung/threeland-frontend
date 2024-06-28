@@ -9,6 +9,15 @@ const routes = {
     comments: {
         store: "comments/store",
         list: "comments/"
+    },
+    tours: {
+        home: "tours/home"
+    },
+    countries: {
+        home: "countries/home"
+    },
+    styles: {
+        home: "styles/home"
     }
 }
 
