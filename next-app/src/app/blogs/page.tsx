@@ -57,6 +57,8 @@ const getData = async () => {
   }
 };
 
+export const revalidate = 0;
+
 const Page = async () => {
   const data = await getData();
 
