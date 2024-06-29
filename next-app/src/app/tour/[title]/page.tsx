@@ -7,19 +7,16 @@ import DetailImage4 from '@/assets/images/Detai.content4.png';
 import HightLightImage from '@/assets/images/hightlight.jpg';
 
 import Clock from '@/assets/images/clock.svg';
-import Star from '@/assets/images/star.svg';
 import Adress from '@/assets/images/adress.svg';
 import '@/styles/DetailDestination.css';
 import plane from '@/assets/images/plane.svg';
 import users from '@/assets/images/users.svg';
 import calendar from '@/assets/images/calendar.svg';
-import Next from '@/assets/images/next-button.svg';
 import prev from '@/assets/images/prev.svg';
 import DescriptionDetail from '@/components/pages/destination-detail/DescriptionDetail';
 import InputBook from '@/components/pages/destination-detail/InputBook';
 import arrow from '@/assets/images/arrow-top-right.svg';
 import TimeLine from '@/components/pages/destination-detail/Timeline';
-import map from '@/assets/images/map.svg';
 import Hotels from '@/components/pages/destination-detail/Hotels';
 import Tour from '@/components/pages/destination-detail/Tour';
 import OurTerms from '@/components/pages/destination-detail/OurTerms';
@@ -354,8 +351,11 @@ const Page = () => {
           {/* <Image className='ml-6' layout='reponse' src={map} alt='' /> */}
           <div className=''>
             <MapWithDirections
-              origin={{ lat: 21.0278, lng: 105.8342 }}
-              destination={{ lat: 16.4637, lng: 107.5909 }}
+              waypoints={[
+                { lat: 21.0278, lng: 105.8342 },
+                { lat: 20.4463, lng: 106.3366 },
+                { lat: 16.4637, lng: 107.5909 },
+              ]}
               height='700px'
             />
           </div>

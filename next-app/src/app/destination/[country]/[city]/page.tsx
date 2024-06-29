@@ -1,8 +1,8 @@
 import React from 'react';
 import Banner from '@/components/core/banner';
 
-import Tour from '@/components/pages/destination/detail/tour'
-import Activities from '@/components/pages/destination/detail/activities'
+import Tour from '@/components/pages/destination/detail/tour';
+import Activities from '@/components/pages/destination/detail/activities';
 import RecommendTourDetail from '@/components/pages/destination/detail/recom-tour';
 
 const Page = () => {
@@ -14,6 +14,7 @@ const Page = () => {
         url='portfolio-banner.jpeg'
         defaultForm={false}
         isMobileFullScreen={false}
+        isFullHeight
       >
         <div
           role='button'

@@ -7,7 +7,11 @@ const Page = () => {
   return (
     <main>
       {/* Banner Section */}
-      <Banner gradient={false} url='extras/hotel-booking-banner.png' />
+      <Banner
+        gradient={false}
+        url='extras/hotel-booking-banner.png'
+        isFullHeight
+      />
 
       {/* Description Section */}
       <Top10BestCruisesText

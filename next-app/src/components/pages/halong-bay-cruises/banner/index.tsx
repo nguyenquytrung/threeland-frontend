@@ -10,6 +10,7 @@ type Props = {
   url?: string;
   gradient?: boolean;
   isMobileFullScreen?: boolean;
+  isFullHeight?: boolean;
 };
 
 const Banner = (props: Props) => {
@@ -17,6 +18,7 @@ const Banner = (props: Props) => {
     url = 'extras/halong-cruises-banner.png',
     gradient = true,
     isMobileFullScreen = true,
+    isFullHeight = false,
   } = props;
   // const bgImg = `bg-[url('/${url}')]`;
   return (
@@ -24,7 +26,9 @@ const Banner = (props: Props) => {
       style={{ backgroundImage: `url('/${url}')` }}
       className={`relative bg-banner-1 ${
         isMobileFullScreen
-          ? 'h-[calc(100vh-144px)] max-[1300px]:h-[calc(100vh-69px)]'
+          ? `${
+              isFullHeight ? 'h-[100vh]' : 'h-[calc(100vh-144px)]'
+            } max-[1300px]:h-[calc(100vh-69px)]`
           : 'h-[clamp(200px,10vw,400px)] lg:max-[1300px]:h-[calc(100vh-69px)] min-[1301px]:h-[calc(100vh-144px)]'
       } overflow-hidden bg-cover`}
     >

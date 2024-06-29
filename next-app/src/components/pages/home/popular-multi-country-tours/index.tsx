@@ -5,6 +5,7 @@ import Slider from 'react-slick';
 // Import css files
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import './index.css';
 import LocationImage from '@/assets/images/location-2.svg';
 import ClockImage from '@/assets/images/clock.svg';
 import StarImage from '@/assets/images/star.svg';
@@ -23,23 +24,23 @@ const slideImagesPopular = [
     url: Popular1Image,
     caption: 'Slide 1',
   },
-  {
-    url: Popular2Image,
-    caption: 'Slide 2',
-  },
-  {
-    url: Popular3Image,
-    caption: 'Slide 3',
-  },
-  {
-    url: Popular4Image,
-    caption: 'Slide 3',
-  },
+  // {
+  //   url: Popular2Image,
+  //   caption: 'Slide 2',
+  // },
+  // {
+  //   url: Popular3Image,
+  //   caption: 'Slide 3',
+  // },
+  // {
+  //   url: Popular4Image,
+  //   caption: 'Slide 3',
+  // },
 ];
 
 const settingsHighLightedExperiences = {
   dots: false,
-  infinite: true,
+  infinite: slideImagesPopular.length !== 1,
   speed: 500,
   slidesToShow: 4,
   slidesToScroll: 1,
@@ -71,13 +72,15 @@ const settingsHighLightedExperiences = {
 };
 
 type Props = {
-  tours: Tour[],
-}
+  tours: Tour[];
+};
 
 const PopularMultiCountryTours = ({ tours }: Props) => {
   const slider = useRef(null);
 
-  const [data, _] = useState<Tour[]>(tours.filter(t => t.countries_count && t.countries_count > 1).slice(0, 8));
+  const [data, _] = useState<Tour[]>(
+    tours.filter((t) => t.countries_count && t.countries_count > 1).slice(0, 8),
+  );
 
   const handleClickPrev = () => {
     // @ts-ignore
@@ -90,7 +93,7 @@ const PopularMultiCountryTours = ({ tours }: Props) => {
   };
 
   return (
-    <section className='relative text-white h-[800px] sm:h-[720px] min-[1700px]:h-[880px] 2xl:h-[800px]'>
+    <section className='popular-multi relative text-white h-[800px] sm:h-[720px] min-[1700px]:h-[880px] 2xl:h-[800px]'>
       <div className='bg-[#0066B3] h-[397px] top-0 right-0 left-0'></div>
       <div className='absolute top-0 bottom-0 left-0 right-0 pt-[4rem] max-w-[1910px] px-[24px] sm:px-[50px] lg:px-[100px] pb-[8rem]'>
         <div className='flex justify-between pr-[1rem]'>

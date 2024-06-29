@@ -46,13 +46,15 @@ const settingsHighLightedExperiences = {
 };
 
 type Props = {
-  tours: Tour[],
-}
+  tours: Tour[];
+};
 
 const HighlightedExperiences = ({ tours }: Props) => {
   const slider = useRef(null);
 
-  const [data, _] = useState<Tour[]>(tours.filter(t => t.countries_count === 1).slice(8, 16));
+  const [data, _] = useState<Tour[]>(
+    tours.filter((t) => t.countries_count === 1).slice(8, 16),
+  );
   const [type, setType] = useState<TYPE>(TYPE.GROUP);
 
   const handleClickPrev = () => {
@@ -92,7 +94,11 @@ const HighlightedExperiences = ({ tours }: Props) => {
       <div className='flex gap-2 mb-4 min-[520px]:mb-8'>
         <div
           role='button'
-          className={`w-[107px] h-[48px] flex items-center justify-center rounded-[8px] ${type === TYPE.PRIVATE ? 'bg-[#0066B3] text-white' : 'border border-[#9CA1A2] text-[#9CA1A2]'}`}
+          className={`w-[107px] h-[48px] flex items-center justify-center rounded-[8px] ${
+            type === TYPE.PRIVATE
+              ? 'bg-[#0066B3] text-white'
+              : 'border border-[#9CA1A2] text-[#9CA1A2]'
+          }`}
           onClick={() => setType(TYPE.PRIVATE)}
         >
           <span>Private</span>
@@ -100,7 +106,11 @@ const HighlightedExperiences = ({ tours }: Props) => {
         <div
           role='button'
           onClick={() => setType(TYPE.GROUP)}
-          className={`w-[107px] h-[48px] flex items-center justify-center rounded-[8px] ${type === TYPE.GROUP ? 'bg-[#0066B3] text-white' : 'border border-[#9CA1A2] text-[#9CA1A2]'}`}
+          className={`w-[107px] h-[48px] flex items-center justify-center rounded-[8px] ${
+            type === TYPE.GROUP
+              ? 'bg-[#0066B3] text-white'
+              : 'border border-[#9CA1A2] text-[#9CA1A2]'
+          }`}
         >
           Group
         </div>
@@ -112,50 +122,52 @@ const HighlightedExperiences = ({ tours }: Props) => {
         {...settingsHighLightedExperiences}
         nextArrow={<button>next</button>}
       >
-        {data.filter(tour => tour.type == type).map((tour, index) => (
-          <div key={index} className='w-[411px] pr-4'>
-            <div className='relative rounded-[24px] bg-[#F7F7F7] h-full p-3 pb-5 overflow-hidden'>
-              <div className='p-1'>
-                <h5 className='font-medium 2xl:text-[22px] leading-[clamp(24px,2vw,32px)]'>
-                  {tour.name}
-                </h5>
-                <div className='flex gap-2 items-start mt-4'>
-                  <Image src={LocationHeImage} alt='location' />
-                  <p className='font-light text-[#6A7373] text-[12px] 2xl:text-[16px]'>
-                    {tour.route}
-                  </p>
-                </div>
-                <div className='min-[1330px]:flex flex-wrap mt-4'>
-                  <div className='flex items-center gap-2 w-fit'>
-                    <Image src={ClockHeImage} alt='location' />
-                    <p className='font-light text-[12px] 2xl:text-[16px]'>
-                      {tour.duration}
+        {data
+          .filter((tour) => tour.type == type)
+          .map((tour, index) => (
+            <div key={index} className='w-[411px] pr-4'>
+              <div className='relative rounded-[24px] bg-[#F7F7F7] h-full p-3 pb-5 overflow-hidden'>
+                <div className='p-1'>
+                  <h5 className='font-medium 2xl:text-[22px] leading-[clamp(24px,2vw,32px)]'>
+                    {tour.name}
+                  </h5>
+                  <div className='flex gap-2 items-start mt-4 h-[70px]'>
+                    <Image src={LocationHeImage} alt='location' />
+                    <p className='font-light text-[#6A7373] text-[12px] 2xl:text-[16px] line-clamp-[3]'>
+                      {tour.route}
                     </p>
                   </div>
+                  <div className='min-[1330px]:flex flex-wrap mt-4'>
+                    <div className='flex items-center gap-2 w-fit'>
+                      <Image src={ClockHeImage} alt='location' />
+                      <p className='font-light text-[12px] 2xl:text-[16px]'>
+                        {tour.duration}
+                      </p>
+                    </div>
+                  </div>
+                  <p className='flex gap-2 items-center my-4'>
+                    <span className='text-[26px] 2xl:text-[36px] font-medium'>
+                      ${tour.price}
+                    </span>
+                  </p>
                 </div>
-                <p className='flex gap-2 items-center my-4'>
-                  <span className='text-[26px] 2xl:text-[36px] font-medium'>
-                    ${tour.price}
-                  </span>
-                </p>
-              </div>
-              <Image
-                className='w-full'
-                key={index}
-                src={tour.avatar ?? ''}
-                alt={tour.name ?? ''}
-                width={416}
-                height={250}
-              />
-              <div
-                role='button'
-                className='absolute mx-auto left-0 right-0 bottom-[-16px] bg-[#F7F7F7] rounded-full p-4 w-fit'
-              >
-                <Image src={ExploreColorImage} alt='explore-color' />
+                <Image
+                  className='w-full'
+                  key={index}
+                  src={tour.avatar ?? ''}
+                  alt={tour.name ?? ''}
+                  width={416}
+                  height={250}
+                />
+                <div
+                  role='button'
+                  className='absolute mx-auto left-0 right-0 bottom-[-16px] bg-[#F7F7F7] rounded-full p-4 w-fit'
+                >
+                  <Image src={ExploreColorImage} alt='explore-color' />
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
       </Slider>
 
       <div className='flex min-[520px]:hdden items-center gap-3 mt-4'>

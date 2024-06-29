@@ -23,6 +23,7 @@ export default function RootLayout({
         url='portfolio-banner.jpeg'
         defaultForm={false}
         isMobileFullScreen={false}
+        isFullHeight
       >
         <div
           role='button'

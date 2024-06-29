@@ -16,6 +16,14 @@ import CambodiaTourImage from '@/assets/images/tour-style-tooltip/cambodia-tour.
 import MyanmarTourImage from '@/assets/images/tour-style-tooltip/myanmar-tour.jpeg';
 import ThailandTourImage from '@/assets/images/tour-style-tooltip/thailand-tour.jpeg';
 
+export const urlPagesShowHeaderColor = [
+  '/contact-us',
+  '/halong-bay-cruises',
+  '/mekong-river-cruises',
+  '/extra',
+  '/tour/',
+];
+
 export const tourStyleTooltip = [
   { id: 0, img: TopSellingTourImage, name: 'Top Selling Tour' },
   { id: 1, img: DayTripsImage, name: 'Day Trips' },
@@ -40,11 +48,11 @@ export const tourStyleCountriesTooltip = [
   },
   {
     id: 1,
-    img: LaosTourImage,
+    img: CambodiaTourImage,
     name: 'Cambodia Tours',
     route: '/cambodia-tours',
   },
-  { id: 2, img: CambodiaTourImage, name: 'Laos Tours', route: '/laos-tours' },
+  { id: 2, img: LaosTourImage, name: 'Laos Tours', route: '/laos-tours' },
   {
     id: 3,
     img: MyanmarTourImage,
