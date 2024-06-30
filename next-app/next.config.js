@@ -9,7 +9,7 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
-                hostname: 'test.threeland.com',
+                hostname: 'vn.threeland.com',
             }
         ]
     }
