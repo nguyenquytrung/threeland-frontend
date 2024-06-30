@@ -80,8 +80,8 @@ const Page = () => {
               and loyal members from 3rd year.
             </li>
             <li>
-              Offices' location in center, easy access from living quarters in
-              the City. Big bus stations and bus stops nearby.
+              Offices&apos; location in center, easy access from living quarters
+              in the City. Big bus stations and bus stops nearby.
             </li>
             <li>
               Summer and winter vacation, family fund support depending on the

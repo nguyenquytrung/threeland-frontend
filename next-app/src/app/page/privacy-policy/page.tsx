@@ -21,9 +21,10 @@ const Page = () => {
             services, request information and support. We use your customer
             information only when it will be important for us to contact you
             regarding our web site, new Threeland Travel services, and special
-            offers we think you'll find valuable. If you would rather not
-            receive this information, please see the "Updating Your Information"
-            section below on how to change your communication preferences.
+            offers we think you&apos;ll find valuable. If you would rather not
+            receive this information, please see the &quot;Updating Your
+            Information&quot; section below on how to change your communication
+            preferences.
           </p>
           <p>
             This site also contains links to other sites. Threeland Travel is

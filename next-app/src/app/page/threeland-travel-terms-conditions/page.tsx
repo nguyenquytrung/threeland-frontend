@@ -31,10 +31,10 @@ const Page = () => {
           <p>
             A non-refundable deposit of 20% of the total package price is
             required to request and confirm your reservations. Final payment of
-            the tour price must be made 15 days prior to client's arrival in
-            Vietnam or starting date of the tour, or otherwise THREELAND TRAVEL
-            may at their sole discretion cancel the bookings without any refund
-            of sums already paid to THREELAND TRAVEL by the Client/Agent.
+            the tour price must be made 15 days prior to client&apos;s arrival
+            in Vietnam or starting date of the tour, or otherwise THREELAND
+            TRAVEL may at their sole discretion cancel the bookings without any
+            refund of sums already paid to THREELAND TRAVEL by the Client/Agent.
           </p>
           <h5 className='font-semibold mt-4'>RATES/VALIDITY</h5>
           <p>
@@ -42,9 +42,9 @@ const Page = () => {
             American Dollars at current rate of exchange and valid until the
             date notified in tour program. THREELAND TRAVEL warrants that the
             prices or rates quoted to the Client/Agent are correct at the time
-            of issuance of the Client's/Agent's quotation and/or invoice but are
-            subject to change in line with market, tax or currency fluctuation,
-            with or without prior notice.
+            of issuance of the Client&apos;s/Agent&apos;s quotation and/or
+            invoice but are subject to change in line with market, tax or
+            currency fluctuation, with or without prior notice.
           </p>
           <h5 className='font-semibold mt-4'>CHILDREN POLICY</h5>
           <p>

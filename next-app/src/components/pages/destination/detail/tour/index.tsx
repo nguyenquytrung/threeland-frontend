@@ -203,26 +203,26 @@ const Index = () => {
 
   return (
     <div className='w-full'>
-      <div className='flex items-center text-[14px] py-5 bg-[#f9f9f9] px-[20%]'>
-        <p className='px-5'>Threeland</p>
+      <div className='flex gap-2 md:gap-5 flex-wrap items-center text-[14px] py-5 bg-[#f9f9f9] px-[24px]'>
+        <p className=''>Threeland</p>
         <ArrowRight />
-        <p className='px-5'>Destination </p>
+        <p className=''>Destination </p>
         <ArrowRight />
-        <p className='px-5'>Vietnam</p>
+        <p className=''>Vietnam</p>
         <ArrowRight />
-        <p className='px-5'>HANOI | HANOI TOURS</p>
+        <p className=''>HANOI | HANOI TOURS</p>
       </div>
-      <h3 className='text-[36px] text-center font-bold justify-content w-full pb-10'>
+      <h3 className='text-[clamp(20px,3vw,36px)] text-center font-bold justify-content w-full py-5'>
         HANOI | HANOI TOURS
       </h3>
 
-      <div className='shadow-lg block min-[900px]:flex gap-8 bg-white relative z-10 py-[3rem]'>
+      <div className='shadow-lg block min-[1200px]:flex gap-8 bg-white relative z-10 py-[3rem]'>
         <Image
           src={cotCoHaNoi}
           alt='who-we-are'
           className='flex-1 w-[100%] max-w-[1256px] h-[600px] object-cover'
         />
-        <div className='flex-1 block min-[900px]:mr-[200px] mr-10 min-[900px]:px-0 px-10'>
+        <div className='flex-1 block max-[1199px]:px-[24px] min-[1200px]:pr-[50px] min-[1600px]:pr-[100px]'>
           <div className='font-semibold flex text-[20px] font-bold border-b-[1px] border-[#000]'>
             <p
               onClick={() => onSetTab(1)}

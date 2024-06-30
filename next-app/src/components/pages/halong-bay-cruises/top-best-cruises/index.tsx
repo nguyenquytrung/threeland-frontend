@@ -102,7 +102,11 @@ const Top10BestCruises = () => {
           >
             {slideImagesCustomerReview.map((slideImage, index) => {
               return (
-                <Dialog open={open} onOpenChange={setOpen}>
+                <Dialog
+                  key={slideImage.caption}
+                  open={open}
+                  onOpenChange={setOpen}
+                >
                   <DialogTrigger asChild>
                     <div key={index} role='button' className='group px-2'>
                       <div className=''>

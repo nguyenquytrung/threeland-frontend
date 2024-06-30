@@ -15,6 +15,7 @@ import PopularSaleImage from '@/assets/images/popular-sale.svg';
 import SeeMoreImage from '@/assets/images/see-more.svg';
 import RightSliderImage from '@/assets/images/right-slider.svg';
 import Link from 'next/link';
+import { PaginationComp } from '@/components/core/pagination';
 
 const recommendTours = [
   { id: 0, img: RecommendVietnam1, title: 'Essential Vietnam with Sapa' },
@@ -191,7 +192,9 @@ const RecommendTour = ({
           ))}
         </div>
 
-        <div
+        <PaginationComp className='mt-6' />
+
+        {/* <div
           role='button'
           className='mt-6 mx-auto border border-[#E6E8E8] transition-all hover:bg-[#f3f3f3] rounded-[8px] w-[235px] h-[48px] flex gap-2 items-center justify-center'
         >
@@ -200,7 +203,7 @@ const RecommendTour = ({
             <span className='text-[#9B9B9B] text-[12px]'>(34)</span>
           </span>
           <Image src={RightSliderImage} alt='view-more-tour' />
-        </div>
+        </div> */}
       </div>
     </section>
   );

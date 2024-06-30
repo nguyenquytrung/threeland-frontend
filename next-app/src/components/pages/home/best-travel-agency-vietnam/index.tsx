@@ -149,7 +149,7 @@ const BestTravelAgencyVietnam = () => {
 
           <Image src={SignImage} alt='SignImage' />
 
-          <div className='absolute flex gap-[clamp(4rem,7vw,8rem)] items-center w-[clamp(600px,65vw,930px)] h-[167px] bg-[#0066B3] bottom-[-5.5rem] text-white px-[4rem]'>
+          <div className='absolute hidden md:flex gap-[clamp(4rem,7vw,8rem)] items-center w-[clamp(600px,65vw,930px)] h-[167px] bg-[#0066B3] bottom-[-5.5rem] text-white px-[4rem]'>
             <div>
               <h4 className='text-[clamp(30px,4vw,48px)] font-semibold leading-[57.6px]'>
                 4+
@@ -170,6 +170,30 @@ const BestTravelAgencyVietnam = () => {
                 70+
               </h4>
               <p className='text-[clamp(16px,1.5vw,24px)]'>Professional</p>
+            </div>
+          </div>
+
+          <div className='flex md:hidden flex-col min-[424px]:flex-row flex-wrap gap-[1rem] min-[424px]:gap-[clamp(0.5rem,7vw,8rem)] items-center justify-center w-full min-h-[167px] bg-[#0066B3] bottom-[2rem] lg:bottom-[-1.5rem] text-white px-[clamp(0.4rem,4vw,4rem)] py-3 min-[424px]:py-0'>
+            <div>
+              <h4 className='text-[clamp(30px,4vw,48px)] font-semibold leading-[57.6px] text-center min-[424px]:text-left'>
+                4+
+              </h4>
+              <p className='text-[clamp(14px,1.5vw,24px)]'>Destination</p>
+            </div>
+            <div className='w-max'>
+              <h4 className='text-[clamp(30px,4vw,48px)] font-semibold leading-[57.6px] text-center min-[424px]:text-left'>
+                1800+
+              </h4>
+              <p className='text-[clamp(14px,1.5vw,24px)]'>
+                {' '}
+                Agencies worldwide
+              </p>
+            </div>
+            <div>
+              <h4 className='text-[clamp(30px,4vw,48px)] font-semibold leading-[57.6px] text-center min-[424px]:text-left'>
+                70+
+              </h4>
+              <p className='text-[clamp(14px,1.5vw,24px)]'>Professional</p>
             </div>
           </div>
         </div>

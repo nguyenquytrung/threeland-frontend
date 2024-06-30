@@ -1,4 +1,6 @@
+'use client';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 import DurationImage from '@/assets/images/duration.svg';
 import TravelImage from '@/assets/images/travel-style.svg';
@@ -14,6 +16,7 @@ type Props = {
   defaultForm?: boolean;
   url?: string;
   isMobileFullScreen?: boolean;
+  isFullHeight?: boolean;
   children?: React.ReactNode;
 };
 
@@ -25,16 +28,23 @@ const Banner = (props: Props) => {
     defaultForm = true,
     url = 'banner1.jpeg',
     isMobileFullScreen = true,
+    isFullHeight = false,
     children,
   } = props;
   // const bgImg = `bg-[url('/${url}')]`;
+  const pathname = usePathname();
+  console.log(pathname);
   return (
     <section
       style={{ backgroundImage: `url('/${url}')` }}
       className={`relative bg-banner-1 ${
         isMobileFullScreen
-          ? 'h-[calc(100vh-144px)] max-[1300px]:h-[calc(100vh-69px)]'
-          : 'h-[clamp(200px,10vw,400px)] lg:max-[1300px]:h-[calc(100vh-69px)] min-[1301px]:h-[calc(100vh-144px)]'
+          ? 'h-[100vh] max-[1300px]:h-[calc(100vh-69px)]'
+          : `h-[clamp(200px,10vw,400px)] lg:max-[1300px]:h-[calc(100vh-69px)] ${
+              isFullHeight
+                ? 'min-[1301px]:h-[100vh]'
+                : 'min-[1301px]:h-[calc(100vh-144px)]'
+            }`
       } overflow-hidden bg-cover bg-center`}
     >
       <div className='absolute inset-0 bg-black bg-opacity-[0.3] flex flex-col items-center justify-center'>
@@ -53,11 +63,20 @@ const Banner = (props: Props) => {
         )}
         {children}
       </div>
-      <Image
-        src={LogoNoColorImage}
-        alt='LogoNoColorImage'
-        className='absolute min-[1160px]:top-1/3 top-[10%] max-[640px]:w-[3rem]'
-      />
+      {pathname === '/' && (
+        <>
+          <Image
+            src={LogoNoColorImage}
+            alt='LogoNoColorImage'
+            className='absolute min-[1160px]:top-1/3 top-[10%] max-[640px]:w-[3rem]'
+          />
+          <Image
+            src={LogoColorImage}
+            alt='logo'
+            className='absolute top-[105px] right-[13%] max-[640px]:h-[3rem]'
+          />
+        </>
+      )}
       {defaultForm && (
         <div className='w-full px-[clamp(24px,4vw,100px)] py-[1rem] absolute bottom-0 left-0 right-0 bg-black bg-opacity-[0.3]'>
           <div className='flex flex-wrap min-[930px]:flex-row flex-col items-center gap-2 rounded-[8px] p-2 max-w-full min-[930px]:w-max w-full mx-auto'>
