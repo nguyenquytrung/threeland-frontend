@@ -9,6 +9,7 @@ class Pagination {
     to?: number;
     total: number;
     next_cursor?: string | null;
+    links: any[];
   };
 
   constructor(data: any) {

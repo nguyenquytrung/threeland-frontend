@@ -33,7 +33,6 @@ const Banner = (props: Props) => {
   } = props;
   // const bgImg = `bg-[url('/${url}')]`;
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <section
       style={{ backgroundImage: `url('/${url}')` }}

@@ -22,15 +22,18 @@ const GotQuestion = dynamic(
   () => import('@/components/pages/destination/got-question'),
 );
 import DestinationBanner from '@/components/pages/destination/banner';
+import DESTINATION_COUNTRY from '@/configs/destinationCountries';
 
-const Page = () => {
+export const revalidate = 0;
+
+const Page = ({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) => {
   return (
     <main>
       {/* Banner Section */}
       <DestinationBanner country='Myanmar' url='myanmar-tours-banner.jpeg' />
 
       {/* Top Recommended Vietnam Tour Packages Section */}
-      <RecommendTour />
+      <RecommendTour searchParams={searchParams} countryId={DESTINATION_COUNTRY.MYANMAR} />
 
       {/* Customer reviews Section */}
       <CustomerReviews />

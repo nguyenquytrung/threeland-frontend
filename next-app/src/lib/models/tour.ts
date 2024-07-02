@@ -1,4 +1,8 @@
+import Image from "./image";
+import Itinerary from "./itinerary";
 import Model from "./model";
+import Review from "./review";
+import Style from "./style";
 
 export enum TYPE {
     PRIVATE = 1,
@@ -35,9 +39,14 @@ class Tour extends Model {
     public activities?: string;
     public route?: string;
     public itineary_brief?: string;
+    public overview?: string;
     public type?: TYPE;
 
     public countries_count?: number;
+    public images?: Image[];
+    public style?: Style;
+    public itineraries?: Itinerary[];
+    public reviews?: Review[];
 }
 
 export default Tour;

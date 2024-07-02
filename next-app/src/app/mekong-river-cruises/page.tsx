@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import Banner from '@/components/pages/halong-bay-cruises/banner';
-import BestTourInHalong from '@/components/pages/halong-bay-cruises/best-tour-in-halong';
+import BestTourInMekong from '@/components/pages/extra/best-tour-in-mekong';
 import ExtrasHighlight from '@/components/pages/halong-bay-cruises/highlight';
 import Top10BestCruises from '@/components/pages/halong-bay-cruises/top-best-cruises';
 import YouAreUnique from '@/components/pages/halong-bay-cruises/you-are-unique';
@@ -20,7 +20,9 @@ const Page = async () => {
       <ExtrasHighlight />
 
       {/* Best Tour In Halong Bay Section */}
-      <BestTourInHalong />
+      <Suspense fallback={<div>Loading...</div>}>
+        <BestTourInMekong />
+      </Suspense>
 
       {/* You Are Unique Section */}
       <YouAreUnique />

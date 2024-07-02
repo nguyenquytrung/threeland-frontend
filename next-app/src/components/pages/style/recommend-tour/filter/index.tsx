@@ -4,25 +4,24 @@ import React from 'react';
 import FilterByImage from '@/assets/images/filter-by.svg';
 import Helper from '@/lib/utils/helper';
 import routes from '@/configs/apiRoutes';
-import DESTINATION_COUNTRY, { FilterOption } from '@/configs/destinationCountries';
+import { FilterOption } from '@/configs/destinationCountries';
 import FilterItem from '@/components/core/filter-item';
 
 type Props = {
     className?: string;
-    countryId: DESTINATION_COUNTRY;
+    styleId: number;
 };
 
 type DataResponse = {
     durations: FilterOption[],
-    destinations: FilterOption[],
+    countries: FilterOption[],
     travelStyles: FilterOption[],
-    styles: FilterOption[],
     prices: FilterOption[],
 }
 
-const getData = async (countryId: DESTINATION_COUNTRY): Promise<DataResponse> => {
+const getData = async (styleId: number): Promise<DataResponse> => {
     try {
-        const apiUrl = Helper.apiRoutes(routes.destinations.filterConfig + countryId);
+        const apiUrl = Helper.apiRoutes(routes.styles.filterConfig + styleId);
 
         const res = await fetch(apiUrl, {
             next: {
@@ -45,9 +44,9 @@ const getData = async (countryId: DESTINATION_COUNTRY): Promise<DataResponse> =>
     }
 };
 
-const Filter = async ({ className = '', countryId }: Props) => {
+const Filter = async ({ className = '', styleId }: Props) => {
 
-    const { durations, destinations, travelStyles, prices, styles } = await getData(countryId);
+    const { durations, countries, travelStyles, prices } = await getData(styleId);
 
     return (
         <div className={`max-w-[414px] min-w-[256px] ${className}`}>
@@ -58,7 +57,7 @@ const Filter = async ({ className = '', countryId }: Props) => {
 
             <div className='flex flex-col gap-6 p-5 pt-3 border border-[#F3F3F3]'>
                 <FilterItem title='DURATION' options={durations} searchKey={'duration'} allowSelectMultiple={false} />
-                <FilterItem title='DESTINATION' options={destinations} defaultShow={4} searchKey={'destination'} />
+                <FilterItem title='COUNTRIES' options={countries} searchKey={'country'} />
                 <FilterItem title='TRAVEL STYLE' options={travelStyles} searchKey={'travel_style'} />
                 <FilterItem
                     title='PRICE PER PAX'
@@ -72,7 +71,6 @@ const Filter = async ({ className = '', countryId }: Props) => {
                     searchKey={'price_type'}
                     allowSelectMultiple={false}
                 />
-                <FilterItem title='THEME' options={styles} searchKey={'style'} />
             </div>
         </div>
     );

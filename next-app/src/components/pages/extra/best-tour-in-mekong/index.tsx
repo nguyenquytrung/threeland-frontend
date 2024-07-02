@@ -5,7 +5,7 @@ import routes from '@/configs/apiRoutes';
 
 const getData = async (): Promise<Tour[]> => {
     try {
-        const apiUrl = Helper.apiRoutes(routes.tours.halongTours);
+        const apiUrl = Helper.apiRoutes(routes.tours.mekongTours);
 
         const res = await fetch(apiUrl, {
             next: {

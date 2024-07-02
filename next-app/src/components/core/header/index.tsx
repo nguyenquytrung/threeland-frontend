@@ -37,6 +37,7 @@ import MekongCruisesImage from '@/assets/images/extras-tooltip/mekong-cruise.jpg
 import HotelBookingImage from '@/assets/images/extras-tooltip/hotel-booking.jpeg';
 import ExtraServiceImage from '@/assets/images/extras-tooltip/extra-service.jpeg';
 import useWindowScrollPosition from '@/hook/useScrollPosition';
+import TOUR_STYLES from '@/configs/tourStyle';
 
 const Header = () => {
   const pathname = usePathname();
@@ -227,18 +228,12 @@ const Header = () => {
                   {/* Tour style popover */}
                   <div className='transition-all z-10 absolute w-[880px] top-[20px] left-[-200px] hidden group-hover:block bg-white p-4 border-t-[4px] border-t-[#0066B3]'>
                     <div className='grid grid-cols-4 gap-3'>
-                      {tourStyleTooltip.map((item) => (
+                      {TOUR_STYLES.map((item) => (
                         <Link
                           role='button'
                           key={item.id}
                           className='group/ts flex gap-2 items-center'
-                          href={{
-                            pathname: `/tours/${item.name
-                              .split(' ')
-                              .join('-')
-                              .toLowerCase()}`,
-                            query: { title: item.name },
-                          }}
+                          href={`/tours/${item.slug}`}
                         >
                           <Image src={item.img} alt='top-selling-tour' />
                           <p className='group-hover/ts:underline text-[#0a284a] text-[14px]'>

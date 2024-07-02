@@ -20,7 +20,9 @@ const Page = async () => {
       <ExtrasHighlight />
 
       {/* Best Tour In Halong Bay Section */}
-      <BestTourInHalong />
+      <Suspense fallback={<div>Loading...</div>}>
+        <BestTourInHalong />
+      </Suspense>
 
       {/* You Are Unique Section */}
       <YouAreUnique />

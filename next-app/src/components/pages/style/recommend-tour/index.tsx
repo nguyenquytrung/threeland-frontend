@@ -1,12 +1,10 @@
-
+import Style from '@/lib/models/style';
 import ListRecommendTour from '@/components/list-recommend-tour';
-import DESTINATION_COUNTRY from '@/configs/destinationCountries';
 import dynamic from 'next/dynamic';
-
-import { PaginationComp } from '@/components/core/pagination';
 import Helper from '@/lib/utils/helper';
 import routes from '@/configs/apiRoutes';
 import Pagination from '@/lib/data/pagination';
+import { PaginationComp } from '@/components/core/pagination';
 
 const Filter = dynamic(() => import('./filter'), {
         loading: () => <div>Loading...</div>
@@ -14,14 +12,13 @@ const Filter = dynamic(() => import('./filter'), {
 )
 
 type Props = {
-    title?: string;
-    countryId: DESTINATION_COUNTRY,
+    style: Style,
     searchParams: { [key: string]: string | string[] | undefined }
 }
 
-const getData = async (countryId: DESTINATION_COUNTRY, searchParams: { [key: string]: string | string[] | undefined }): Promise<Pagination> => {
+const getData = async (styleId: number, searchParams: { [key: string]: string | string[] | undefined }): Promise<Pagination> => {
     try {
-        const apiUrl = Helper.apiRoutes(routes.tours.destination + countryId) + Helper.objectToParams(searchParams);
+        const apiUrl = Helper.apiRoutes(routes.tours.style + styleId) + Helper.objectToParams(searchParams);
 
         const res = await fetch(apiUrl, {
             next: {
@@ -44,21 +41,18 @@ const getData = async (countryId: DESTINATION_COUNTRY, searchParams: { [key: str
     }
 };
 
-const RecommendTour = async ({
-    title = 'Top Recommended Vietnam Tour Packages',
-    countryId,
-    searchParams,
-}: Props) => {
-    const pagination = await getData(countryId, searchParams);
+const RecommendTour = async ({ style, searchParams }: Props) => {
+
+    const pagination = await getData(style.id ?? 0, searchParams);
 
     return (
         <section className='flex gap-6 px-[24px] sm:px-[50px] lg:px-[100px] 2xl:max-w-[1584px] mx-auto w-full py-10'>
             <Filter
                 className='hidden min-[1180px]:block w-[30%]'
-                countryId={countryId}
+                styleId={style.id ?? 0}
             />
             <div className='flex-1'>
-                <ListRecommendTour title={title} tours={pagination.data} />
+                <ListRecommendTour title={style.name} tours={pagination.data} />
                 <PaginationComp pagination={pagination} className='mt-4' />
             </div>
         </section>
