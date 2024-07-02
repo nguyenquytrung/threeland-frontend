@@ -57,7 +57,7 @@ const StaysInHotel = () => {
       <hr className='mt-[1rem]' />
       <div className='flex gap-4 mt-[1rem]'>
         <Filter
-          filterCategories={filterCategories}
+          countryId={1}
           className='w-[24%] hidden min-[1380px]:block'
         />
         <div className='grid grid-cols-1 md:grid-cols-2 min-[1080px]:grid-cols-1 gap-4 gap-y-10 min-[1080px]:gap-y-4 flex-1'>
